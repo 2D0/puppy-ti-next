@@ -1,0 +1,13 @@
+export { default as Back } from './ico-back.svg';
+export { default as FireWorkGreen } from './ico-firework_green.png';
+export { default as FireWorkRed } from './ico-firework_red.png';
+export { default as FireWorkStar } from './ico-firework_star.png';
+export { default as Foot } from './ico-foot.svg';
+export { default as PercentChar } from './ico-percent_char.png';
+export { default as Share } from './ico-share.svg';
+export { default as SnsFaceBook } from './ico-sns1.svg';
+export { default as SnsKakao } from './ico-sns2.svg';
+export { default as SnsTwitter } from './ico-sns3.svg';
+export { default as SnsLink } from './ico-sns4.svg';
+export { default as TransEn } from './ico-trans_en.svg';
+export { default as TransKo } from './ico-trans_ko.svg';
