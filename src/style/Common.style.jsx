@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled, {css} from 'styled-components';
+import {Link} from 'react-router-dom';
 import device from './Device.jsx';
 
 // ********************** 색상 **********************
@@ -234,7 +234,7 @@ export const Wrap = styled.div`
     position: relative;
     overflow: hidden;
     ${BgCommon}
-    ${({ percent }) => percent === 100 && BgBlack}
+    ${({percent}) => percent === 100 && BgBlack}
 `;
 export const Content = styled.div`
     height: calc(100vh - 85px);
@@ -299,7 +299,7 @@ export const BackCont = styled.div`
     overflow: hidden;
 `;
 //공통 input
-export const CommonInput = styled.input.attrs({ maxLength: 6 })`
+export const CommonInput = styled.input.attrs({maxLength: 6})`
     ${CommonBox}
     ${CommonShadow}
 `;
@@ -310,14 +310,14 @@ export const CommonBtn = styled.button`
     ${CommonBox}
     ${CommonShadow}
 
-    ${({ startActive }) =>
-    startActive
-        ? css`
-                  ${BgLightPurple}
-              `
-        : css`
-                  ${BgUnable}
-              `}
+    ${({startActive}) =>
+            startActive
+                    ? css`
+                        ${BgLightPurple}
+                    `
+                    : css`
+                        ${BgUnable}
+                    `}
 `;
 
 // ********************* 퍼센트 바 ********************
@@ -335,12 +335,11 @@ export const PercentBar = styled.div`
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    ${BgWhite}
 
-    ${({ percent }) => percent !== 100 && CommonShadow}
-    
+    ${BgWhite}
+    ${({percent}) => percent !== 100 && CommonShadow}
     ${PercentBarFill} {
-        width: ${({ percent }) => percent}%;
+        width: ${({percent}) => percent}%;
     }
 `;
 
@@ -390,25 +389,25 @@ export const HeaderCont = styled.header`
     z-index: 998;
     //padding-top: calc(env(safe-area-inset-bottom) + 10px);
 
-    ${({ scrollHeader }) =>
-    scrollHeader &&
-    css`
-            box-shadow: 0 0 7px #dcd5e8;
-        `};
+    ${({scrollHeader}) =>
+            scrollHeader &&
+            css`
+                box-shadow: 0 0 7px #dcd5e8;
+            `};
 
-    ${({ location, percent }) => {
-    switch (location) {
-        case '/check':
-            return percent === 100 ? BgBlack : BgCommon;
-        case '/result':
-            return BgCommon;
-        default:
-            return BgLightPurple;
-    }
-}};
+    ${({location, percent}) => {
+        switch (location) {
+            case '/check':
+                return percent === 100 ? BgBlack : BgCommon;
+            case '/result':
+                return BgCommon;
+            default:
+                return BgLightPurple;
+        }
+    }};
 
     ${HeaderSwitchImg} {
-        ${({ percent }) => percent !== 100 && SmallIconShadow}
+        ${({percent}) => percent !== 100 && SmallIconShadow}
     }
 `;
 // ********************** 푸터 **********************
