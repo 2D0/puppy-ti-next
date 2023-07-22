@@ -1,58 +1,46 @@
-import styled, {css} from 'styled-components';
-
-import {
-  BgPink,
-  BgPurple,
-  BgWhite,
-  FontMediumSize,
-  FontWhite,
-  IconShadow,
-  flexCenter
-} from '@/style/Common.style';
-
 // ******************** 질문 박스 ********************
-export const QuestionQABoxs = styled.ul`
+export const CheckQABoxs = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 40px 0;
 `;
-export const QuestionQABoxList = styled.li``;
-export const QuestionQATop = styled.ul`
+export const CheckQABoxList = styled.li``;
+export const CheckQATop = styled.ul`
   display: flex;
   height: 40px;
 `;
-export const QuestionQATit = styled.li`
+export const CheckQATit = styled.li`
   width: 50%;
   height: inherit;
   ${flexCenter}
   ${FontMediumSize}
   ${FontWhite}
 `;
-export const QuestionQATitL = styled(QuestionQATit)`
+export const CheckQATitL = styled(CheckQATit)`
   ${BgPink}
 `;
-export const QuestionQATitR = styled(QuestionQATit)`
+export const CheckQATitR = styled(CheckQATit)`
   ${BgPurple}
 `;
-export const QuestionQACont = styled.div`
+export const CheckQACont = styled.div`
   flex-direction: column;
   gap: 30px 0;
   padding: 30px 0;
   ${flexCenter}
   ${BgWhite}
 `;
-export const QuestionQATxt = styled.span`
+export const CheckQATxt = styled.span`
   width: 90%;
   white-space: break-spaces;
   text-align: center;
   ${FontMediumSize}
 `;
-export const QuestionQABtns = styled.div`
+export const CheckQABtns = styled.div`
   gap: 0 25px;
   ${flexCenter}
 `;
-export const QuestionQABtn = styled.button``;
-export const QuestionFootShape = `
+export const CheckQABtn = styled.button``;
+export const CheckFootShape = `
     display: block;
     width: auto;
     height: 70px;
@@ -67,13 +55,13 @@ export const QuestionFootShape = `
         ${IconShadow}
     }
 `;
-export const QuestionFootBlank = `
+export const CheckFootBlank = `
     stroke-width: 4px;
     fill: transparent;
 `;
-export const QuestionFoot = styled.span`
+export const CheckFoot = styled.span`
   svg {
-    ${QuestionFootShape}
+    ${CheckFootShape}
     ${({scoreIdx}) =>
       scoreIdx === 3 &&
       css`
@@ -81,7 +69,7 @@ export const QuestionFoot = styled.span`
       `};
 
     > path {
-      ${QuestionFootBlank};
+      ${CheckFootBlank};
 
       //버튼 기본 디자인
       ${({scoreIdx}) => {
