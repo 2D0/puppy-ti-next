@@ -1,10 +1,9 @@
-import React from 'react';
 
 const CheckPage = () => {
-  return (
-    <div>
-      CheckPage
-    </div>
-  )
+    return (
+        <div>
+            check
+        </div>
+    )
 }
 export default CheckPage;
