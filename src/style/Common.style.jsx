@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
-import {Link} from 'react-router-dom';
-import device from './Device.jsx';
+import { Link } from 'react-router-dom';
+import device from "@/style/Device.style";
+
 
 // ********************** 색상 **********************
 export const FontPurple = `
@@ -125,13 +126,13 @@ export const BoxCenter = `
   left: 50%;
   transform: translate(-50%, -50%);
 `;
-export const flexItemCenter = `
+export const FlexItemCenter = `
   display: flex;
   align-items: center;
 `;
-export const flexCenter = `
-  ${flexItemCenter}
-  justify-content: center;
+export const Center = `
+  display: grid;
+  place-items: center;
 `;
 
 //가로 중앙 정렬
@@ -250,10 +251,10 @@ export const ContentsInner = `
   z-index: 3;
   position: relative;
 `;
-export const subContMargin = `
+export const SubContMargin = `
   margin-bottom: 40px;
 `;
-export const defaultContMargin = `
+export const DefaultContMargin = `
   margin-bottom: 80px;
 `;
 
@@ -306,7 +307,7 @@ export const CommonInput = styled.input.attrs({maxLength: 6})`
 `;
 //공통 버튼
 export const CommonBtn = styled.button`
-  ${flexCenter}
+  ${Center}
   ${FontWhite}
   ${CommonBox}
   ${CommonShadow}
@@ -349,7 +350,7 @@ export const HeaderInner = styled.div`
   height: 85px;
   margin: 0 auto;
   position: relative;
-  ${flexItemCenter}
+  ${FlexItemCenter}
 `;
 export const HeaderLogo = styled.h1`
   width: auto;
@@ -364,7 +365,7 @@ export const HeaderLogoImg = styled.img`
 export const HeaderSwitch = styled.div`
   width: fit-content;
   gap: 0 12px;
-  ${flexItemCenter}
+  ${FlexItemCenter}
 `;
 export const HeaderSwitchIcon = styled.button`
   width: 40px;
@@ -417,12 +418,12 @@ export const Footer = styled.footer`
   height: 95px;
   position: relative;
   z-index: 3;
-  ${flexCenter}
+  ${Center}
   ${BgDarkPurple}
 `;
 export const FooterInfo = styled.ul`
   gap: 8px;
-  ${flexCenter}
+  ${Center}
 `;
 export const FooterInfoList = styled.li`
   display: flex;

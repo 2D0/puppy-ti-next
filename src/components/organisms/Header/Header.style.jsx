@@ -1,18 +1,25 @@
 import styled, {css} from 'styled-components';
-// ********************** 헤더 **********************
+import {
+  FlexItemCenter,
+  Center,
+  BgCommon,
+  BgLightPurple,
+  SmallIconShadow
+} from "@/style/Common.style";
 
+// ********************** 헤더 **********************
 export const HeaderInner = styled.div`
   justify-content: flex-end;
   width: calc(100% - 30px);
   height: 85px;
   margin: 0 auto;
   position: relative;
-  ${flexItemCenter}
+  ${FlexItemCenter}
 `;
 export const HeaderLogo = styled.h1`
   width: auto;
   height: 60%;
-  ${BoxCenter}
+  ${Center}
 `;
 export const HeaderLogoImg = styled.img`
   display: block;
@@ -22,7 +29,7 @@ export const HeaderLogoImg = styled.img`
 export const HeaderSwitch = styled.div`
   width: fit-content;
   gap: 0 12px;
-  ${flexItemCenter}
+  ${FlexItemCenter}
 `;
 export const HeaderSwitchIcon = styled.button`
   width: 40px;
@@ -33,7 +40,7 @@ export const HeaderSwitchImg = styled.img`
   display: block;
   width: 35px;
   height: 35px;
-  ${BoxCenter}
+  ${Center}
 `;
 export const HeaderCont = styled.header`
   width: 100%;

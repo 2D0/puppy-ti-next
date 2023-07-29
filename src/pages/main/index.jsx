@@ -1,10 +1,10 @@
 import React from 'react';
-
+import layout from "@/app/layout";
 const MainPage = () => {
   return (
-    <div>
+    <layout>
       MainPage
-    </div>
+    </layout>
   )
 }
 export default MainPage;

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
+import NuxtLink from "next/link"
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
@@ -35,9 +35,9 @@ const Header = ({location, percent, scrollHeader}) => {
     <O.HeaderCont scrollHeader={scrollHeader} location={location} percent={percent}>
       <O.HeaderInner>
         <O.HeaderLogo>
-          <Link to={'/'}>
+          <NuxtLink href={'/'}>
             <O.HeaderLogoImg src={logoColor}/>
-          </Link>
+          </NuxtLink>
         </O.HeaderLogo>
         <O.HeaderSwitch>
           <O.HeaderSwitchIcon>

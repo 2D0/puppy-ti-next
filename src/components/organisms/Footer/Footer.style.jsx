@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import {
+  FontWhite,
+  FontSmallSize,
+  BgDarkPurple,
+  BgWhite,
+  Center
+} from "@/style/Common.style";
 
 // ********************** 푸터 **********************
 export const FooterTxt = `
-    ${FontWhite}
-    ${FontSmallSize}
+  ${FontWhite}
+  ${FontSmallSize}
 `;
 export const Footer = styled.footer`
   flex-direction: column;
@@ -12,12 +19,12 @@ export const Footer = styled.footer`
   height: 95px;
   position: relative;
   z-index: 3;
-  ${flexCenter}
+  ${Center}
   ${BgDarkPurple}
 `;
 export const FooterInfo = styled.ul`
   gap: 8px;
-  ${flexCenter}
+  ${Center}
 `;
 export const FooterInfoList = styled.li`
   display: flex;

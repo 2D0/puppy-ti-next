@@ -2,9 +2,9 @@ import React from 'react';
 
 const CheckPage = () => {
   return (
-    <div>
-      CheckPage
-    </div>
+    <>
+      check
+    </>
   )
 }
 export default CheckPage;
