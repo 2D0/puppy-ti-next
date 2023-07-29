@@ -131,8 +131,8 @@ export const FlexItemCenter = `
   align-items: center;
 `;
 export const Center = `
-  display: grid;
-  place-items: center;
+  ${FlexItemCenter}
+  justify-content: center;
 `;
 
 //가로 중앙 정렬

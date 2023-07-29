@@ -4,7 +4,7 @@ import {
   Center,
   BgCommon,
   BgLightPurple,
-  SmallIconShadow
+  SmallIconShadow, BoxCenter
 } from "@/style/Common.style";
 
 // ********************** 헤더 **********************
@@ -19,7 +19,7 @@ export const HeaderInner = styled.div`
 export const HeaderLogo = styled.h1`
   width: auto;
   height: 60%;
-  ${Center}
+  ${BoxCenter}
 `;
 export const HeaderLogoImg = styled.img`
   display: block;
@@ -35,12 +35,12 @@ export const HeaderSwitchIcon = styled.button`
   width: 40px;
   height: 40px;
   position: relative;
+  ${Center}
 `;
 export const HeaderSwitchImg = styled.img`
   display: block;
   width: 35px;
   height: 35px;
-  ${Center}
 `;
 export const HeaderCont = styled.header`
   width: 100%;
