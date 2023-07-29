@@ -5,7 +5,7 @@ import {
   FontSmallSize,
   BgDarkPurple,
   BgWhite,
-  Center
+  Center, FlexItemCenter
 } from "@/style/Common.style";
 
 // ********************** 푸터 **********************
@@ -19,7 +19,7 @@ export const Footer = styled.footer`
   height: 95px;
   position: relative;
   z-index: 3;
-  ${Center}
+  ${FlexItemCenter}
   ${BgDarkPurple}
 `;
 export const FooterInfo = styled.ul`

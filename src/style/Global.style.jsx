@@ -94,7 +94,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  li {
+  ul {
     list-style: none;
   }
 

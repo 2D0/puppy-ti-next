@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import NuxtLink from "next/link"
+import Link from "next/link"
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
@@ -8,8 +8,8 @@ import CheckHead from '@/components/molecules/CheckHead/CheckHead';
 import * as O from '@/components/organisms/Header/Header.style';
 
 //이미지
-import {LogoBlack, LogoWhite} from '@/assets/img/logo/index.js';
-import {TransEn, TransKo} from '@/assets/img/icons/index.js';
+import {LogoBlack, LogoWhite} from '@/assets/img/Logo/index';
+import {TransEn, TransKo} from '@/assets/img/Icons/index';
 
 const Header = ({location, percent, scrollHeader}) => {
   const [logoColor, setLogoColor] = useState(null); //로고 컬러 상태
@@ -18,11 +18,11 @@ const Header = ({location, percent, scrollHeader}) => {
   const switchColor = () => {
     switch (location) {
       case '/check':
-        return percent === 100 ? setLogoColor(LogoWhite) : setLogoColor(LogoBlack);
+        return percent === 100 ? setLogoColor(LogoWhite.src) : setLogoColor(LogoBlack.src);
       case '/result':
-        return setLogoColor(LogoBlack);
+        return setLogoColor(LogoBlack.src);
       default:
-        return setLogoColor(LogoWhite);
+        return setLogoColor(LogoWhite.src);
     }
   };
 
@@ -35,16 +35,16 @@ const Header = ({location, percent, scrollHeader}) => {
     <O.HeaderCont scrollHeader={scrollHeader} location={location} percent={percent}>
       <O.HeaderInner>
         <O.HeaderLogo>
-          <NuxtLink href={'/'}>
+          <Link href={'/'}>
             <O.HeaderLogoImg src={logoColor}/>
-          </NuxtLink>
+          </Link>
         </O.HeaderLogo>
         <O.HeaderSwitch>
           <O.HeaderSwitchIcon>
-            <O.HeaderSwitchImg src={TransEn} alt="영어"/>
+            <O.HeaderSwitchImg src={TransEn.src} alt="영어"/>
           </O.HeaderSwitchIcon>
           <O.HeaderSwitchIcon>
-            <O.HeaderSwitchImg src={TransKo} alt="한글"/>
+            <O.HeaderSwitchImg src={TransKo.src} alt="한글"/>
           </O.HeaderSwitchIcon>
         </O.HeaderSwitch>
       </O.HeaderInner>

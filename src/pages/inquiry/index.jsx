@@ -1,10 +1,12 @@
-import React from 'react';
-
-const InquiryPage = () => {
-  return (
-    <div>
-      InquiryPage
-    </div>
-  )
-}
-export default InquiryPage;
+//
+// import React from 'react';
+// import Layout from "@/components/template/Layout/Layout";
+//
+// const InquiryPage = () => {
+//   return (
+//     <Layout>
+//       check
+//     </Layout>
+//   )
+// }
+// export default InquiryPage;
