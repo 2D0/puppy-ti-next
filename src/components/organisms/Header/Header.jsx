@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React, {useEffect, useState} from 'react';
 import Link from "next/link"
+=======
+'use client';
+import React from 'react';
+>>>>>>> 7ec1ea405c13a2181f4e35d6ee322c8cb55bce05
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
@@ -8,6 +13,7 @@ import CheckHead from '@/components/molecules/CheckHead/CheckHead';
 import * as O from '@/components/organisms/Header/Header.style';
 
 //이미지
+<<<<<<< HEAD
 import {LogoBlack, LogoWhite} from '@/assets/img/Logo/index';
 import {TransEn, TransKo} from '@/assets/img/Icons/index';
 
@@ -30,8 +36,14 @@ const Header = ({location, percent, scrollHeader}) => {
   useEffect(() => {
     switchColor();
   }, [percent, location]);
+=======
+// import {LogoBlack, LogoWhite} from '@/assets/img/logo/index.js';
+// import {TransEn, TransKo} from '@/assets/img/icons/index.js';
+>>>>>>> 7ec1ea405c13a2181f4e35d6ee322c8cb55bce05
 
+export function Header() {
   return (
+<<<<<<< HEAD
     <O.HeaderCont scrollHeader={scrollHeader} location={location} percent={percent}>
       <O.HeaderInner>
         <O.HeaderLogo>
@@ -51,7 +63,10 @@ const Header = ({location, percent, scrollHeader}) => {
 
       {location === '/check' && <CheckHead percent={percent}/>}
     </O.HeaderCont>
+=======
+    <header>
+      <div>Header</div>
+    </header>
+>>>>>>> 7ec1ea405c13a2181f4e35d6ee322c8cb55bce05
   );
-};
-
-export {Header};
+}
