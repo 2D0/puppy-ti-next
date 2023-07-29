@@ -1,6 +1,4 @@
-// import React, {useEffect, useState} from 'react';
-// import Link from "next/link"
-// =======
+
 'use client';
 import React from 'react';
 
@@ -59,7 +57,6 @@ export function Header() {
     //
     //   {location === '/check' && <CheckHead percent={percent}/>}
     // </O.HeaderCont>
-
     <header>
       <div>Header</div>
     </header>
