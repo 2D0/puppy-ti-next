@@ -3,10 +3,11 @@ import React from 'react';
 //스타일
 import * as A from '@/components/atoms/NextButton/NextButton.style';
 
-const NextButton = ({startActive, passName}) => {
+const NextButton = ({buttonName, clickEvent, type}) => {
+
   return (
-    <A.NextButton startActive={startActive} onClick={passName} type="submit">
-      시작하기
+    <A.NextButton onClick={clickEvent} type={type} inputName={inputName}>
+      {buttonName}
     </A.NextButton>
   );
 };

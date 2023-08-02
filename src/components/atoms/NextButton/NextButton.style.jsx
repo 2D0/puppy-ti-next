@@ -1,16 +1,22 @@
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import {
-  flexCenter,
+  Center,
   FontWhite,
   CommonBox,
-  CommonShadow,
-  BgLightPurple,
-  BgUnable
+  CommonShadow
 } from '@/style/Common.style.jsx';
 
-export const ShareButtonAtom = styled.button`
-  ${flexCenter}
+export const NextButton = styled.button`
+  ${Center}
   ${FontWhite}
   ${CommonBox}
   ${CommonShadow}
+  
+  ${
+    ({inputName}) => {
+      return(
+        inputName !== '' && BgPurple
+      )
+    }
+  }
 `;

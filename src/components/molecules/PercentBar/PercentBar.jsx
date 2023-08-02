@@ -2,6 +2,7 @@ import React from 'react';
 
 //스타일
 import * as M from '@/components/molecules/PercentBar/PercentBar.style';
+import * as C from '@/style/Common.style';
 
 const CheckHead = ({percent}) => {
   return (

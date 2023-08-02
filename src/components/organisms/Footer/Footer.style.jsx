@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import Link from "next/link";
 import {
   FontWhite,
   FontSmallSize,
   BgDarkPurple,
   BgWhite,
-  Center, FlexItemCenter
+  Center,
+  FlexItemCenter
 } from "@/style/Common.style";
 
 // ********************** 푸터 **********************

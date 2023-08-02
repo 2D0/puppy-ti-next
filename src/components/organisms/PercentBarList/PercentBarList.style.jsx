@@ -7,7 +7,7 @@ import {
   flexItemCenter,
   FontGray,
   PercentBarFill,
-} from '@/style/CommonContents.jsx';
+} from '@/style/Common.style';
 
 export const ResultPercentCont = styled.div`
   ${defaultContMargin}

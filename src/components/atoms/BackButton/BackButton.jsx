@@ -9,7 +9,7 @@ import backButtonText from '@/components/atoms/ButtonText/ButtonText';
 
 const BackButton = ({backButtonImg}) => {
   return (
-    <A.BackButtonAtom>
+    <A.BackButtonAtom href={'/'}>
       {/*<A.BackButtonImg src={Back} alt="메인으로 가기"/>*/}
       <A.BackButtonImg>{backButtonImg}</A.BackButtonImg>
       <backButtonText/>

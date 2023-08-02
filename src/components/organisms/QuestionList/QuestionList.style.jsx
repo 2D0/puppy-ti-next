@@ -1,3 +1,14 @@
+import styled, {css} from 'styled-components';
+import {
+  FontWhite,
+  BgWhite,
+  BgPink,
+  BgPurple,
+  FontMediumSize,
+  Center,
+  IconShadow
+} from '@/style/Common.style';
+
 // ******************** 질문 박스 ********************
 export const CheckQABoxs = styled.ul`
   display: flex;
@@ -12,7 +23,7 @@ export const CheckQATop = styled.ul`
 export const CheckQATit = styled.li`
   width: 50%;
   height: inherit;
-  ${flexCenter}
+  ${Center}
   ${FontMediumSize}
   ${FontWhite}
 `;
@@ -26,7 +37,7 @@ export const CheckQACont = styled.div`
   flex-direction: column;
   gap: 30px 0;
   padding: 30px 0;
-  ${flexCenter}
+  ${Center}
   ${BgWhite}
 `;
 export const CheckQATxt = styled.span`
@@ -37,7 +48,7 @@ export const CheckQATxt = styled.span`
 `;
 export const CheckQABtns = styled.div`
   gap: 0 25px;
-  ${flexCenter}
+  ${Center}
 `;
 export const CheckQABtn = styled.button``;
 export const CheckFootShape = `

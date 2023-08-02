@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import {
+  IconShadow
+} from '@/style/Common.style';
 
 export const CheckFootShape = `
   display: block;

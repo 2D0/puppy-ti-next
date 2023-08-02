@@ -4,7 +4,8 @@ import {
   Center,
   BgCommon,
   BgLightPurple,
-  SmallIconShadow, BoxCenter
+  SmallIconShadow,
+  BoxCenter
 } from "@/style/Common.style";
 
 // ********************** 헤더 **********************
