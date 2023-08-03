@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Link from 'next/link'
 
 import {
   FontMediumSize,
   IconShadow,
   PhotoCover,
-  flexCenter
+  Center
 } from '@/style/Common.style';
 
 // ********************* 공유하기 ********************
@@ -12,7 +13,7 @@ export const CommonShare = styled.div``;
 export const CommonShareTit = styled.div`
   gap: 0 8px;
   margin-bottom: 15px;
-  ${flexCenter}
+  ${Center}
 `;
 export const CommonShareIcon = styled.img`
   width: 22px;
@@ -23,7 +24,7 @@ export const CommonShareTxt = styled.span`
 `;
 export const CommonSns = styled.ul`
   gap: 0 15px;
-  ${flexCenter}
+  ${Center}
 `;
 export const CommonSnsIcon = styled.li``;
 export const CommonSnsLink = styled(Link)`

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import questionData from '@/assets/constants/questions.json';
+import questionData from '@/api/Check/questions.json';
 import {ReactComponent as Foot} from '@/assets/img/icons/ico-foot.svg';
 
 //스타일

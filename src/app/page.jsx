@@ -3,7 +3,8 @@ import React, {useState} from 'react';
 import { useRouter } from 'next/navigation';
 
 //컴포넌트
-import {ShareButton, AccentText, NextButton} from '@/components/atoms/index';
+import {AccentText, NextButton, TopBackground} from '@/components/atoms/index';
+import {Share} from '@/components/molecules/index';
 
 const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
@@ -16,9 +17,17 @@ const Home = () => {
 
   return (
     <>
-      <ShareButton/>
-      <AccentText/>
-      <NextButton buttonName={'시작하기'} clickEvent={clickEvent} inputName={inputName}/>
+      <TopBackground />
+      <AccentText
+        accentText={'퍼피티아이'}
+      />
+      <NextButton
+        buttonName={'시작하기'}
+        clickEvent={clickEvent}
+        inputName={inputName}
+      />
+      ㅇㅇ
+      <Share/>
     </>
   );
 }
