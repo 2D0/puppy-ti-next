@@ -4,7 +4,7 @@ import React from 'react';
 import * as A from '@/components/atoms/SlashBackground/SlashBackground.style';
 
 //이미지
-import {Slash} from '@/assets/img/background/index.js';
+import Slash from '@/assets/img/background/back-slash.svg?url';
 
 const SlashBackground = () => {
   return (

@@ -6,7 +6,7 @@ import {useLocation} from 'react-router-dom';
 import * as O from '@/components/organisms/Background/Background.style';
 
 //이미지
-import {Wave} from '@/assets/img/background/index.js';
+import Wave from '@/assets/img/background/back-wave.svg?url';
 
 const Background = () => {
   const [purpleBg, setPurpleBg] = useState(true);

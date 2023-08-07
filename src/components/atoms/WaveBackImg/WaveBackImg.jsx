@@ -4,7 +4,7 @@ import React from 'react';
 import * as A from '@/components/atoms/WaveBackImg/WaveBackImg.style';
 
 //이미지
-import {Wave} from '@/assets/img/background/index.js';
+import Wave from '@/assets/img/background/back-wave.svg?url';
 
 const WaveBackImg = () => {
   return (
