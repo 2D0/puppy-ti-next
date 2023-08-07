@@ -26,7 +26,6 @@ const Home = () => {
         clickEvent={clickEvent}
         inputName={inputName}
       />
-      ㅇㅇ
       <Share/>
     </>
   );

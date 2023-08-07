@@ -1,0 +1,30 @@
+/*
+!* **************** 폰트 **************** *!
+!* 구기 (Gugi) *!
+@font-face {
+  font-family: 'gugi';
+  font-weight: 400;
+  src: url(app/fonts/Gugi/Gugi-Regular.ttf) format('truetype');
+}
+
+!* 스포카한산스 (SpoqaHanSansNeo) *!
+@font-face {
+  font-family: 'SpoqaHan';
+  font-weight: 400;
+  src: url(app/fonts/Spoqa/SpoqaHanSansNeo-Regular.ttf) format('truetype'),
+  url(app/fonts/Spoqa/SpoqaHanSansNeo-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SpoqaHan';
+  font-weight: 500;
+  src: url(app/fonts/Spoqa/SpoqaHanSansNeo-Medium.ttf) format('truetype'),
+  url(app/fonts/Spoqa/SpoqaHanSansNeo-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'SpoqaHan';
+  font-weight: 700;
+  src: url(app/fonts/Spoqa/SpoqaHanSansNeo-Bold.ttf) format('truetype'),
+  url(app/fonts/Spoqa/SpoqaHanSansNeo-Bold.otf) format('opentype');
+}*/

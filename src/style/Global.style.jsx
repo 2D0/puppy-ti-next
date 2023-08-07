@@ -1,53 +1,13 @@
 import {createGlobalStyle} from 'styled-components';
-import {gugiRegular} from '@/assets/fonts/gugi';
-import {
-  spoqaRegularTtf,
-  spoqaRegularOtf,
-  spoqaMediumTtf,
-  spoqaMediumOtf,
-  spoqaBoldOtf,
-  spoqaBoldTtf
-} from '@/assets/fonts/spoqa';
 
 const GlobalStyle = createGlobalStyle`
-  // **************** 폰트 ****************
-  //구기 (Gugi)
-  @font-face {
-    font-family: 'gugi';
-    font-weight: 400;
-    src: url(${gugiRegular}) format('truetype');
-  }
-
-  //스포카한산스 (SpoqaHanSansNeo)
-  @font-face {
-    font-family: 'SpoqaHan';
-    font-weight: 400;
-    src: url(${spoqaRegularTtf}) format('truetype'),
-    url(${spoqaRegularOtf}) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'SpoqaHan';
-    font-weight: 500;
-    src: url(${spoqaMediumTtf}) format('truetype'),
-    url(${spoqaMediumOtf}) format('opentype');
-  }
-
-  @font-face {
-    font-family: 'SpoqaHan';
-    font-weight: 700;
-    src: url(${spoqaBoldOtf}) format('truetype'),
-    url(${spoqaBoldTtf}) format('opentype');
-  }
-
-
   // **************** reset ****************
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: #111;
-    font-family: 'SpoqaHan';
+    //font-family: 'SpoqaHan';
     font-weight: 400;
   }
 
@@ -59,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    display: none;
+    opacity: 0;
   }
 
   input:focus, select:focus, textarea:focus {
@@ -75,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    border: none;
+    border: 0;
     background-color: transparent;
     padding: 0;
     cursor: pointer;
@@ -99,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   fieldset {
-    border: none;
+    border: 0;
   }
 
   article, aside, details, figcaption, figure,
