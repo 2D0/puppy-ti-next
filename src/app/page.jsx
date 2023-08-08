@@ -1,6 +1,6 @@
 'use client';
 import React, {useState} from 'react';
-import { useRouter } from 'next/navigation';
+import {useRouter} from 'next/navigation';
 
 //컴포넌트
 import {AccentText, NextButton, TopBackground} from '@/components/atoms/index';
@@ -11,15 +11,16 @@ const Home = () => {
   const [inputName, setInputName] = useState('');
 
   //강아지 이름 입력 여부에 따라 nextButton이 활성화 된다.
-  const clickEvent = () => {
-    inputName !== '' && router.push('/check');
+  const clickEvent = ({gugiFont}) => {
+    !inputName || router.push('/check');
   }
 
   return (
     <>
-      <TopBackground />
+      <TopBackground/>
       <AccentText
         accentText={'퍼피티아이'}
+        className={gugiFont.className}
       />
       <NextButton
         buttonName={'시작하기'}

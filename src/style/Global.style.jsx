@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   input:focus, select:focus, textarea:focus {
-    outline: none;
+    outline: 0;
   }
 
   label {

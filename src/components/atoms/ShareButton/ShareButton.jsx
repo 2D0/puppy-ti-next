@@ -7,7 +7,6 @@ import * as A from '@/components/atoms/ShareButton/ShareButton.style';
 const ShareButton = ({snsImg}) => {
   return (
     <A.ShareButtonAtom href='/'>
-      {console.log(snsImg)}
       <image src={`${location.href}${snsImg}`} />
     </A.ShareButtonAtom>
   );

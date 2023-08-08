@@ -9,8 +9,10 @@ import * as O from '@/components/organisms/Header/Header.style';
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
 
 //이미지
-import {LogoBlack, LogoWhite} from '@/assets/img/Logo/index';
-import {TransEn, TransKo} from '@/assets/img/Icons/index';
+import LogoWhite from '@/assets/img/Logo/logo-white.svg?url';
+import LogoBlack from '@/assets/img/Logo/logo-black.svg?url';
+import TransEn from '@/assets/img/Icons/ico-trans_en.svg?url';
+import TransKo from '@/assets/img/Icons/ico-trans_ko.svg?url';
 
 export function Header({location, percent, scrollHeader}) {
   const [logoColor, setLogoColor] = useState(null); //로고 컬러 상태
@@ -19,7 +21,7 @@ export function Header({location, percent, scrollHeader}) {
     const switchColor = () => {
       switch (location) {
         case '/check':
-          return percent === 100 ? setLogoColor(LogoWhite.src) : setLogoColor(LogoBlack.src);
+          return percent === 100 ? setLogoColor(LogoWhite) : setLogoColor(LogoBlack);
         case '/result':
           return setLogoColor(LogoBlack.src);
         default:
