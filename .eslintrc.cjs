@@ -1,5 +1,5 @@
 module.exports = {
-  "root": true,
+  'root': true,
   'env': {
     'browser': true,
     'es2021': true
@@ -7,7 +7,6 @@ module.exports = {
   'extends': [
     'eslint:recommended',
     'plugin:react/recommended',
-    'prettier',
   ],
   'parserOptions': {
     'ecmaVersion': 'latest',
@@ -15,11 +14,19 @@ module.exports = {
   },
   'plugins': [
     'react',
+    'prettier',
+    'prettier/@javascript-eslint',
+    'prettier/babel',
+    'prettier/flowtype',
+    'prettier/react',
+    'prettier/standard',
+    'prettier/unicorn',
+    'prettier/vue'
   ],
   'rules': {
     'react/jsx-filename-extension': [
       'error',
-      {extensions: ['.js', '.jsx']},
+      {extensions: ['.vue', '.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.scss']},
     ],
     /*'indent': [
         'error',
