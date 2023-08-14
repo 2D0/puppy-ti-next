@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {BgBlack, BgCommon} from "@/style/Common.style";
+import styled from 'styled-components';
+import { BgBlack, BgCommon } from '@/style/Common.style';
 
 export const Wrap = styled.body`
   width: 100%;
@@ -10,5 +10,5 @@ export const Wrap = styled.body`
   position: relative;
   overflow: hidden;
   ${BgCommon}
-  ${({percent}) => percent === 100 && BgBlack}
+  ${({ percent }) => percent === 100 && BgBlack}
 `;

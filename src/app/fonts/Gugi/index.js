@@ -1,1 +1,1 @@
-export { default as gugiRegular } from './Gugi-Regular.ttf';
+export {default as gugiRegular} from './Gugi-Regular.ttf';

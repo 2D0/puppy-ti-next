@@ -1,41 +1,36 @@
-import React from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
 
-//스타일
-import * as M from '@/components/molecules/PageShare/PageShare';
+import { FontMediumSize, IconShadow, PhotoCover, Center } from '@/style/Common.style';
 
-//이미지
-import {Share, SnsFaceBook, SnsKakao, SnsLink, SnsTwitter} from '@/assets/img/icons/index.js';
-
-const ShareCont = () => {
-  return (
-    <M.CommonShare>
-      <M.CommonShareTit>
-        <M.CommonShareIcon src={Share} alt="공유하기"></M.CommonShareIcon>
-        <M.CommonShareTxt>공유하기</M.CommonShareTxt>
-      </M.CommonShareTit>
-      <M.CommonSns>
-        <M.CommonSnsIcon>
-          <M.CommonSnsLink to="/">
-            <M.CommonSnsIconImg src={SnsFaceBook} alt="페이스북"/>
-          </M.CommonSnsLink>
-        </M.CommonSnsIcon>
-        <M.CommonSnsIcon>
-          <M.CommonSnsLink to="/">
-            <M.CommonSnsIconImg src={SnsKakao} alt="카카오톡"/>
-          </M.CommonSnsLink>
-        </M.CommonSnsIcon>
-        <M.CommonSnsIcon>
-          <M.CommonSnsLink to="/">
-            <M.CommonSnsIconImg src={SnsTwitter} alt="트위터"/>
-          </M.CommonSnsLink>
-        </M.CommonSnsIcon>
-        <M.CommonSnsIcon>
-          <M.CommonSnsLink to="/">
-            <M.CommonSnsIconImg src={SnsLink} alt="링크"/>
-          </M.CommonSnsLink>
-        </M.CommonSnsIcon>
-      </M.CommonSns>
-    </M.CommonShare>
-  );
-};
-export default ShareCont;
+// ********************* 공유하기 ********************
+export const CommonShare = styled.div``;
+export const CommonShareTit = styled.div`
+  gap: 0 8px;
+  margin-bottom: 15px;
+  ${Center}
+`;
+export const CommonShareIcon = styled.img`
+  width: 22px;
+  height: 22px;
+`;
+export const CommonShareTxt = styled.span`
+  ${FontMediumSize}
+`;
+export const CommonSns = styled.ul`
+  gap: 0 15px;
+  ${Center}
+`;
+export const CommonSnsIcon = styled.li``;
+export const CommonSnsLink = styled(Link)`
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  ${IconShadow}
+`;
+export const CommonSnsIconImg = styled.img`
+  border-radius: 50%;
+  overflow: hidden;
+  ${PhotoCover}
+`;
