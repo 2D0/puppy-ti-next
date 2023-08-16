@@ -5,6 +5,18 @@ import { BoxCenter, FlexItemCenter, IconShadow } from '@/style/Common.style.jsx'
 export const ShareWrap = styled.div`
   gap: 15px;
   ${FlexItemCenter}
+  
+  >div{
+    ${FlexItemCenter}
+    
+    >img{
+      width: 42px;
+      height: 42px;
+    }
+  }
+`;
+export const ShareButtons = styled.div`
+
 `;
 export const ShareButtonAtom = styled(Link)`
   display: block;
@@ -18,6 +30,5 @@ export const ShareButtonAtom = styled(Link)`
   >img {
     width: 100%;
     height: 100%;
-    ${BoxCenter}
   }
 `;
