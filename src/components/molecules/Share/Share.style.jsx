@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Link from "next/link";
-import {BoxCenter, FlexItemCenter, IconShadow} from '@/style/Common.style.jsx';
+import Link from 'next/link';
+import { BoxCenter, FlexItemCenter, IconShadow } from '@/style/Common.style.jsx';
 
-export const ShareMolecules = styled.div`
+export const ShareWrap = styled.div`
   gap: 15px;
   ${FlexItemCenter}
 `;
@@ -14,8 +14,8 @@ export const ShareButtonAtom = styled(Link)`
   overflow: hidden;
   position: relative;
   ${IconShadow}
-  
-  >img{
+
+  >img {
     width: 100%;
     height: 100%;
     ${BoxCenter}

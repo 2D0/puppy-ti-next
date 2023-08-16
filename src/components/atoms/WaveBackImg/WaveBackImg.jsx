@@ -9,7 +9,7 @@ import Wave from '@/assets/img/background/back-wave.svg?url';
 const WaveBackImg = () => {
   return (
     <>
-      <A.WaveBackImgAtom src={Wave}/>
+      <A.WaveBackImgAtom src={Wave} />
     </>
   );
 };

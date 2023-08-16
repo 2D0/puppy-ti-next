@@ -1,12 +1,5 @@
-import styled, {css} from 'styled-components';
-import {
-  FlexItemCenter,
-  Center,
-  BgCommon,
-  BgLightPurple,
-  SmallIconShadow,
-  BoxCenter
-} from "@/style/Common.style";
+import styled, { css } from 'styled-components';
+import { FlexItemCenter, Center, BgCommon, BgLightPurple, SmallIconShadow, BoxCenter } from '@/style/Common.style';
 
 // ********************** 헤더 **********************
 export const HeaderInner = styled.div`
@@ -53,13 +46,13 @@ export const HeaderCont = styled.header`
   z-index: 998;
   //padding-top: calc(env(safe-area-inset-bottom) + 10px);
 
-  ${({scrollHeader}) =>
+  ${({ scrollHeader }) =>
     scrollHeader &&
     css`
       box-shadow: 0 0 7px #dcd5e8;
     `};
 
-  ${({location, percent}) => {
+  ${({ location, percent }) => {
     switch (location) {
       case '/check':
         return percent === 100 ? BgBlack : BgCommon;
@@ -71,6 +64,6 @@ export const HeaderCont = styled.header`
   }};
 
   ${HeaderSwitchImg} {
-    ${({percent}) => percent !== 100 && SmallIconShadow}
+    ${({ percent }) => percent !== 100 && SmallIconShadow}
   }
 `;

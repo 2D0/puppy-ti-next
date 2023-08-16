@@ -1,25 +1,25 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import questionData from '@/api/Check/questions.json';
-import {ReactComponent as Foot} from '@/assets/img/icons/ico-foot.svg?url';
+import { ReactComponent as Foot } from '@/assets/img/icons/ico-foot.svg?url';
 
 //스타일
 import * as M from '@/components/molecules/Question/Question.style';
 
 const CheckQuestion = ({
-    setPercent,
-    setPercentEnergy,
-    setPercentInformation,
-    setPercentIDecisions,
-    setPercentLifestyle,
-    setScoreI,
-    setScoreE,
-    setScoreS,
-    setScoreN,
-    setScoreT,
-    setScoreF,
-    setScoreJ,
-    setScoreP,
-  }) => {
+  setPercent,
+  setPercentEnergy,
+  setPercentInformation,
+  setPercentIDecisions,
+  setPercentLifestyle,
+  setScoreI,
+  setScoreE,
+  setScoreS,
+  setScoreN,
+  setScoreT,
+  setScoreF,
+  setScoreJ,
+  setScoreP,
+}) => {
   const [checkPercent, setCheckPercent] = useState(null); //문항 체크 진도율
   const [question, setQuestion] = useState(questionData.question); //질문 데이터
   const [score, setScore] = useState(questionData.scoreType);
@@ -55,7 +55,7 @@ const CheckQuestion = ({
     );
     setScore(
       score.map(item => {
-        return {...item};
+        return { ...item };
       }),
     );
     setQuestionIdx(itemIdx);
@@ -226,7 +226,7 @@ const CheckQuestion = ({
                     scoreIdx={scoreIdx}
                     scoreCount={scoreItem.score}
                   >
-                    <Foot/>
+                    <Foot />
                   </M.QuestionFoot>
                 </M.QuestionQABtn>
               ))}

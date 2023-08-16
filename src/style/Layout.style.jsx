@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BgBlack, BgCommon } from '@/style/Common.style';
 
-export const Wrap = styled.body`
+export const Body = styled.body`
   width: 100%;
   max-width: 750px;
   margin: 0 auto;

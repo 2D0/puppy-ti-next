@@ -9,7 +9,7 @@ import Slash from '@/assets/img/background/back-slash.svg?url';
 const SlashBackground = () => {
   return (
     <>
-      <A.SlashBackgroundAtom src={Slash}/>
+      <A.SlashBackgroundAtom src={Slash} />
     </>
   );
 };

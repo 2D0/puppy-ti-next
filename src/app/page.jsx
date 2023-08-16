@@ -12,7 +12,7 @@ const Home = () => {
   const [inputName, setInputName] = useState('');
 
   //강아지 이름 입력 여부에 따라 nextButton이 활성화 된다.
-  const clickEvent = ({ gugiFont }) => {
+  const clickEvent = () => {
     !inputName || router.push('/check');
   };
 

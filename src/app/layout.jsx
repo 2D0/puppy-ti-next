@@ -1,10 +1,17 @@
 'use client';
 import React from 'react';
 import StyledJsxRegistry from './registry';
-import { Header, Footer } from '@/components/organisms/index';
+
+//스타일
 import GlobalStyle from '@/style/Global.style';
+import * as P from '@/style/Layout.style';
+
+//폰트
 import spoqaFont from '@/api/Fonts/SpocaFonts';
-import gugiFont from '@/api/Fonts/GugiFont';
+
+//컴포넌트
+import { Header, Footer } from '@/components/organisms/index';
+import LineBackground from '@/components/atoms/LineBackground/LineBackground';
 
 const Layout = ({ children }) => {
   return (
@@ -13,13 +20,14 @@ const Layout = ({ children }) => {
 
       <html lang="en" className={spoqaFont.className}>
         <head />
-        <body>
+        <P.Body>
+          <LineBackground />
           <Header />
           <main>
-            <StyledJsxRegistry gugiFont={gugiFont}>{children}</StyledJsxRegistry>
+            <StyledJsxRegistry>{children}</StyledJsxRegistry>
           </main>
           <Footer />
-        </body>
+        </P.Body>
       </html>
     </>
   );
