@@ -30,7 +30,7 @@ const isDiscernIcon = ({ data }) => {
 };
 
 const SvgComponent = ({ data }) => {
-  const Icon = isDiscernIcon({ data});
+  const Icon = isDiscernIcon({ data });
 
   return (
     <>

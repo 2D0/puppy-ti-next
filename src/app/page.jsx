@@ -1,26 +1,50 @@
 'use client';
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import gugiFont from '@/api/Fonts/GugiFont';
+
+//스타일
+import { MainChar } from '@/style/Page.style';
 
 //컴포넌트
-import { AccentText, NextButton, TopBackground } from '@/components/atoms/index';
-import { Share } from '@/components/molecules/index';
+import { NextButton, WaveBackground, NameInput, SlashBackground } from '@/components/atoms/index';
+import { Share, TitleBox } from '@/components/molecules/index';
+
+//이미지
+import { MainImg } from '@/assets/img/Character/index';
 
 const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
-  const [inputName, setInputName] = useState('');
+  const [dogName, setDogName] = useState('');
 
   //강아지 이름 입력 여부에 따라 nextButton이 활성화 된다.
   const clickEvent = () => {
-    !inputName || router.push('/check');
+    !dogName || router.push('/check');
+  };
+
+  //input에 글자가 1개 이상 입력될 경우 버튼 활성화
+  const onNameChange = e => {
+    const { value } = e.target;
+    setDogName(value.replace(/(^\s*)|(\s*$)/g, '') !== '');
+  };
+
+  const InputData = {
+    name: 'input',
+    value: '',
+    type: 'text',
+    placeholder: '반려견 이름을 적어주세요.',
   };
 
   return (
     <>
-      <TopBackground />
-      <AccentText accentText={'퍼피티아이'} className={gugiFont.className} />
-      <NextButton buttonName={'시작하기'} clickEvent={clickEvent} inputName={inputName} />
+      <WaveBackground />
+      <SlashBackground />
+      <MainChar>
+        <Image src={MainImg} />
+      </MainChar>
+      <TitleBox accentText={'퍼피'} lastText={'티아이'} />
+      <NameInput onChange={onNameChange} InputData={InputData} />
+      <NextButton buttonName={'시작하기'} clickEvent={clickEvent} dogName={dogName} />
       <Share />
     </>
   );

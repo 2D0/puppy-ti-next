@@ -1,13 +1,6 @@
 import styled from 'styled-components';
-import Link from "next/link";
-import {
-  FontWhite,
-  FontSmallSize,
-  BgDarkPurple,
-  BgWhite,
-  Center,
-  FlexItemCenter
-} from "@/style/Common.style";
+import Link from 'next/link';
+import { FontWhite, FontSmallSize, BgDarkPurple, BgWhite, Center, FlexItemCenter } from '@/style/Common.style';
 
 // ********************** 푸터 **********************
 export const FooterTxt = `
@@ -20,7 +13,7 @@ export const Footer = styled.footer`
   height: 95px;
   position: relative;
   z-index: 3;
-  ${FlexItemCenter}
+  ${Center}
   ${BgDarkPurple}
 `;
 export const FooterInfo = styled.ul`

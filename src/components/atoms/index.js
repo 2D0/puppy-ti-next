@@ -6,5 +6,5 @@ export { default as DefaultText } from './DefaultText/DefaultText.jsx';
 export { default as Logo } from './Logo/logo.jsx';
 export { default as NextButton } from './NextButton/NextButton.jsx';
 export { default as SlashBackground } from './SlashBackground/SlashBackground.jsx';
-export { default as TopBackground } from '@/components/atoms/LineBackground/LineBackground.jsx';
-export { default as WaveBackImg } from './WaveBackImg/WaveBackImg.jsx';
+export { default as WaveBackground } from './WaveBackground/WaveBackground.jsx';
+export { default as NameInput } from './NameInput/NameInput.jsx';

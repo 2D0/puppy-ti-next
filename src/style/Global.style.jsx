@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   // **************** reset ****************
@@ -6,9 +6,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #111;
-    //font-family: 'SpoqaHan';
+    font-size: .875rem; //14px
     font-weight: 400;
+    color: #111;
   }
 
   body {

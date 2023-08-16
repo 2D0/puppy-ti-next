@@ -73,8 +73,9 @@ export const A11yHidden = styled.span`
   display: block;
   width: 1px;
   height: 1px;
-  margin-left: -1px;
-  text-indent: -9999px;
+  margin: -1px 0 -1px 0;
+  position: absolute;
+  right: -9999px;
   overflow: hidden;
   white-space: nowrap;
 `;

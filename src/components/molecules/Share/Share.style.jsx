@@ -1,22 +1,24 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { BoxCenter, FlexItemCenter, IconShadow } from '@/style/Common.style.jsx';
+import { Center, FlexItemCenter, IconShadow } from '@/style/Common.style.jsx';
 
 export const ShareWrap = styled.div`
-  gap: 15px;
+  flex-direction: column;
+  gap: 10px 0;
+  ${Center}
+`;
+export const ShareTit = styled.div`
+  gap: 5px;
   ${FlexItemCenter}
-  
-  >div{
-    ${FlexItemCenter}
-    
-    >img{
-      width: 42px;
-      height: 42px;
-    }
+
+  >img {
+    width: 20px;
+    height: 20px;
   }
 `;
 export const ShareButtons = styled.div`
-
+  gap: 15px;
+  ${FlexItemCenter}
 `;
 export const ShareButtonAtom = styled(Link)`
   display: block;

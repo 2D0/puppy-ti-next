@@ -1,7 +1,8 @@
 import React from 'react';
+import Image from 'next/image';
 
 //스타일
-import {SlashBackgroundAtom} from '@/components/atoms/SlashBackground/SlashBackground.style';
+import { BackImgSlashTop, BackImgSlashBottom } from '@/components/atoms/SlashBackground/SlashBackground.style';
 
 //이미지
 import Slash from '@/assets/img/background/back-slash.svg?url';
@@ -9,7 +10,8 @@ import Slash from '@/assets/img/background/back-slash.svg?url';
 const SlashBackground = () => {
   return (
     <>
-      <SlashBackgroundAtom src={Slash} />
+      <BackImgSlashTop src={Slash} alt={''} />
+      <BackImgSlashBottom src={Slash} alt={''} />
     </>
   );
 };

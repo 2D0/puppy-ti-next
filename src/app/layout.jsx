@@ -11,7 +11,6 @@ import spoqaFont from '@/api/Fonts/SpocaFonts';
 
 //컴포넌트
 import { Header, Footer } from '@/components/organisms/index';
-import LineBackground from '@/components/atoms/LineBackground/LineBackground';
 
 const Layout = ({ children }) => {
   return (
@@ -21,7 +20,6 @@ const Layout = ({ children }) => {
       <html lang="en" className={spoqaFont.className}>
         <head />
         <P.Body>
-          <LineBackground />
           <Header />
           <main>
             <StyledJsxRegistry>{children}</StyledJsxRegistry>
