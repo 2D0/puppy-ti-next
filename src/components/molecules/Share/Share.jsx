@@ -6,7 +6,6 @@ import { ShareWrap, ShareTit, ShareButtons, ShareButtonAtom } from '@/components
 //컴포넌트
 import { DefaultText } from '@/components/atoms';
 import SvgComponent from '@/assets/img/Icons/SvgComponent';
-import { ShareIcon } from '@/api/Icons/ShareIcon';
 
 const Share = () => {
   const snsImg = ['FACEBOOK', 'KAKAO', 'TWITTER', 'LINK']; //sns 이미지 배열

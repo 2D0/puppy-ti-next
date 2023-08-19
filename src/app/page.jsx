@@ -19,18 +19,18 @@ const Home = () => {
 
   //강아지 이름 입력 여부에 따라 nextButton이 활성화 된다.
   const clickEvent = () => {
-    !dogName || router.push('/check');
+    dogName !== '' && router.push('/check');
   };
 
   //input에 글자가 1개 이상 입력될 경우 버튼 활성화
-  const onNameChange = e => {
+  const nameChange = e => {
     const { value } = e.target;
-    setDogName(value.replace(/(^\s*)|(\s*$)/g, '') !== '');
+    dogName !== '' && setDogName(value);
+    setDogName(value);
   };
 
   const InputData = {
     name: 'input',
-    value: '',
     type: 'text',
     placeholder: '반려견 이름을 적어주세요.',
   };
@@ -43,8 +43,8 @@ const Home = () => {
         <Image src={MainImg} />
       </MainChar>
       <TitleBox accentText={'퍼피'} lastText={'티아이'} />
-      <NameInput onChange={onNameChange} InputData={InputData} />
-      <NextButton buttonName={'시작하기'} clickEvent={clickEvent} dogName={dogName} />
+      <NameInput onChange={nameChange} InputData={InputData} />
+      <NextButton buttonName={'시작하기'} clickEvent={clickEvent} buttonHandler={dogName} />
       <Share />
     </>
   );
