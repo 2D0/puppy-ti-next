@@ -1,5 +1,4 @@
 # 퍼피티아이(puppy-ti) - Github
-***
 ## 목차
 - [프로젝트 소개](#프로젝트-소개)
 - [프로젝트 디자인](#프로젝트-디자인)
@@ -10,16 +9,18 @@
 - [대표 정보](#대표-정보)
 - [전하는 말](#전하는-말)
 
+<br>
 
 ## 프로젝트 소개
-***
 ### 프로젝트 명
 한글명 : 퍼피티아이 <br>
 영문명 : PuppyTI
+<br>
 
 
 ### 프로젝트 의도
 내가 키우는 강아지는 어떤 성향을 가지고 있는지 궁금증을 해소하기 위해 만들어진 프로젝트
+<br>
 
 
 ### 프로젝트 분석
@@ -30,6 +31,7 @@
 사람에 대한 성향 테스트는 넘쳐나지만 동물들 굳이 한 가지 생명체를 뽑자면 강아지 즉 나의 반려견을 테스트할 수 있는 앱은 흔하지 않다.
 
 사람들이 사람전용(나를 위한) 성향 테스트를 하면서 나의 반려견은 어떤 성향을 가지고 있는지 알고 싶어 하는 주인들이 많이 생겨났고 그들을 타깃으로 니즈를 분석하여 현존하는 반려견 테스트 보다 특별하고 퀄리티 있는  반려견 성향 테스트 프로젝트를 만들면 좋을 결과를 얻을 수 있을 것이라 여겨진다.
+<br>
 
 ### 프로젝트 기획서
 https://docs.google.com/presentation/d/1hI9ijlBPItc1ybzdTasFByNJ8ISUOFvNnqJiEgMUytY/edit?usp=sharing
@@ -37,37 +39,24 @@ https://docs.google.com/presentation/d/1hI9ijlBPItc1ybzdTasFByNJ8ISUOFvNnqJiEgMU
 <br>
 
 ## 프로젝트 디자인
-***
-<!-- Write Overview about this project -->
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px">
-
-  ![0 Main](https://github.com/2D0/puppy-ti-next/assets/70118192/62bc7a03-4331-4e5e-b22b-b43865ed5e44)
-  
-  ![1  Main](https://github.com/2D0/puppy-ti-next/assets/70118192/e74962fc-be7e-41d0-9108-e3b7743059a7)
-  <div></div>
-
-  ![2  Check](https://github.com/2D0/puppy-ti-next/assets/70118192/8cfdf4e8-5707-4999-88a6-3baf47429612)
-  
-  ![3  Check-checked](https://github.com/2D0/puppy-ti-next/assets/70118192/8b1ec608-8bf9-4bef-836a-a91bd39fabd7)
-  
-  ![4  Check-100%](https://github.com/2D0/puppy-ti-next/assets/70118192/6de71125-950e-4136-bbaa-1f9be8b74af0)
-
-  ![5  Result](https://github.com/2D0/puppy-ti-next/assets/70118192/4d8d5fce-1231-4f42-8a46-9a03a2a5ce2f)
-  <div></div>  
-  <div></div>
-
-  ![6  Team Member](https://github.com/2D0/puppy-ti-next/assets/70118192/4f1f385d-714a-4ccf-9807-16085482ddb2)
-  
-  ![7  Inquiry](https://github.com/2D0/puppy-ti-next/assets/70118192/65755171-a26a-45ba-91b2-8b0e7ca22044)
-  
-  ![8  Open Source](https://github.com/2D0/puppy-ti-next/assets/70118192/d4486bad-f75b-4776-8e4f-6a9e4846f84a)
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/62bc7a03-4331-4e5e-b22b-b43865ed5e44" width="32%">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/e74962fc-be7e-41d0-9108-e3b7743059a7" width="32%">
+  <div width="32%"></div>
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/8cfdf4e8-5707-4999-88a6-3baf47429612" width="32%">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/8b1ec608-8bf9-4bef-836a-a91bd39fabd7" width="32%">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/6de71125-950e-4136-bbaa-1f9be8b74af0" width="32%">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/4d8d5fce-1231-4f42-8a46-9a03a2a5ce2f" width="32%">
+  <div width="32%"></div>
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/4f1f385d-714a-4ccf-9807-16085482ddb2" width="32%">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/d4486bad-f75b-4776-8e4f-6a9e4846f84a" width="32%">
+  <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/65755171-a26a-45ba-91b2-8b0e7ca22044" width="32%">
 
 </div>
 
 <br>
 
 ## MBTI 퍼센트 산출 가이드
-***
 ### 상수
 ```
 기준점                 : 100점
@@ -126,7 +115,7 @@ MBTI 타입 퍼센트   : 기준점 ÷ {(MBTI별 문항 총 개수 - 무효(cent
 <br>
 
 ## MBTI 퍼센트 산출 예시
-***
+
 ### MBTI 종류와 점수가 산출 되는 과정
 ```
 간식을 주면 순식간에 그 자리에서 먹어치운다. ➝ 그렇다 = P / 아니다 = J
@@ -167,18 +156,20 @@ F 최종 퍼센트    : 100 ÷ {(8 - 2) × 3} × 7 = 38.8888889점 => 39점(반�
 <br>
 
 ## 프로젝트 기여방법
-***
+
 1. [여기로](https://github.com/2D0/puppy-ti-next/fork) 접속 후 Fork 하기.<br>
 2. `git checkout -b feature/thx이름` 명령어로 새 브랜치를 만들기.<br>
 3. `git commit -am 'Add some 작업 내용'` 명령어로 Commit 하기.<br>
 4. `git push origin feature/thx이름` 명령어로 브랜치에 Push 하기.<br>
 5. [여기로](https://github.com/2D0/puppy-ti-next/pulls) 접속 후 작업한 부분을 캡쳐해 사진을 등록하고 작업 설명 작성 후 Pull request 하기.
 
+<br>
+
 ### 개발 환경 설정
 ```bash
 yarn dev
 ```
-
+<br>
 
 ### 커밋 메시지 규칙
 ```
@@ -234,24 +225,24 @@ Delete    : 파일 및 디렉토리 삭제
 ↓↓ z-index 예시 코드
 ```css
   .modal{
-      z-index:1000;
-    }
-  .modal-background{
-    z-index:999;
-  }
+  z-index:1000;
+}
+.modal-background{
+  z-index:999;
+}
 ```
 
-
+<br>
 
 ## 오픈 소스 라이센스
-***
+
 폭죽 아이콘  : [Freepik - Flaticon](https://www.flaticon.com/kr/free-icon/fireworks_8175405?term=%ED%8F%AD%EC%A3%BD&page=1&position=5&origin=search&related_id=8175405)<br>
 개 산책 아이콘  : [photo3idea_studio - Flaticon](https://www.flaticon.com/kr/free-icon/dog-walking_3827181?term=%EA%B0%9C+%EC%82%B0%EC%B1%85&page=1&position=1&origin=search&related_id=3827181)
 
 <br>
 
 ## 대표 정보
-***
+
 대표 관리자 - 이다영 <br>
 대표 명 - 메이크 트리<br>
 대표 메일 - maketree0615@gmail.com<br>
@@ -264,7 +255,7 @@ Delete    : 파일 및 디렉토리 삭제
 <br>
 
 ## 전하는 말
-***
+
 퍼피티아이 프로젝트에 관심을 가져주셔서 대단히 감사합니다.<br>
 프론트 개발자라는 목표가 생기고 나만의 프로젝트를 만들어야겠다 생각 들어<br>
 인생 첫 프로젝트로 퍼피티아이를 기획하여 작업하게 되었습니다.<br>
@@ -274,5 +265,5 @@ Delete    : 파일 및 디렉토리 삭제
 퍼피티아이 프로젝트가 끝난 후에도 새로운 프로젝트를 기획하여 작업할 계획입니다.<br>
 조언과 피드백 언제나 환영하며 잘 부탁드립니다.<br>
 
-***
+
 puppy-ti ver.1 작업 후 next.js로 refactoring 하고 있어 화면 출력과 작동이 원활하지 못 한 점 이해해 주시면 감사하겠습니다. 
