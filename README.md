@@ -5,10 +5,10 @@
 - [프로젝트 디자인](#프로젝트-디자인)
 - [MBTI 퍼센트 산출 가이드](#mbti-퍼센트-산출-가이드)
 - [MBTI 퍼센트 산출 예시](#mbti-퍼센트-산출-예시)
-- [프로젝트 참여방법](#프로젝트-참여방법)
+- [프로젝트 기여방법](#프로젝트-기여방법)
 - [오픈 소스 라이센스](#오픈-소스-라이센스)
 - [대표 정보](#대표-정보)
-- [메시지](#메시지)
+- [전하는 말](#전하는-말)
 
 
 ## 프로젝트 소개
@@ -31,7 +31,10 @@
 
 사람들이 사람전용(나를 위한) 성향 테스트를 하면서 나의 반려견은 어떤 성향을 가지고 있는지 알고 싶어 하는 주인들이 많이 생겨났고 그들을 타깃으로 니즈를 분석하여 현존하는 반려견 테스트 보다 특별하고 퀄리티 있는  반려견 성향 테스트 프로젝트를 만들면 좋을 결과를 얻을 수 있을 것이라 여겨진다.
 
-<a href="design"> </a>
+### 프로젝트 기획서
+https://docs.google.com/presentation/d/1hI9ijlBPItc1ybzdTasFByNJ8ISUOFvNnqJiEgMUytY/edit?usp=sharing
+
+<br>
 
 ## 프로젝트 디자인
 ***
@@ -61,7 +64,7 @@
 
 </div>
 
-
+<br>
 
 ## MBTI 퍼센트 산출 가이드
 ***
@@ -120,7 +123,7 @@ MBTI 타입의 각 1점 : 기준점 ÷ (MBTI별 문항 총 개수 - 무효(cente
 MBTI 타입 퍼센트   : 기준점 ÷ {(MBTI별 문항 총 개수 - 무효(center) 선택 개수) × 문항별 선택지 속 최고 점수} × MBTI 타입 결과 점수
 ```
 
-
+<br>
 
 ## MBTI 퍼센트 산출 예시
 ***
@@ -161,14 +164,15 @@ T 최종 퍼센트    : 100 ÷ {(8 - 2) × 3} × 11 = 61.111점 => 61점(반올�
 F 최종 퍼센트    : 100 ÷ {(8 - 2) × 3} × 7 = 38.8888889점 => 39점(반올림)
 ```
 
+<br>
 
-## 프로젝트 참여방법
+## 프로젝트 기여방법
 ***
 1. [여기로](https://github.com/2D0/puppy-ti-next/fork) 접속 후 Fork 하기.<br>
-2. (git checkout -b feature/thx이름) 명령어로 새 브랜치를 만들기.<br>
-3. (git commit -am 'Add some 작업 내용') 명령어로 Commit 하기.<br>
-4. (git push origin feature/thx이름) 명령어로 브랜치에 Push 하기.<br>
-5. [여기로](https://github.com/2D0/puppy-ti-next/pulls) 접속 후 작업한 부분 캡쳐해서 사진을 등록하고 설명 작성 후 Pull request 하기.
+2. `git checkout -b feature/thx이름` 명령어로 새 브랜치를 만들기.<br>
+3. `git commit -am 'Add some 작업 내용'` 명령어로 Commit 하기.<br>
+4. `git push origin feature/thx이름` 명령어로 브랜치에 Push 하기.<br>
+5. [여기로](https://github.com/2D0/puppy-ti-next/pulls) 접속 후 작업한 부분을 캡쳐해 사진을 등록하고 작업 설명 작성 후 Pull request 하기.
 
 ### 개발 환경 설정
 ```bash
@@ -220,7 +224,7 @@ Delete    : 파일 및 디렉토리 삭제
 버튼+2	: 101
 버튼+3	: 102
 
-* 최 상단에 있어야 할 특정 컴포넌트*
+* 최 상단에 있어야 할 특정 컴포넌트 *
 헤더         : 996
 사이드메뉴 배경 : 997
 사이드메뉴     : 998
@@ -244,7 +248,7 @@ Delete    : 파일 및 디렉토리 삭제
 폭죽 아이콘  : [Freepik - Flaticon](https://www.flaticon.com/kr/free-icon/fireworks_8175405?term=%ED%8F%AD%EC%A3%BD&page=1&position=5&origin=search&related_id=8175405)<br>
 개 산책 아이콘  : [photo3idea_studio - Flaticon](https://www.flaticon.com/kr/free-icon/dog-walking_3827181?term=%EA%B0%9C+%EC%82%B0%EC%B1%85&page=1&position=1&origin=search&related_id=3827181)
 
-
+<br>
 
 ## 대표 정보
 ***
@@ -257,7 +261,18 @@ Delete    : 파일 및 디렉토리 삭제
   <img src="https://github.com/2D0/puppy-ti-next/assets/70118192/7a95e248-e951-46f5-8a2f-87c05c26d781" alt="maketree로고" height="40px">
 </div><br>
 
+<br>
 
-## 메시지
+## 전하는 말
 ***
-puppy-ti ver.1 작업 후 next.js로 refactoring 하고 있어서 화면 출력과 작동이 원활하지 못 한 점 이해해 주시면 감사하겠습니다. 
+퍼피티아이 프로젝트에 관심을 가져주셔서 대단히 감사합니다.<br>
+프론트 개발자라는 목표가 생기고 나만의 프로젝트를 만들어야겠다 생각 들어<br>
+인생 첫 프로젝트로 퍼피티아이를 기획하여 작업하게 되었습니다.<br>
+비 전공자로서 프론트 개발을 독학으로 하다 보니 보니 부족한 점이 많지만<br>
+완성도 높은 작업물을 만들기 위해 끊임 연구하고 공부하며 심혈을 기울이고 있습니다.<br>
+앞으로도 개인 프로젝트를 꾸준히 만들고 싶어 메이크 트리라는 대표 명을 만들게 되었고,<br>
+퍼피티아이 프로젝트가 끝난 후에도 새로운 프로젝트를 기획하여 작업할 계획입니다.<br>
+조언과 피드백 언제나 환영하며 잘 부탁드립니다.<br>
+
+***
+puppy-ti ver.1 작업 후 next.js로 refactoring 하고 있어 화면 출력과 작동이 원활하지 못 한 점 이해해 주시면 감사하겠습니다. 
