@@ -10,7 +10,7 @@ const WaveBackground = () => {
   return (
     <BackgroundWrap>
       <BackgroundContent />
-      <WaveImage src={Wave} alt={'배경'} fill={true} />
+      <WaveImage src={Wave} alt={'물결 배경'} fill={true} />
     </BackgroundWrap>
   );
 };

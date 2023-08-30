@@ -7,11 +7,12 @@ import { useRouter } from 'next/navigation';
 import { MainChar } from '@/style/Page.style';
 
 //컴포넌트
-import { NextButton, WaveBackground, NameInput, SlashBackground } from '@/components/atoms/index';
+import { NextButton, WaveBackground, NameInput } from '@/components/atoms/index';
 import { Share, TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
+import SvgComponent from '@/assets/img/Icons/SvgComponent';
 
 const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
@@ -38,7 +39,6 @@ const Home = () => {
   return (
     <>
       <WaveBackground />
-      <SlashBackground />
       <MainChar>
         <Image src={MainImg} />
       </MainChar>

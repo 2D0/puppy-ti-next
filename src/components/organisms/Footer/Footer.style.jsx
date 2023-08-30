@@ -7,10 +7,10 @@ export const FooterTxt = `
   ${FontWhite}
   ${FontSmallSize}
 `;
-export const Footer = styled.footer`
+export const FooterWrap = styled.footer`
   flex-direction: column;
   width: 100%;
-  height: 95px;
+  height: 85px;
   position: relative;
   z-index: 3;
   ${Center}

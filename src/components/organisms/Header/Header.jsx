@@ -3,7 +3,15 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 //스타일
-import * as O from '@/components/organisms/Header/Header.style';
+import {
+  HeaderCont,
+  HeaderInner,
+  HeaderLogo,
+  HeaderLogoImg,
+  HeaderSwitch,
+  HeaderSwitchIcon,
+  HeaderSwitchImg,
+} from '@/components/organisms/Header/Header.style';
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
@@ -35,24 +43,24 @@ export function Header({ location, percent, scrollHeader }) {
   }, [percent, location]);
 
   return (
-    <O.HeaderCont scrollHeader={scrollHeader} location={location} percent={percent}>
-      <O.HeaderInner>
-        <O.HeaderLogo>
+    <HeaderCont scrollHeader={scrollHeader} location={location} percent={percent}>
+      <HeaderInner>
+        <HeaderLogo>
           <Link href={'/'}>
-            <O.HeaderLogoImg src={logoColor} />
+            <HeaderLogoImg src={logoColor} />
           </Link>
-        </O.HeaderLogo>
-        <O.HeaderSwitch>
-          <O.HeaderSwitchIcon>
-            <O.HeaderSwitchImg src={TransEn.src} alt="영어" />
-          </O.HeaderSwitchIcon>
-          <O.HeaderSwitchIcon>
-            <O.HeaderSwitchImg src={TransKo.src} alt="한글" />
-          </O.HeaderSwitchIcon>
-        </O.HeaderSwitch>
-      </O.HeaderInner>
+        </HeaderLogo>
+        <HeaderSwitch>
+          <HeaderSwitchIcon>
+            <HeaderSwitchImg src={TransEn.src} alt="영어" />
+          </HeaderSwitchIcon>
+          <HeaderSwitchIcon>
+            <HeaderSwitchImg src={TransKo.src} alt="한글" />
+          </HeaderSwitchIcon>
+        </HeaderSwitch>
+      </HeaderInner>
       {location === '/check' && <CheckHead percent={percent} />}
-    </O.HeaderCont>
+    </HeaderCont>
   );
 }
 export default Header;

@@ -4,13 +4,14 @@ import StyledJsxRegistry from './registry';
 
 //스타일
 import GlobalStyle from '@/style/Global.style';
-import * as P from '@/style/Layout.style';
+import { BackImgSlashBottom, BackImgSlashTop, Body, Main } from '@/style/Layout.style';
 
 //폰트
 import spoqaFont from '@/api/Fonts/SpocaFonts';
 
 //컴포넌트
 import { Header, Footer } from '@/components/organisms/index';
+import SvgComponent from '@/assets/img/Icons/SvgComponent';
 
 const Layout = ({ children }) => {
   return (
@@ -19,13 +20,19 @@ const Layout = ({ children }) => {
 
       <html lang="en" className={spoqaFont.className}>
         <head />
-        <P.Body>
+        <Body>
+          <BackImgSlashTop>
+            <SvgComponent data={'SLASH'} fill={true} />
+          </BackImgSlashTop>
+          <BackImgSlashBottom>
+            <SvgComponent data={'SLASH'} fill={true} />
+          </BackImgSlashBottom>
           <Header />
-          <main>
+          <Main>
             <StyledJsxRegistry>{children}</StyledJsxRegistry>
-          </main>
+          </Main>
           <Footer />
-        </P.Body>
+        </Body>
       </html>
     </>
   );

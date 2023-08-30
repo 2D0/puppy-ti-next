@@ -8,6 +8,7 @@ import Twitter from '@/assets/img/Icons/ico-twitter.svg?url';
 import Link from '@/assets/img/Icons/ico-link.svg?url';
 import Back from '@/assets/img/Icons/ico-back.svg?url';
 import Share from '@/assets/img/Icons/ico-share.svg?url';
+import Slash from '@/assets/img/background/back-slash.svg?url';
 
 const isDiscernIcon = ({ data }) => {
   switch (data) {
@@ -23,18 +24,19 @@ const isDiscernIcon = ({ data }) => {
       return Kakao;
     case 'TWITTER':
       return Twitter;
-
+    case 'SLASH':
+      return Slash;
     default:
       break;
   }
 };
 
-const SvgComponent = ({ data }) => {
+const SvgComponent = ({ data, fill }) => {
   const Icon = isDiscernIcon({ data });
 
   return (
     <>
-      <Image src={Icon} alt={data} />
+      <Image src={Icon} alt={data} fill={fill} />
     </>
   );
 };

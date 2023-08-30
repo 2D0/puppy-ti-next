@@ -10,7 +10,7 @@ import Slash from '@/assets/img/background/back-slash.svg?url';
 const SlashBackground = () => {
   return (
     <>
-      <BackImgSlashTop src={Slash} alt={''} />
+      <BackImgSlashTop src={Slash} alt={''} fill={true} />
       <BackImgSlashBottom src={Slash} alt={''} />
     </>
   );

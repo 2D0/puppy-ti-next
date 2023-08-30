@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { SlashBackgroundAtom } from '@/components/atoms/SlashBackground/SlashBackground.style';
 
 export const MainChar = styled.div`
   width: 72%;
