@@ -7,7 +7,7 @@ import GlobalStyle from '@/style/Global.style';
 import { BackImgSlashBottom, BackImgSlashTop, Body, Main } from '@/style/Layout.style';
 
 //폰트
-import spoqaFont from '@/api/Fonts/SpocaFonts';
+import spoqaFont from '@/app/api/fonts/SpocaFonts';
 
 //컴포넌트
 import { Header, Footer } from '@/components/organisms/index';

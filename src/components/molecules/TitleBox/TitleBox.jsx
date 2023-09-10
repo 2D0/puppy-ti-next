@@ -1,7 +1,7 @@
 import React from 'react';
 
 //폰트
-import gugiFont from '@/api/Fonts/GugiFont';
+import gugiFont from '@/app/api/fonts/GugiFont';
 
 //스타일
 import { TitleWrap } from './TitleBox.style.jsx';

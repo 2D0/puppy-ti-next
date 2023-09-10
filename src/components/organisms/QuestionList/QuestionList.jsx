@@ -1,5 +1,5 @@
 import React from 'react';
-import questionData from '@/api/Check/questions.json'
+import questionData from '@/app/api/Check/questions.json';
 
 //스타일
 import * as O from '@/components/organisms/QuestionList/QuestionList.style';
@@ -24,14 +24,8 @@ const QuestionList = () => {
                   }}
                   type="button"
                 >
-                  <O.CheckFoot
-                    questionItem={item}
-                    questionIdx={questionIdx}
-                    score={score}
-                    scoreIdx={scoreIdx}
-                    scoreCount={scoreItem.score}
-                  >
-                    <Foot/>
+                  <O.CheckFoot questionItem={item} questionIdx={questionIdx} score={score} scoreIdx={scoreIdx} scoreCount={scoreItem.score}>
+                    <Foot />
                   </O.CheckFoot>
                 </O.CheckQABtn>
               ))}
@@ -40,6 +34,6 @@ const QuestionList = () => {
         </O.CheckQABoxList>
       ))}
     </O.CheckQABoxs>
-  )
+  );
 };
 export default QuestionList;

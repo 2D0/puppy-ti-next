@@ -3,32 +3,32 @@ import localFont from 'next/font/local';
 const spoqaFont = localFont({
   src: [
     {
-      path: './../../app/fonts/Spoqa/SpoqaHanSansNeo-Regular.ttf',
+      path: './../../../app/fonts/Spoqa/SpoqaHanSansNeo-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './../../app/fonts/Spoqa/SpoqaHanSansNeo-Regular.otf',
+      path: './../../../app/fonts/Spoqa/SpoqaHanSansNeo-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './../../app/fonts/Spoqa/SpoqaHanSansNeo-Medium.ttf',
+      path: './../../../app/fonts/Spoqa/SpoqaHanSansNeo-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './../../app/fonts/Spoqa/SpoqaHanSansNeo-Medium.otf',
+      path: './../../../app/fonts/Spoqa/SpoqaHanSansNeo-Medium.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './../../app/fonts/Spoqa/SpoqaHanSansNeo-Bold.ttf',
+      path: './../../../app/fonts/Spoqa/SpoqaHanSansNeo-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: './../../app/fonts/Spoqa/SpoqaHanSansNeo-Bold.otf',
+      path: './../../../app/fonts/Spoqa/SpoqaHanSansNeo-Bold.otf',
       weight: '700',
       style: 'normal',
     },
