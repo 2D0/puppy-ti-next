@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 //스타일
 import { MainChar } from '@/style/Page.style';
@@ -13,15 +14,23 @@ import { Share, TitleBox } from '@/components/molecules/index';
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
 import SvgComponent from '@/assets/img/Icons/SvgComponent';
-import { sqlTest } from '@/api/Result/date';
 
 const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [dogName, setDogName] = useState('');
 
+  const getData = async () => {
+    await axios
+      .get('/test/INTJ')
+      .then(result => {
+        console.log(result);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   useEffect(() => {
-    // localhost:3001/test
-    // axios get
+    getData();
   }, []);
 
   //강아지 이름 입력 여부에 따라 nextButton이 활성화 된다.
