@@ -6,6 +6,7 @@ const ResultPage = () => {
   const getData = async () => {
     const { data } = await (await fetch('./api/result')).json();
     setResultData(data);
+    console.log(data);
   };
   useEffect(() => {
     getData();
