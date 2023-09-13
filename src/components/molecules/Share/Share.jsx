@@ -4,7 +4,7 @@ import React from 'react';
 import { ShareWrap, ShareTit, ShareButtons, ShareButtonAtom } from '@/components/molecules/Share/Share.style';
 
 //컴포넌트
-import { DefaultText } from '@/components/atoms';
+import { TextDefault } from '@/components/atoms';
 import SvgComponent from '@/assets/img/Icons/SvgComponent';
 
 const Share = () => {
@@ -14,7 +14,7 @@ const Share = () => {
     <ShareWrap>
       <ShareTit>
         <SvgComponent data={'SHARE'} />
-        <DefaultText data={'공유하기'} />
+        <TextDefault data={'공유하기'} />
       </ShareTit>
       <ShareButtons>
         {snsImg.map(item => {

@@ -7,13 +7,13 @@ import gugiFont from '@/app/api/fonts/GugiFont';
 import { TitleWrap } from './TitleBox.style.jsx';
 
 //컴포넌트
-import { AccentText } from '@/components/atoms';
+import { TextAccent } from '@/components/atoms';
 
 const TitleBox = ({ shape, firstText, accentText, lastText }) => {
   return (
     <TitleWrap shape={shape} className={gugiFont.className}>
       <span>{firstText}</span>
-      <AccentText shape={shape} data={accentText} />
+      <TextAccent shape={shape} data={accentText} />
       <span>{lastText}</span>
     </TitleWrap>
   );
