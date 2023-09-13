@@ -6,14 +6,14 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/:path*',
-  //       destination: 'http://localhost:3001/:path*',
-  //     },
-  //   ];
-  // },
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: 'http://localhost:4000/:path*',
+      },
+    ];
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find(rule => rule.test?.test?.('.svg'));
