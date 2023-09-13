@@ -257,6 +257,21 @@ export const SubContMargin = `
 export const DefaultContMargin = `
   margin-bottom: 80px;
 `;
+//컴포넌트
+export const ColumnComponent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vh;
+  width: 100%;
+`;
+export const RowText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+`;
 
 // ********************** 배경 **********************
 //컨텐츠 상단 배경

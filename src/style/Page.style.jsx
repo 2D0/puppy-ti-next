@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { SlashBackgroundAtom } from '@/components/atoms/SlashBackground/SlashBackground.style';
+import { SlashBackgroundAtom } from '@/components/atoms/BackgroundSlash/BackgroundSlash.style';
 
 export const MainChar = styled.div`
-  width: 72%;
+  width: 50%;
   height: auto;
-  margin-bottom: 20px;
 
   > img {
     width: 100%;
