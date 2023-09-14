@@ -8,6 +8,7 @@ export const Body = styled.body`
   height: 100vh;
   max-width: 750px;
   margin: 0 auto;
+  padding-top: 85px;
   box-shadow: 0 0 15px rgb(0 0 0 / 15%);
   position: relative;
   overflow-y: auto;
@@ -21,7 +22,7 @@ export const Main = styled.main`
   gap: 3vh;
   width: 100%;
   height: 100%;
-  padding-top: 85px;
+  padding-top: 6.25rem; //100px
   position: relative;
 `;
 export const SlashBackground = styled.div`

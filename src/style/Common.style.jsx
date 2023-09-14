@@ -46,28 +46,56 @@ export const BgPink = `
   background-color: #9E446F;
 `;
 
+export const White = `
+  #fff;
+`;
+export const Black = `
+  #333;
+`;
+export const LightGray = `
+  #ccc;
+`;
+export const Gray = `
+  #888;
+`;
+export const Purple = `
+  #7846D0;
+`;
+export const WhitePurple = `
+  #F4EEFF;
+`;
+export const LightPurple = `
+  #C4A5FA;
+`;
+export const DarkPurple = `
+  #1C0E35;
+`;
+export const Pink = `
+  #9E446F;
+`;
+
 // ********************* 폰트 ********************
 export const FontFamilySub = `
   font-family: 'gugi';
 `;
-export const FontSmallSize = `
-  font-size: 17px;
-`;
+export const FontDefaultSize = `
+  1.063rem;
+`; //17px;
 export const FontMediumSize = `
-  font-size: 20px;
-`;
+  1.25rem;
+`; //20px;
 export const FontLargeSize = `
-  font-size: 25px;
-`;
-export const FontBigSize = `
-  font-size: 40px;
-`;
+  1.563rem;
+`; //25px;
+export const FontMiddleSize = `
+  2.25rem;
+`; //36px;
 export const FontExtraSize = `
-  font-size: 60px;
-`;
+  5rem;
+`; //80px;
 export const FontExBigSize = `
-  font-size: 90px;
-`;
+  6.875rem;
+`; //110px;
 //웹 접근성 : 텍스트 숨기기
 export const A11yHidden = styled.span`
   display: block;
@@ -81,13 +109,18 @@ export const A11yHidden = styled.span`
 `;
 
 // ********************** 블럭 **********************
+//컨텐츠 이너
+export const ContentsInner = `
+  width: calc(100% - 50px);
+  margin: 0 auto;
+`;
 //기본 버튼, 인풋 블럭
 export const CommonBox = `
-  width: 65%;
   height: 60px;
   margin:0 auto;
   border-radius: 10px;
   text-align : center;
+  ${ContentsInner}
   ${FontMediumSize}
 `;
 
@@ -225,6 +258,23 @@ export const BlackShadow = `
   4px 4px 30px #444;
 `;
 
+export const TextList = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 14px;
+    background: ${({ color }) => color};
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+`;
 // ******************** 컨텐츠 ********************
 //컨텐츠
 export const Wrap = styled.div`
@@ -243,13 +293,6 @@ export const Content = styled.div`
   overflow: overlay;
   padding: 85px 0 95px;
   ${BgCommon}
-`;
-//컨텐츠 이너
-export const ContentsInner = `
-  width: calc(100% - 50px);
-  margin: 0 auto;
-  z-index: 3;
-  position: relative;
 `;
 export const SubContMargin = `
   margin-bottom: 40px;
@@ -426,46 +469,4 @@ export const HeaderCont = styled.header`
   ${HeaderSwitchImg} {
     ${({ percent }) => percent !== 100 && SmallIconShadow}
   }
-`;
-// ********************** 푸터 **********************
-export const FooterTxt = `
-    ${FontWhite}
-    ${FontSmallSize}
-`;
-export const Footer = styled.footer`
-  flex-direction: column;
-  width: 100%;
-  height: 95px;
-  position: relative;
-  z-index: 3;
-  ${Center}
-  ${BgDarkPurple}
-`;
-export const FooterInfo = styled.ul`
-  gap: 8px;
-  ${Center}
-`;
-export const FooterInfoList = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 14px;
-    ${BgWhite}
-  }
-
-  &:last-child:after {
-    display: none;
-  }
-`;
-export const FooterInfoLink = styled(Link)`
-  padding: 3px 2px;
-  ${FooterTxt}
-`;
-export const FooterCopy = styled.div`
-  ${FooterTxt}
 `;

@@ -3,17 +3,17 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   // **************** reset ****************
   * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: .875rem; //14px
-    font-weight: 400;
-    color: #111;
+    box-sizing: border-box;
   }
 
   body {
+    font-size: 1rem; //16px
+    font-weight: 400;
     overflow-y: auto;
     background-color: #f4f2fa;
+    color: #111;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
