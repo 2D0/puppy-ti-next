@@ -1,4 +1,3 @@
-export { default as TextAccent } from '@/components/atoms/TextAccent/TextAccent.jsx';
 export { default as TextSub } from '@/components/atoms/TextSub/TextSub.jsx';
 export { default as ButtonBack } from '@/components/atoms/ButtonBack/ButtonBack.jsx';
 export { default as TextButton } from '@/components/atoms/TextButton/TextButton.jsx';
