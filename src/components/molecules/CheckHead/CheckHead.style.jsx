@@ -1,12 +1,10 @@
-import styled, {css, keyframes} from 'styled-components';
-import {
-  ContentsInner,
-  BoxCenterRow,
-  BoxCenterCol,
-} from '@/style/Common.style.jsx';
+import styled, { css, keyframes } from 'styled-components';
+import { ContentsInner, BoxCenterRow, BoxCenterCol } from '@/style/Common.style.jsx';
 
 // **************** 상단 퍼센트 헤드 ****************
 export const CheckTopInner = styled.div`
+  position: relative;
+  z-index: 3;
   ${ContentsInner}
 `;
 
@@ -144,34 +142,34 @@ export const CheckTop = styled.article`
   overflow: hidden;
 
   ${CheckTopChar} {
-    left: ${({percent}) => percent - 28}%;
+    left: ${({ percent }) => percent - 28}%;
   }
 
   // 폭죽 별
   ${CheckTopFireGreen} {
-    ${({percent}) => percent === 100 && fadeOption(5, 0)};
+    ${({ percent }) => percent === 100 && fadeOption(5, 0)};
   }
 
   ${CheckTopFireRed} {
-    ${({percent}) => percent === 100 && fadeOption(5, 2)};
+    ${({ percent }) => percent === 100 && fadeOption(5, 2)};
   }
 
   ${CheckTopStarL1},
   ${CheckTopStarR1} {
-    ${({percent}) => percent === 100 && fadeOption(3, 0)};
+    ${({ percent }) => percent === 100 && fadeOption(3, 0)};
   }
 
   ${CheckTopStarL2},
   ${CheckTopStarR2} {
-    ${({percent}) => percent === 100 && fadeOption(5, 3)};
+    ${({ percent }) => percent === 100 && fadeOption(5, 3)};
   }
 
   ${CheckTopStarL3},
   ${CheckTopStarR3} {
-    ${({percent}) => percent === 100 && fadeOption(4, 0)};
+    ${({ percent }) => percent === 100 && fadeOption(4, 0)};
   }
 
   ${CheckTopStarR4} {
-    ${({percent}) => percent === 100 && fadeOption(3, 2)};
+    ${({ percent }) => percent === 100 && fadeOption(3, 2)};
   }
 `;

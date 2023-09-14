@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { FontPurple } from '@/style/Common.style.jsx';
+import { FontMiddleSize } from '@/style/Common.style';
 
 export const SubText = styled.span`
-  font-size: 1.5rem;
+  font-size: ${FontMiddleSize};
+  color: ${({ color }) => color};
 `;

@@ -9,12 +9,14 @@ import SvgComponent from '@/assets/img/Icons/SvgComponent';
 
 const Share = () => {
   const snsImg = ['FACEBOOK', 'KAKAO', 'TWITTER', 'LINK']; //sns 이미지 배열
-
+  const titleData = {
+    text: '공유하기',
+  };
   return (
     <ShareWrap>
       <ShareTit>
         <SvgComponent data={'SHARE'} />
-        <TextDefault data={'공유하기'} />
+        <TextDefault shape={titleData} />
       </ShareTit>
       <ShareButtons>
         {snsImg.map(item => {

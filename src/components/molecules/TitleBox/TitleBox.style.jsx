@@ -1,7 +1,13 @@
 import styled from 'styled-components';
+import { FontExBigSize, FontExtraSize } from '@/style/Common.style';
 
 export const TitleWrap = styled.div`
+  color: ${({ color }) => color};
   > span {
-    font-size: ${({ shape }) => (shape === 'BIG' ? '90px' : '60px')};
+    font-size: ${({ size }) => (size ? FontExBigSize : FontExtraSize)};
   }
+`;
+
+export const TextAccent = styled.span`
+  color: ${({ color }) => color};
 `;

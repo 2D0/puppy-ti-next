@@ -4,17 +4,14 @@ import React from 'react';
 import gugiFont from '@/app/api/fonts/GugiFont';
 
 //스타일
-import { TitleWrap } from './TitleBox.style.jsx';
+import { TitleWrap, TextAccent } from './TitleBox.style.jsx';
 
-//컴포넌트
-import { TextAccent } from '@/components/atoms';
-
-const TitleBox = ({ shape, firstText, accentText, lastText }) => {
+const TitleBox = ({ shape }) => {
   return (
-    <TitleWrap shape={shape} className={gugiFont.className}>
-      <span>{firstText}</span>
-      <TextAccent shape={shape} data={accentText} />
-      <span>{lastText}</span>
+    <TitleWrap size={shape.size} className={shape.font && gugiFont.className} color={shape.color}>
+      <span>{shape.first}</span>
+      <TextAccent color={shape.accent.color}>{shape.accent.text}</TextAccent>
+      <span>{shape.last}</span>
     </TitleWrap>
   );
 };

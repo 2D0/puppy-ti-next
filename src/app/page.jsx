@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
 //스타일
@@ -13,28 +12,14 @@ import { Share, TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
-import SvgComponent from '@/assets/img/Icons/SvgComponent';
-import { ColumnComponent, RowText } from '@/style/Common.style';
+import { ColumnComponent, RowText, DarkPurple, Purple, TextList, Black } from '@/style/Common.style';
 
 const Home = () => {
-  const router = useRouter(); //react router 페이지 핸들링하는 함수
-  const [dogName, setDogName] = useState(null);
-  const [testCount, setTestCount] = useState(null);
+  const [buttonAble, setButtonAble] = useState(false);
+  const [testCount, setTestCount] = useState(null); //참여횟수
+  let nameData = ''; //반려견 이름
 
-  //input에 글자가 1개 이상 입력될 경우 버튼 활성화
-  const nameChange = e => {
-    const { value } = e.target;
-    setDogName(value);
-  };
-
-  const InputData = {
-    name: 'input',
-    type: 'text',
-    placeholder: '반려견 이름을 적어주세요.',
-  };
-
-  const dataArray = ['참여횟수', `${testCount}`];
-
+  //참여 횟수 디비에서 가져오기
   const getData = async () => {
     await axios({
       url: '/test-count',
@@ -48,11 +33,12 @@ const Home = () => {
       });
   };
 
+  //입력한 이름 디비에 전송
   const postData = async () => {
     await axios({
       url: '/dog-name',
       method: 'POST',
-      data: { name: `${dogName}` },
+      data: { name: `${nameData}` },
     })
       .then(response => {
         console.log(response.data);
@@ -64,13 +50,56 @@ const Home = () => {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
-  //강아지 이름 입력 여부에 따라 nextButton이 활성화 된다.
-  const clickEvent = () => {
-    dogName && router.push('/check');
-    postData();
+  //input에 value있을 경우 버튼 활성화
+  const inputEvent = e => {
+    const { value } = e.target;
+    setButtonAble(value && true);
+    nameData = value;
   };
+
+  //props 데이터
+  const inputData = {
+    name: 'input',
+    type: 'text',
+    placeholder: '반려견 이름을 적어주세요.',
+    event: inputEvent,
+  };
+  const buttonData = {
+    type: 'button',
+    url: '/check',
+    able: buttonAble,
+    event: postData,
+    content: {
+      text: '시작하기',
+      font: true,
+    },
+  };
+  const titleData = {
+    size: 'BIG',
+    color: DarkPurple,
+    font: true,
+    accent: {
+      text: '퍼피',
+      color: Purple,
+    },
+    last: '티아이',
+  };
+  const subTextData = {
+    text: '나의 반려견은 어떤 성향일까?',
+    font: true,
+  };
+  const textList = [
+    {
+      text: '참여 횟수',
+      color: Black,
+    },
+    {
+      text: testCount,
+      color: Black,
+    },
+  ];
   return (
     <>
       <BackgroundWave />
@@ -78,15 +107,21 @@ const Home = () => {
         <Image src={MainImg} />
       </MainChar>
       <ColumnComponent>
-        <TextSub data={'나의 반려견은 어떤 성향일까?'} font={true} />
-        <TitleBox accentText={'퍼피'} lastText={'티아이'} />
+        <TextSub shape={subTextData} />
+        <TitleBox shape={titleData} />
       </ColumnComponent>
       <ColumnComponent>
-        <NameInput onChange={nameChange} InputData={InputData} />
-        <ButtonNext buttonName={'시작하기'} clickEvent={clickEvent} buttonHandler={dogName} />
+        <NameInput inputData={inputData} />
+        <ButtonNext buttonData={buttonData} />
       </ColumnComponent>
       <RowText>
-        <TextDefault data={'참여 횟수'} />|<TextDefault data={testCount} />
+        {textList.map((item, index) => {
+          return (
+            <TextList key={index} color={item.color}>
+              <TextDefault shape={item} />
+            </TextList>
+          );
+        })}
       </RowText>
       <Share />
     </>

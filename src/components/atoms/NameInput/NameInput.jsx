@@ -1,9 +1,9 @@
 import React from 'react';
 
 //스타일
-import * as A from './NameInput.style';
+import { InputBox } from './NameInput.style';
 
-const NameInput = ({ onChange, InputData }) => {
-  return <A.InputBox onChange={onChange} type={InputData.type} placeholder={InputData.placeholder} />;
+const NameInput = ({ inputData }) => {
+  return <InputBox onChange={inputData.event} type={inputData.type} placeholder={inputData.placeholder} />;
 };
 export default NameInput;

@@ -4,7 +4,11 @@ import React from 'react';
 import { DefaultText } from '@/components/atoms/TextDefault/TextDefault.style';
 import gugiFont from '@/app/api/fonts/GugiFont';
 
-const TextDefault = ({ data, font }) => {
-  return <DefaultText className={font && gugiFont.className}>{data}</DefaultText>;
+const TextDefault = ({ shape }) => {
+  return (
+    <DefaultText className={shape.font && gugiFont.className} color={shape.color}>
+      {shape.text}
+    </DefaultText>
+  );
 };
 export default TextDefault;

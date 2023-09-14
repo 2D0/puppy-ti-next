@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState([]);
-  const [dogName, setDogName] = useState();
+  const [nameData, setNameData] = useState();
 
   const getData = async () => {
     await axios({
@@ -12,7 +12,7 @@ const ResultPage = () => {
       method: 'GET',
     })
       .then(response => {
-        setDogName(response.data.name);
+        setNameData(response.data.name);
       })
       .catch(error => {
         console.log(error);
@@ -25,7 +25,7 @@ const ResultPage = () => {
   return (
     <div>
       ResultPage
-      {dogName}
+      {nameData}
       {resultData.map(item => {
         return (
           <div key={item.mbti}>

@@ -12,7 +12,7 @@ export const HeaderInner = styled.div`
 `;
 export const HeaderLogo = styled.h1`
   width: auto;
-  height: 60%;
+  height: 60px;
   ${BoxCenter}
 `;
 export const HeaderLogoImg = styled.img`
