@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import {
-  FontLargeSize,
-  Center
-} from '@/style/Common.style.jsx';
+import { SizeRegularRem, Center, SizeSmallRem } from '@/style/Common.style.jsx';
 
 export const BackButtonAtom = styled(Link)`
-  padding: 10px;
-  gap: 0 10px;
-  ${Center}
-  ${FontLargeSize}
+  padding: ${SizeSmallRem};
+  gap: 0 ${SizeSmallRem};
+  font-size: ${SizeRegularRem};
+  ${Center};
 `;
 export const BackButtonImg = styled.img`
-  width: 25px;
+  width: 1.563rem; //25px
 `;
