@@ -1,33 +1,31 @@
 import React from 'react';
 
 //스타일
-import { ShareWrap, ShareTit, ShareButtons, ShareButtonAtom } from '@/components/molecules/Share/Share.style';
+import { ShareTit } from '@/components/molecules/Share/Share.style';
+import { ColumnComponent } from '@/style/Common.style';
 
 //컴포넌트
 import { TextDefault } from '@/components/atoms';
 import SvgComponent from '@/assets/img/Icons/SvgComponent';
+import IconButtonList from '@/components/molecules/IconButtonList/IconButtonList.style';
 
 const Share = () => {
-  const snsImg = ['FACEBOOK', 'KAKAO', 'TWITTER', 'LINK']; //sns 이미지 배열
+  const shareImgData = {
+    name: 'SHARE',
+    fill: false,
+  };
+  const snsImgData = [{ name: 'FACEBOOK' }, { name: 'KAKAO' }, { name: 'TWITTER' }, { name: 'LINK' }];
   const titleData = {
     text: '공유하기',
   };
   return (
-    <ShareWrap>
+    <ColumnComponent>
       <ShareTit>
-        <SvgComponent data={'SHARE'} />
+        <SvgComponent data={shareImgData} />
         <TextDefault shape={titleData} />
       </ShareTit>
-      <ShareButtons>
-        {snsImg.map(item => {
-          return (
-            <ShareButtonAtom href="/">
-              <SvgComponent data={item} />
-            </ShareButtonAtom>
-          );
-        })}
-      </ShareButtons>
-    </ShareWrap>
+      <IconButtonList imageData={snsImgData} />
+    </ColumnComponent>
   );
 };
 
