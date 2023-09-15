@@ -1,11 +1,5 @@
 export { default as TextSub } from '@/components/atoms/TextSub/TextSub.jsx';
-export { default as ButtonBack } from '@/components/atoms/ButtonBack/ButtonBack.jsx';
-export { default as TextButton } from '@/components/atoms/TextButton/TextButton.jsx';
-export { default as ButtonCheck } from '@/components/atoms/ButtonCheck/ButtonCheck.jsx';
-export { default as ButtonShare } from '@/components/atoms/ButtonShare/ButtonShare.jsx';
 export { default as TextDefault } from '@/components/atoms/TextDefault/TextDefault.jsx';
-export { default as Logo } from './Logo/logo.jsx';
 export { default as ButtonNext } from '@/components/atoms/ButtonNext/ButtonNext.jsx';
-export { default as BackgroundSlash } from '@/components/atoms/BackgroundSlash/BackgroundSlash.jsx';
 export { default as BackgroundWave } from '@/components/atoms/BackgroundWave/BackgroundWave.jsx';
 export { default as NameInput } from './NameInput/NameInput.jsx';
