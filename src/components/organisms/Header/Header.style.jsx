@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { CenterAlign, PositionCenter, SizeLargeRem, Black, WhitePurple, LightPurple } from '@/style/Common.style';
+import { CenterAlign, PositionCenter, SizeLargeRem, Black, WhitePurple, LightPurple, MaxWidth } from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 // ********************** 헤더 **********************
