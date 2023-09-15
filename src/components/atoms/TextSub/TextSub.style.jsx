@@ -1,7 +1,12 @@
 import styled from 'styled-components';
-import { FontMiddleSize } from '@/style/Common.style';
+import device from '@/style/Device.style';
 
 export const SubText = styled.span`
-  font-size: ${FontMiddleSize};
+  font-size: 2.25rem; //36px
+  line-height: 1em;
   color: ${({ color }) => color};
+
+  @media ${device.MaxWidthFull} {
+    font-size: 5.5vw;
+  }
 `;

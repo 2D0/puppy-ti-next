@@ -1,90 +1,82 @@
-import styled, {css} from 'styled-components';
-
-import {
-  BgPink,
-  BgPurple,
-  BgWhite,
-  FontMediumSize,
-  FontWhite,
-  IconShadow,
-  flexCenter
-} from '@/style/Common.style';
+import styled, { css } from 'styled-components';
+import { SizeDefaultRem, IconShadow, White, Purple, Pink, Center, SizeMediumRem } from '@/style/Common.style';
 
 // ******************** 질문 박스 ********************
+export const StrockeWidth = `0.25rem`;
 export const QuestionQABoxs = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 40px 0;
+  gap: ${SizeMediumRem} 0;
 `;
 export const QuestionQABoxList = styled.li``;
 export const QuestionQATop = styled.ul`
   display: flex;
-  height: 40px;
+  height: ${SizeMediumRem};
 `;
 export const QuestionQATit = styled.li`
   width: 50%;
   height: inherit;
-  ${flexCenter}
-  ${FontMediumSize}
-  ${FontWhite}
+  color: ${White};
+  font-size: ${SizeDefaultRem};
+  ${Center};
 `;
 export const QuestionQATitL = styled(QuestionQATit)`
-  ${BgPink}
+  background-color: ${Pink};
 `;
 export const QuestionQATitR = styled(QuestionQATit)`
-  ${BgPurple}
+  background-color: ${Purple};
 `;
 export const QuestionQACont = styled.div`
   flex-direction: column;
-  gap: 30px 0;
-  padding: 30px 0;
-  ${flexCenter}
-  ${BgWhite}
+  gap: 1.875rem 0; //30px
+  padding: 1.875em 0; //30px
+  background-color: ${White};
+  ${Center}
 `;
 export const QuestionQATxt = styled.span`
   width: 90%;
   white-space: break-spaces;
   text-align: center;
-  ${FontMediumSize}
+  font-size: ${SizeDefaultRem};
 `;
 export const QuestionQABtns = styled.div`
-  gap: 0 25px;
-  ${flexCenter}
+  gap: 0 ${SizeRegularRem};
+  ${Center}
 `;
 export const QuestionQABtn = styled.button``;
-export const QuestionFootShape = `
+export const QuestionFootShape = css`
+  display: block;
+  width: auto;
+  height: 4.375rem;
+  stroke-width: ${StrockeWidth};
+  fill: transparent;
+
+  > path {
     display: block;
     width: auto;
-    height: 70px;
-    stroke-width: 4px;
-    fill: transparent;
-
-    > path {
-        display: block;
-        width: auto;
-        height: 100%;
-        fill: #9e446f;
-        ${IconShadow}
-    }
+    height: 100%;
+    fill: #9e446f;
+    ${IconShadow}
+  }
 `;
-export const QuestionFootBlank = `
-    stroke-width: 4px;
-    fill: transparent;
+export const QuestionFootBlank = css`
+  stroke-width: ${StrockeWidth};
+  fill: transparent;
 `;
 export const QuestionFoot = styled.span`
   svg {
     ${QuestionFootShape}
-    ${({scoreIdx}) =>
+    ${({ scoreIdx }) =>
       scoreIdx === 3 &&
       css`
-        height: 60px;
+        height: 3.75rem; //60px
       `};
 
     > path {
       ${QuestionFootBlank};
 
       //버튼 기본 디자인
-      ${({scoreIdx}) => {
+      ${({ scoreIdx }) => {
         if (scoreIdx === 3) {
           return css`
             stroke: #999;
@@ -102,7 +94,7 @@ export const QuestionFoot = styled.span`
         }
       }}
 
-      ${({questionItem, questionIdx, score}) => {
+      ${({ questionItem, questionIdx, score }) => {
         /*if (questionItem.id === questionIdx) {
             for (let i = 0; questionItem.state.type !== 'center' && i <= questionItem.state.score; i++) {
                 console.log(score[i]);
@@ -131,7 +123,7 @@ export const QuestionFoot = styled.span`
       }}
 
 
-      ${({questionItem, questionIdx, scoreCount, scoreIdx}) => {
+      ${({ questionItem, questionIdx, scoreCount, scoreIdx }) => {
         if (questionItem.id === questionIdx && questionItem.state.score === scoreCount) {
           if (questionItem.state.type === 'center' && scoreIdx === 3) {
             // console.log(item.state.type === 'center');

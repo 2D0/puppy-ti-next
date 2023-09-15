@@ -1,12 +1,14 @@
-import styled from 'styled-components';
-import { BgWhite, CommonBox, CommonShadow, ContentsInner, FontDefaultSize, FontGray } from '@/style/Common.style.jsx';
+import styled, { css } from 'styled-components';
+import { CommonShape, CommonShadow, SizeDefaultRem, Gray, White } from '@/style/Common.style.jsx';
 export const InputBox = styled.input`
   border: none;
-  font-size: ${FontDefaultSize};
-  ${CommonBox}
-  ${CommonShadow}
-  ${BgWhite}
+  background-color: ${White};
+  ${CommonShape};
+  ${CommonShadow};
+
   &::placeholder {
-    ${FontGray}
+    ${css`
+      color: ${Gray};
+    `}
   }
 `;

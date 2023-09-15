@@ -1,13 +1,12 @@
-import styled from 'styled-components';
-import {
-  IconShadow
-} from '@/style/Common.style';
+import styled, { css } from 'styled-components';
+import { IconShadow } from '@/style/Common.style';
 
-export const CheckFootShape = `
+export const StrockeWidth = `0.25rem`; //4px
+export const CheckFootShape = css`
   display: block;
   width: auto;
-  height: 70px;
-  stroke-width: 4px;
+  height: 4.375rem; //70px
+  stroke-width: ${StrockeWidth};
   fill: transparent;
 
   > path {
@@ -18,8 +17,8 @@ export const CheckFootShape = `
     ${IconShadow}
   }
 `;
-export const CheckFootBlank = `
-  stroke-width: 4px;
+export const CheckFootBlank = css`
+  stroke-width: ${StrockeWidth};
   fill: transparent;
 `;
 export const CheckButtonAtom = styled.span`
@@ -27,7 +26,6 @@ export const CheckButtonAtom = styled.span`
     ${CheckFootShape}
     > path {
       ${CheckFootBlank};
-
     }
   }
 `;

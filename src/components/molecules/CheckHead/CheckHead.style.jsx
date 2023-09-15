@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ContentsInner, BoxCenterRow, BoxCenterCol } from '@/style/Common.style.jsx';
+import { ContentsInner, PositionCenterRow, PositionCenterCol, SizeLargeRem } from '@/style/Common.style.jsx';
 
 // **************** 상단 퍼센트 헤드 ****************
 export const CheckTopInner = styled.div`
@@ -56,23 +56,23 @@ export const CheckTopCharImg = styled.img`
   width: 66%;
   height: auto;
   bottom: 0;
-  ${BoxCenterRow}
+  ${PositionCenterRow}
 `;
 
 //산책 캐릭터
 export const CheckTopChar = styled.div`
-  width: 185px;
-  height: 185px;
+  width: 11.563rem; //185px
+  height: 11.563rem; //185px
   position: absolute;
-  bottom: 50px;
+  bottom: 3.125rem; //50px
   transition: all 0.5s ease;
   z-index: 1;
 `;
 
 //오른쪽 폭죽
 export const CheckTopRight = styled.div`
-  width: 93px;
-  height: 93px;
+  width: 5.813rem; //93px
+  height: 5.813rem; //93px
   position: absolute;
   top: 0;
   right: 0;
@@ -112,10 +112,10 @@ export const CheckTopStarR4 = styled.img`
 
 //왼쪽 별
 export const CheckTopLeft = styled.div`
-  width: 37px;
-  height: 73px;
+  width: 2.313rem; //37px
+  height: 4.563rem; //73px
   left: 0;
-  ${BoxCenterCol}
+  ${PositionCenterCol}
 `;
 export const CheckTopStarL1 = styled.img`
   top: 0;
@@ -124,7 +124,7 @@ export const CheckTopStarL1 = styled.img`
 `;
 export const CheckTopStarL2 = styled.img`
   left: 0;
-  ${BoxCenterCol}
+  ${PositionCenterCol}
   ${CheckTopStarLShape}
 `;
 export const CheckTopStarL3 = styled.img`
@@ -137,8 +137,8 @@ export const CheckTopStarL3 = styled.img`
 export const CheckTop = styled.article`
   width: 100%;
   max-width: 750px;
-  padding-bottom: 20px;
-  padding-top: 185px;
+  padding-bottom: 1.25rem; //20px
+  padding-top: calc(6.25rem + ${SizeLargeRem}); //100px
   overflow: hidden;
 
   ${CheckTopChar} {

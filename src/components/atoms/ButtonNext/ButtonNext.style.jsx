@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
-import { Center, White, CommonBox, CommonShadow, LightPurple, LightGray } from '@/style/Common.style.jsx';
+import { Center, White, CommonShape, CommonShadow, LightPurple, LightGray } from '@/style/Common.style.jsx';
 
 export const NextButton = styled.button`
   background: ${LightGray};
-  ${Center}
-  ${CommonBox}
-  ${CommonShadow}
-  
+  ${Center};
+  ${CommonShape};
+  ${CommonShadow};
+
   ${({ able }) => {
     able;
     //텍스트 입력할 경우 버튼 Able
@@ -18,7 +18,7 @@ export const NextButton = styled.button`
           cursor: default;
         `;
   }}
-  
+
   >span {
     color: ${White};
   }

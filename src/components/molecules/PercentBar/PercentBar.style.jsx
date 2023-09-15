@@ -1,30 +1,21 @@
 import styled from 'styled-components';
-import {
-  BgWhite,
-  BgLightPurple,
-  CommonShadow
-} from '@/style/Common.style.jsx';
-
+import { White, LightPurple, CommonShadow, PositionFit, SizeSmallRem } from '@/style/Common.style.jsx';
 
 // ********************* 퍼센트 바 ********************
 export const PercentBarFill = styled.div`
+  ${PositionFit};
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   transition: all 1s ease;
-  ${BgLightPurple}
+  background-color: ${LightPurple};
 `;
 export const PercentBar = styled.div`
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
+  ${PercentBarFill};
+  width: ${({ percent }) => percent}%;
+  height: 3.125rem; //50px
+  border-radius: ${SizeSmallRem};
   overflow: hidden;
   position: relative;
+  background-color: ${White};
 
-  ${BgWhite}
-  ${({percent}) => percent !== 100 && CommonShadow}
-  ${PercentBarFill} {
-    width: ${({percent}) => percent}%;
-  }
+  ${({ percent }) => percent !== 100 && CommonShadow};
 `;

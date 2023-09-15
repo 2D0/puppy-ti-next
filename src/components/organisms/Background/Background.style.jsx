@@ -1,9 +1,6 @@
-import styled, {css} from 'styled-components';
-import device from '@/style/Device.style';import {
-  BgLightPurple
-} from "@/style/Common.style";
-
-
+import styled, { css } from 'styled-components';
+import device from '@/style/Device.style';
+import { LightPurple } from '@/style/Common.style';
 
 // ********************** 배경 **********************
 //컨텐츠 상단 배경
@@ -12,8 +9,9 @@ export const ContentsBack = styled.div`
   height: calc(45vh - 250px);
   position: relative;
   z-index: 2;
-  ${BgLightPurple} @media ${device.MaxHeightS} {
-    height: 280px;
+  background-color: ${LightPurple};
+  @media ${device.MaxHeightS} {
+    height: 17.5rem; //280px
   }
 `;
 //배경 박스 전체

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { CenterAlign, IconShadow } from '@/style/Common.style.jsx';
+import { CenterAlign, IconShadow, SizeMediumRem } from '@/style/Common.style.jsx';
 
 export const IconButtonListWrap = styled.div`
-  gap: 15px;
+  gap: 0.938rem; //15px
   ${CenterAlign};
 `;
 export const IconButton = styled(Link)`
   display: block;
-  width: 40px;
-  height: 40px;
+  width: ${SizeMediumRem};
+  height: ${SizeMediumRem};
   border-radius: 50%;
   position: relative;
   ${IconShadow}

@@ -7,19 +7,27 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  html{
 
+  }
   body {
     font-size: 1rem; //16px
     font-weight: 400;
     overflow-y: auto;
+    overflow-x: hidden;
     background-color: #f4f2fa;
     color: #111;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    box-shadow: 0 0 15px rgb(0 0 0 / 15%);
   }
-
-  ::-webkit-scrollbar {
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-thumb ,
+  ::-webkit-scrollbar-track {
     opacity: 0;
+    width: 0;
+    height: 0;
+    background-color: transparent;
   }
 
   input:focus, select:focus, textarea:focus {

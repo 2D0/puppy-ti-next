@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import Link from "next/link";
-import {BoxCenter} from '@/style/Common.style.jsx';
+import Link from 'next/link';
+import { PositionCenter } from '@/style/Common.style.jsx';
 
 export const LogoAtom = styled(Link)`
   width: auto;
   height: 60%;
-  ${BoxCenter}
+  ${PositionCenter}
 `;
 export const LogoImg = styled.img`
   display: block;

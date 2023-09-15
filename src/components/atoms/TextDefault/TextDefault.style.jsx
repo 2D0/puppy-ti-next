@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { FontDefaultSize } from '@/style/Common.style';
+import { SizeDefaultRem } from '@/style/Common.style';
 
 export const DefaultText = styled.span`
-  font-size: ${FontDefaultSize};
+  font-size: ${SizeDefaultRem};
   color: ${({ color }) => color};
 `;

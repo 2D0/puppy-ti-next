@@ -1,34 +1,38 @@
 import styled from 'styled-components';
-import { BgBlack, BgCommon } from '@/style/Common.style';
-import { SlashBackgroundAtom } from '@/components/atoms/BackgroundSlash/BackgroundSlash.style';
-import Image from 'next/image';
+import { Black, CenterAlign, SizeFull, SizeMediumRem, SizeLargeRem, WhitePurple } from '@/style/Common.style';
+import device from '@/style/Device.style';
 
 export const Body = styled.body`
   width: 100%;
   height: 100vh;
   max-width: 750px;
+  max-height: calc(1624px - ${SizeLargeRem});
   margin: 0 auto;
-  padding-top: 85px;
-  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  padding-top: ${SizeLargeRem};
   position: relative;
   overflow-y: auto;
-  ${BgCommon}
-  ${({ percent }) => percent === 100 && BgBlack}
+  background-color: ${({ percent }) => (percent === 100 ? Black : WhitePurple)};
+
+  @media ${device.MaxHeightFull} {
+    height: 100%;
+  }
 `;
 export const Main = styled.main`
-  display: flex;
+  ${CenterAlign};
+  ${SizeFull};
   flex-direction: column;
-  align-items: center;
-  gap: 3vh;
-  width: 100%;
-  height: 100%;
-  padding-top: 6.25rem; //100px
+  gap: ${SizeMediumRem};
+  padding: 4.375rem 0; //68px
   position: relative;
+  overflow-x: hidden;
 `;
 export const SlashBackground = styled.div`
   width: 83%;
   position: absolute;
-  z-index: 2;
+
+  > img {
+    ${SizeFull}
+  }
 `;
 export const BackImgSlashTop = styled(SlashBackground)`
   top: -10%;

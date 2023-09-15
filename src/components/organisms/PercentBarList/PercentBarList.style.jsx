@@ -1,63 +1,42 @@
-import styled, {css} from 'styled-components';
-import {
-  FontSmallSize,
-  FontMediumSize,
-  defaultContMargin,
-  FontDarkPurple,
-  flexItemCenter,
-  FontGray,
-  PercentBarFill,
-} from '@/style/Common.style';
+import styled, { css } from 'styled-components';
+import { SizeDefaultRem, DarkPurple, Gray, CenterAlign, SizeSmallRem, SizeMediumRem } from '@/style/Common.style';
 
-export const ResultPercentCont = styled.div`
-  ${defaultContMargin}
-`;
+export const ResultPercentCont = styled.div``;
 export const ResultPercentBox = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  ${defaultContMargin}
+  gap: ${SizeMediumRem};
 `;
 export const ResultPercentList = styled.li`
-  ${PercentBarFill} {
-    ${({percent}) =>
-      percent >= 100 - percent
-        ? css`
+  ${({ percent }) =>
+    percent >= 100 - percent
+      ? css`
           left: 0;
           right: initial;
           width: ${percent}%;
         `
-        : css`
+      : css`
           left: initial;
           right: 0;
           width: ${100 - percent}%;
         `};
-  }
 `;
 export const ResultPercentInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: ${SizeSmallRem};
   position: relative;
   z-index: 2;
 `;
 export const ResultPercentNames = styled.div`
-  gap: 0 10px;
-
-  ${flexItemCenter}
+  ${CenterAlign};
+  gap: 0 ${SizeSmallRem};
+  
   > span {
-    ${FontGray}
-
-    ${({resultType}) =>
-      resultType &&
-      css`
-        ${FontDarkPurple}
-      `}
+    ${({ resultType }) => (resultType ? DarkPurple : Gray)}
 `;
 export const ResultPercentName = styled.span`
+  font-size: ${SizeDefaultRem};
   font-weight: 500;
-  ${FontMediumSize}
 `;
-export const ResultPercentNum = styled.span`
-  ${FontSmallSize}
-`;
+export const ResultPercentNum = styled.span``;
