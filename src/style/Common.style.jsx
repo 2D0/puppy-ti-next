@@ -2,15 +2,15 @@ import styled, { css } from 'styled-components';
 import device from '@/style/Device.style';
 
 // ********************** 색상 **********************
-export const White = `#fff;`;
-export const Black = `#333;`;
-export const LightGray = `#ccc;`;
-export const Gray = `#888;`;
-export const Purple = `#7846D0;`;
-export const WhitePurple = `#F4EEFF;`;
-export const LightPurple = `#C4A5FA;`;
-export const DarkPurple = `#1C0E35;`;
-export const Pink = `#9E446F;`;
+export const White = `#fff`;
+export const Black = `#333`;
+export const LightGray = `#ccc`;
+export const Gray = `#888`;
+export const Purple = `#7846D0`;
+export const WhitePurple = `#F4EEFF`;
+export const LightPurple = `#C4A5FA`;
+export const DarkPurple = `#1C0E35`;
+export const Pink = `#9E446F`;
 
 // ********************* 사이즈 ********************
 //100% 사이즈
@@ -18,13 +18,14 @@ export const SizeFull = css`
   width: 100%;
   height: 100%;
 `;
+export const SizeMaxWidth = `750px`;
 export const SizeSmallRem = `0.625rem`; //10px
-export const SizeDefaultRem = `1.063rem;`; //17px;
-export const SizeRegularRem = `1.563rem;`; //25px;
-export const SizeMediumRem = `2.5rem;`; //40px;
-export const SizeMediumLargeRem = `5rem;`; //80px;
-export const SizeLargeRem = `5.33rem;`; //85px;
-export const SizeExtraRem = `6.875rem;`; //110px;
+export const SizeDefaultRem = `1.063rem`; //17px;
+export const SizeRegularRem = `1.563rem`; //25px;
+export const SizeMediumRem = `2.5rem`; //40px;
+export const SizeMediumLargeRem = `5rem`; //80px;
+export const SizeLargeRem = `5.33rem`; //85px;
+export const SizeExtraRem = `6.875rem`; //110px;
 
 // ********************** 정렬 **********************
 //display 중앙
@@ -100,7 +101,7 @@ export const ContentsInner = css`
 //기본 버튼, 인풋 모양
 export const CommonShape = css`
   ${ContentsInner};
-  height: 3.75em; //60px
+  height: 3.75rem; //60px
   border-radius: ${SizeSmallRem};
   text-align: center;
   font-size: ${SizeDefaultRem};
@@ -151,7 +152,7 @@ export const ColumnComponent = styled.div`
 //컨텐츠
 export const Wrap = styled.div`
   width: 100%;
-  max-width: 750px;
+  max-width: ${SizeMaxWidth};
   margin: 0 auto;
   padding-top: ${SizeLargeRem};
   box-shadow: 0 0 15px rgb(0 0 0 / 15%);

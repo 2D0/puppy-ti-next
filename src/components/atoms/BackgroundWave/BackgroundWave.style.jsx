@@ -10,7 +10,7 @@ export const BackgroundWrap = styled.div`
 `;
 export const WaveBlock = styled.div`
   width: 100%;
-  height: calc(3.125rem - 5vh); //423px
+  aspect-ratio: 1 / 0.5;
   border-radius: 0 0 0 ${SizeMediumLargeRem};
   ${BackGroundShadow};
   position: relative;

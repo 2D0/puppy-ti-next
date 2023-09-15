@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { Black, CenterAlign, SizeFull, SizeMediumRem, SizeLargeRem, WhitePurple } from '@/style/Common.style';
+import { Black, CenterAlign, SizeFull, SizeMediumRem, SizeLargeRem, WhitePurple, SizeMaxWidth } from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 export const Body = styled.body`
   width: 100%;
   height: 100vh;
-  max-width: 750px;
-  max-height: calc(1624px - ${SizeLargeRem});
+  max-width: ${SizeMaxWidth};
   margin: 0 auto;
   padding-top: ${SizeLargeRem};
   position: relative;
