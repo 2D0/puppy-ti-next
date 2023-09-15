@@ -15,12 +15,11 @@ import {
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
+import IconButtonList from '@/components/molecules/IconButtonList/IconButtonList.style';
 
 //이미지
 import LogoWhite from '@/assets/img/Logo/logo-white.svg?url';
 import LogoBlack from '@/assets/img/Logo/logo-black.svg?url';
-import TransEn from '@/assets/img/Icons/ico-trans_en.svg?url';
-import TransKo from '@/assets/img/Icons/ico-trans_ko.svg?url';
 
 export function Header({ location, percent, scrollHeader }) {
   const [logoColor, setLogoColor] = useState(null); //로고 컬러 상태
@@ -42,6 +41,8 @@ export function Header({ location, percent, scrollHeader }) {
     switchColor();
   }, [percent, location]);
 
+  const transImgData = [{ name: 'EN' }, { name: 'KO' }];
+
   return (
     <HeaderCont scrollHeader={scrollHeader} location={location} percent={percent}>
       <HeaderInner>
@@ -50,14 +51,7 @@ export function Header({ location, percent, scrollHeader }) {
             <HeaderLogoImg src={logoColor} />
           </Link>
         </HeaderLogo>
-        <HeaderSwitch>
-          <HeaderSwitchIcon>
-            <HeaderSwitchImg src={TransEn.src} alt="영어" />
-          </HeaderSwitchIcon>
-          <HeaderSwitchIcon>
-            <HeaderSwitchImg src={TransKo.src} alt="한글" />
-          </HeaderSwitchIcon>
-        </HeaderSwitch>
+        <IconButtonList imageData={transImgData} />
       </HeaderInner>
       {location === '/check' && <CheckHead percent={percent} />}
     </HeaderCont>
