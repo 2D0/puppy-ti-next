@@ -7,12 +7,12 @@ import axios from 'axios';
 import { MainChar } from '@/style/Page.style';
 
 //컴포넌트
+import { ColumnComponent, RowText, DarkPurple, Purple, TextList, Black } from '@/style/Common.style';
 import { ButtonNext, BackgroundWave, NameInput, TextDefault, TextSub } from '@/components/atoms/index';
 import { Share, TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
-import { ColumnComponent, RowText, DarkPurple, Purple, TextList, Black } from '@/style/Common.style';
 
 const Home = () => {
   const [buttonAble, setButtonAble] = useState(false);
@@ -20,7 +20,7 @@ const Home = () => {
   let nameData = ''; //반려견 이름
 
   //참여 횟수 디비에서 가져오기
-  const getData = async () => {
+  const getCountData = async () => {
     await axios({
       url: '/test-count',
       method: 'GET',
@@ -34,7 +34,7 @@ const Home = () => {
   };
 
   //입력한 이름 디비에 전송
-  const postData = async () => {
+  const postNameData = async () => {
     await axios({
       url: '/dog-name',
       method: 'POST',
@@ -49,7 +49,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getData();
+    getCountData();
   }, []);
 
   //input에 value있을 경우 버튼 활성화
@@ -70,7 +70,7 @@ const Home = () => {
     type: 'button',
     url: '/check',
     able: buttonAble,
-    event: postData,
+    event: postNameData,
     content: {
       text: '시작하기',
       font: true,

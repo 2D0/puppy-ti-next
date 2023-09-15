@@ -26,7 +26,7 @@ const Footer = () => {
       <FooterInfo>
         {textList.map(item => {
           return (
-            <TextList color={item.color}>
+            <TextList key={item.text} color={item.color}>
               <FooterInfoLink href={item.url}>{item.text}</FooterInfoLink>
             </TextList>
           );
