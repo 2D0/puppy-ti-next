@@ -11,7 +11,7 @@ const BackgroundWave = () => {
   return (
     <BackgroundWrap>
       <WaveBlock>
-        <Image src={Round} />
+        <Image src={Round} alt={'웨이브'} />
       </WaveBlock>
     </BackgroundWrap>
   );
