@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import StyledJsxRegistry from './registry';
+import StyledComponentsRegistry from '../../lib/registry';
 
 //스타일
 import GlobalStyle from '@/style/Global.style';
@@ -14,20 +14,18 @@ import { Header, Footer } from '@/components/organisms/index';
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <StyledComponentsRegistry>
       <GlobalStyle />
 
       <html lang="en" className={spoqaFont.className}>
         <head />
         <Body>
           <Header />
-          <Main>
-            <StyledJsxRegistry>{children}</StyledJsxRegistry>
-          </Main>
+          <Main>{children}</Main>
           <Footer />
         </Body>
       </html>
-    </>
+    </StyledComponentsRegistry>
   );
 };
 
