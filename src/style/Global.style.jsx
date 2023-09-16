@@ -1,100 +1,91 @@
 import { createGlobalStyle } from 'styled-components';
-import { gugiRegular } from '@/assets/fonts/gugi';
-import { spoqaRegularTtf, spoqaRegularOtf, spoqaMediumTtf, spoqaMediumOtf, spoqaBoldOtf, spoqaBoldTtf } from '@/assets/fonts/spoqa';
 
 const GlobalStyle = createGlobalStyle`
-    // **************** 폰트 ****************
-    //구기 (Gugi)
-    @font-face {
-        font-family: 'gugi';
-        font-weight: 400;
-        src: url(${gugiRegular}) format('truetype');
-    }
-    
-    //스포카한산스 (SpoqaHanSansNeo)
-    @font-face {
-        font-family: 'SpoqaHan';
-        font-weight: 400;
-        src: url(${spoqaRegularTtf}) format('truetype'),
-        url(${spoqaRegularOtf}) format('opentype');
-    }
-    @font-face {
-        font-family: 'SpoqaHan';
-        font-weight: 500;
-        src: url(${spoqaMediumTtf}) format('truetype'),
-        url(${spoqaMediumOtf}) format('opentype');
-    }
-    @font-face {
-        font-family: 'SpoqaHan';
-        font-weight: 700;
-        src: url(${spoqaBoldOtf}) format('truetype'),
-        url(${spoqaBoldTtf}) format('opentype');
-    }
+  // **************** reset ****************
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html{
 
-    
-    // **************** reset ****************
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        color: #111;
-        font-family: 'SpoqaHan';
-        font-weight: 400;
-    }
-    body{
-        overflow-y: auto;
-        background-color: #f4f2fa;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    input:focus, select:focus, textarea:focus {
-        outline: none;
-    }
-    label {
-        display: block;
-    }
-    textarea {
-        resize: none;
-    }
-    button {
-        border: none;
-        background-color: transparent;
-        padding: 0;
-        cursor: pointer;
-        -webkit-appearance: none;
-    }
-    a {
-        text-decoration: none;
-    }
-    a:hover {
-        cursor: pointer;
-    }
-    i {
-        font-style: normal;
-    }
-    li {
-        list-style: none;
-    }
-    fieldset {
-        border: none;
-    }
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section,
-    table, tbody, td {
-        display: block;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-    button, input, optgroup, select, textarea {
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-    }
+  }
+  body {
+    font-size: 1rem; //16px
+    font-weight: 400;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #f4f2fa;
+    color: #111;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+  }
+  ::-webkit-scrollbar,
+  ::-webkit-scrollbar-thumb ,
+  ::-webkit-scrollbar-track {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: 0;
+  }
+
+  label {
+    display: block;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  button {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  i {
+    font-style: normal;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  fieldset {
+    border: 0;
+  }
+
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section,
+  table, tbody, td {
+    display: block;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 `;
 
 export default GlobalStyle;

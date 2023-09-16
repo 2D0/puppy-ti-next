@@ -1,1 +1,1 @@
-export { default as mainImg } from './mian-puppyti.png';
+export { default as mainImg } from '../Character/mian-puppyti.png';
