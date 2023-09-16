@@ -13,11 +13,12 @@ import { Share, TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
+import { Form, useForm } from 'react-hook-form';
 
 const Home = () => {
   const [buttonAble, setButtonAble] = useState(false);
-  const [testCount, setTestCount] = useState(null); //참여횟수
-  let nameData = ''; //반려견 이름
+  const [testCount, setTestCount] = useState(0); //참여횟수
+  const [nameData, setNameData] = useState(''); //반려견 이름
 
   //참여 횟수 디비에서 가져오기
   const getCountData = async () => {
@@ -33,44 +34,32 @@ const Home = () => {
       });
   };
 
-  //입력한 이름 디비에 전송
-  const postNameData = async () => {
-    await axios({
-      url: '/dog-name',
-      method: 'POST',
-      data: { name: `${nameData}` },
-    })
-      .then(response => {
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
   useEffect(() => {
     getCountData();
+    console.log(buttonAble);
   }, []);
 
   //input에 value있을 경우 버튼 활성화
-  const inputEvent = e => {
-    const { value } = e.target;
-    setButtonAble(value && true);
-    nameData = value;
+  const inputEvent = event => {
+    const { value } = event.target;
+    setButtonAble(value ? true : false);
   };
-
   //props 데이터
   const inputData = {
     name: 'input',
+    // value: nameData,
     type: 'text',
     placeholder: '반려견 이름을 적어주세요.',
     event: inputEvent,
   };
   const buttonData = {
-    type: 'button',
+    type: 'submit',
     url: '/check',
     able: buttonAble,
-    event: postNameData,
+    axiosData: {
+      url: '/dog-name',
+      data: { name: `${nameData}` },
+    },
     content: {
       text: '시작하기',
       font: true,
@@ -100,11 +89,12 @@ const Home = () => {
       color: Black,
     },
   ];
+
   return (
     <>
       <BackgroundWave />
       <MainChar>
-        <Image src={MainImg} />
+        <Image src={MainImg} alt={'퍼피티아이'} property />
       </MainChar>
       <ColumnComponent>
         <TextSub shape={subTextData} />
