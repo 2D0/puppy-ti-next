@@ -72,11 +72,10 @@ yarn dev
 ```
 ### server
 ```bash
-cd puppyti-server
 yarn srart
 ```
 ### 예시 이미지
-<img width="1087" alt="image" src="https://github.com/2D0/puppy-ti-next/assets/70118192/2f0f7aab-d14f-4107-a3d6-482f1cee5f6f">
+<img width="1083" alt="image" src="https://github.com/2D0/puppy-ti-next/assets/70118192/8c4e7fe2-868c-4954-a0d0-a51505e2a4fc">
 <br><br><br>
 
 ## 프로젝트 규칙
