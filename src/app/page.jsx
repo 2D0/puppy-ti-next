@@ -13,7 +13,6 @@ import { Share, TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
-import { Form, useForm } from 'react-hook-form';
 
 const Home = () => {
   const [buttonAble, setButtonAble] = useState(false);
