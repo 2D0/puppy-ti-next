@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "json-server --watch db.json --port 5000",
     "lint": "next lint"
   },
   "dependencies": {
@@ -13,20 +13,14 @@
     "axios": "^1.4.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
-    "fs": "^0.0.1-security",
-    "mysql": "^2.18.1",
-    "net": "^1.0.2",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "prettier": "^3.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.46.1",
     "react-router-dom": "^6.14.2",
     "react-svg": "^16.1.21",
-    "styled-components": "^6.0.4",
-    "tailwindcss": "3.3.2",
-    "tls": "^0.0.1"
+    "styled-components": "^6.0.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
