@@ -76,7 +76,7 @@ cd puppyti-server
 yarn srart
 ```
 ### 예시 이미지
-<img width="1491" alt="image" src="https://github.com/2D0/puppy-ti-next/assets/70118192/f7adcf40-e310-476f-86a6-fb08dd4c6289">
+<img width="1061" alt="image" src="https://github.com/2D0/puppy-ti-next/assets/70118192/f6c6e8f8-3b05-4a31-984d-19ba95d39b16">
 <br><br><br>
 
 ## 프로젝트 규칙
