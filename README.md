@@ -2,9 +2,11 @@
 ## 목차
 - [프로젝트 소개](#프로젝트-소개)
 - [프로젝트 디자인](#프로젝트-디자인)
+- [프로젝트 시작하기](#프로젝트-시작하기)
+- [개발 환경 설정](#개발-환경-설정)
+- [프로젝트 규칙](#프로젝트-규칙)
 - [MBTI 퍼센트 산출 가이드](#mbti-퍼센트-산출-가이드)
 - [MBTI 퍼센트 산출 예시](#mbti-퍼센트-산출-예시)
-- [프로젝트 시작하기](#프로젝트-시작하기)
 - [오픈 소스 라이센스](#오픈-소스-라이센스)
 - [대표 정보](#대표-정보)
 - [전하는 말](#전하는-말)
@@ -50,6 +52,156 @@
   <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/d4486bad-f75b-4776-8e4f-6a9e4846f84a" width="32%">
   <img style="display:block" src="https://github.com/2D0/puppy-ti-next/assets/70118192/65755171-a26a-45ba-91b2-8b0e7ca22044" width="32%">
 </div>
+<br><br>
+
+## 프로젝트 시작하기
+### 기여방법
+1. [여기로](https://github.com/2D0/puppy-ti-next/fork) 접속 후 Fork 하기.<br>
+2. `git checkout -b feature/thx이름` 명령어로 새 브랜치를 만들기.<br>
+3. `git commit -am 'Add some 작업 내용'` 명령어로 Commit 하기.<br>
+4. `git push origin feature/thx이름` 명령어로 브랜치에 Push 하기.<br>
+5. [여기로](https://github.com/2D0/puppy-ti-next/pulls) 접속 후 작업한 부분을 캡쳐해 사진을 등록하고 작업 설명 작성 후 Pull request 하기.
+<br><br><br>
+
+## 개발 환경 설정
+총 2개의 터미널을 사용해야 하며 프로젝트 경로에서 아래 명령어 실행하면 client와 server환경이 구축됩니다.
+### client 
+```bash
+yarn install
+yarn dev
+```
+### server
+```bash
+yarn srart
+```
+### 예시 이미지
+<img width="1083" alt="image" src="https://github.com/2D0/puppy-ti-next/assets/70118192/8c4e7fe2-868c-4954-a0d0-a51505e2a4fc">
+<br><br><br>
+
+## 프로젝트 규칙
+### commit 메시지
+```
+[Feat]      : 새로운 기능 추가
+[Fix]       : 버그 수정
+[Build]     : 빌드 관련 파일 수정
+[Ci]        : CI 관련 설정 수정
+[Docs]      : 문서 수정 (추가, 수정, 삭제), 패키지 매니저 수정(ex .gitignore 수정 같은 경우)
+[Style]     : 코드 스타일 수정
+[Design]    : css scss 등 style 작업
+[Refactor]  : 코드 리팩토링
+[Test]      : 테스트 코드, 리팩토링 테스트 코드 추가
+[Chore]     : 자잘한 수정, 빌드 업무 수정
+[Etc]       : 사진, 폰트 등 아이템 추가
+[Delete]    : 파일 및 디렉토리 삭제
+```
+### Atomic Design Pattern Component 생성
+```
+1. 재활용할 component 원본 파일에 1회 성 props 데이터를 기입하지 않는다.
+2. 재활용할 component의 props는 props.key 형식으로 받아 올 수 있게 한다.(전달받을 props 데이터가 1개여도 마찬가지)
+3. 페이지에서 component를 import 한 뒤 전달할 props는 key:value의 형식으로 변수에 할당해 전달한다.(전달할 props 데이터가 1개여도 마찬가지)
+```
+Component 생성 예시 코드 
+```JavaScript
+//** DefaultText.jsx  **//
+
+const TextDefault = ({ shape }) => {
+  return (
+    <DefaultText className={shape.font && FontGugi.className} color={shape.color}>
+      {shape.text}
+    </DefaultText>
+  );
+};
+export default TextDefault;
+```
+Component 사용 예시 코드 
+```JavaScript
+//** Footer.jsx **//
+
+//컴포넌트
+import { TextDefault } from '@/components/atoms';
+
+const textList = [
+  {
+    url: '/team_member',
+    text: '팀원 소개',
+    color: White,
+  },
+  {
+    url: '/inquiry',
+    text: '광고 및 후원 문의',
+    color: White,
+  },
+  {
+    url: '/source_license',
+    text: '라이센스',
+    color: White,
+  },
+];
+
+const Footer = () => {
+  return (
+    <FooterWrap>
+      <FooterInfo>
+        <RowText>
+          {textList.map((item, index) => {
+            return (
+              <TextList key={index} color={item.color}>
+                <TextDefault shape={item} />
+              </TextList>
+            );
+          })}
+        </RowText>
+      </FooterInfo>
+      <FooterCopy>ⓒ 2023. MAKETREE All rights reserved.</FooterCopy>
+    </FooterWrap>
+  );
+};
+export default Footer;
+```
+
+### Css z-index
+```
+* 한 칸의 블럭 뒤로 보낼 경우 *
+블럭-1	: -1
+블럭-1	: -2
+블럭-1	: -3
+
+* 여러개의 블럭 뒤로 보낼 경우 *
+다수블럭-1 : -10
+다수블럭-1 : -11
+다수블럭-1 : -12
+
+* 한 칸의 블럭 위에 올릴 경우 *
+블럭+1	: 1
+블럭+2	: 2
+블럭+3	: 3
+
+* 여러개의 블럭 위에 올릴 경우 *
+다수블럭+1 : 10
+다수블럭+2 : 11
+다수블럭+3 : 12
+
+* 버튼, 이미지 등 특정 컴포넌트 *
+버튼+1	: 100
+버튼+2	: 101
+버튼+3	: 102
+
+* 최 상단에 있어야 할 특정 컴포넌트 *
+헤더         : 996
+사이드메뉴 배경 : 997
+사이드메뉴     : 998
+모달 배경     : 999
+모달         : 1000
+```
+z-index 예시 코드
+```css
+.modal{
+  z-index:1000;
+}
+.modal-background{
+  z-index:999;
+}
+```
 <br><br>
 
 ## MBTI 퍼센트 산출 가이드
@@ -139,82 +291,6 @@ F 총 점수       : 7점
 
 T 최종 퍼센트    : 100 ÷ {(8 - 2) × 3} × 11 = 61.111점 => 61점(반올림)
 F 최종 퍼센트    : 100 ÷ {(8 - 2) × 3} × 7 = 38.8888889점 => 39점(반올림)
-```
-<br><br>
-
-## 프로젝트 시작하기
-### 프로젝트 기여방법
-1. [여기로](https://github.com/2D0/puppy-ti-next/fork) 접속 후 Fork 하기.<br>
-2. `git checkout -b feature/thx이름` 명령어로 새 브랜치를 만들기.<br>
-3. `git commit -am 'Add some 작업 내용'` 명령어로 Commit 하기.<br>
-4. `git push origin feature/thx이름` 명령어로 브랜치에 Push 하기.<br>
-5. [여기로](https://github.com/2D0/puppy-ti-next/pulls) 접속 후 작업한 부분을 캡쳐해 사진을 등록하고 작업 설명 작성 후 Pull request 하기.
-
-### 개발 환경 설정
-```bash
-yarn install
-yarn dev
-```
-
-### 커밋 메시지 규칙
-```
-Feat      : 새로운 기능 추가
-Fix       : 버그 수정
-Build     : 빌드 관련 파일 수정
-Ci        : CI 관련 설정 수정
-Docs      : 문서 수정 (추가, 수정, 삭제), 패키지 매니저 수정(ex .gitignore 수정 같은 경우)
-Style     : 코드 스타일 수정
-Design    : css scss 등 style 작업
-Refactor  : 코드 리팩토링
-Test      : 테스트 코드, 리팩토링 테스트 코드 추가
-Chore     : 자잘한 수정, 빌드 업무 수정
-Etc       : 사진, 폰트 등 아이템 추가
-Delete    : 파일 및 디렉토리 삭제
-```
-
-### Css 작업 시 z-index 규칙
-```
-* 한 칸의 블럭 뒤로 보낼 경우 *
-블럭-1	: -1
-블럭-1	: -2
-블럭-1	: -3
-
-* 여러개의 블럭 뒤로 보낼 경우 *
-다수블럭-1 : -10
-다수블럭-1 : -11
-다수블럭-1 : -12
-
-* 한 칸의 블럭 위에 올릴 경우 *
-블럭+1	: 1
-블럭+2	: 2
-블럭+3	: 3
-
-* 여러개의 블럭 위에 올릴 경우 *
-다수블럭+1 : 10
-다수블럭+2 : 11
-다수블럭+3 : 12
-
-* 버튼, 이미지 등 특정 컴포넌트 *
-버튼+1	: 100
-버튼+2	: 101
-버튼+3	: 102
-
-* 최 상단에 있어야 할 특정 컴포넌트 *
-헤더         : 996
-사이드메뉴 배경 : 997
-사이드메뉴     : 998
-모달 배경     : 999
-모달         : 1000
-```
-
-### ↓↓ z-index 예시 코드
-```css
-.modal{
-  z-index:1000;
-}
-.modal-background{
-  z-index:999;
-}
 ```
 <br><br>
 
