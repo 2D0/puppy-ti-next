@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SizeFull, PositionFit, BackGroundShadow, LightPurple, WhitePurple, SizeMediumLargeRem } from '@/style/Common.style';
+import { SizeFull, PositionFit, BackGroundShadow, LightPurple, WhitePurple, SizeMediumLargeRem, SizeMediumRem } from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 // ********************** 배경 **********************
@@ -16,10 +16,6 @@ export const WaveBlock = styled.div`
   position: relative;
   z-index: 2;
   background-color: ${LightPurple};
-
-  @media ${device.MaxHeightS} {
-    height: 23.75rem; //380px
-  }
 
   > img {
     width: ${SizeMediumLargeRem};
@@ -40,5 +36,20 @@ export const WaveBlock = styled.div`
     bottom: 0;
     z-index: 2;
     background-color: ${LightPurple};
+  }
+
+  @media ${device.MaxWidthL} {
+    border-radius: 0 0 0 ${SizeMediumRem};
+
+    > img {
+      width: ${SizeMediumRem};
+      height: ${SizeMediumRem};
+      bottom: -${SizeMediumRem};
+    }
+
+    &:before {
+      width: ${SizeMediumRem};
+      height: ${SizeMediumRem};
+    }
   }
 `;

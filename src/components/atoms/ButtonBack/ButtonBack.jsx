@@ -5,7 +5,6 @@ import * as A from '@/components/atoms/ButtonBack/ButtonBack.style';
 import backButtonText from '@/components/atoms/TextButton/TextButton';
 
 //이미지
-// import {Back} from '@/assets/img/icons/page.jsx.js';
 
 const ButtonBack = ({ backButtonImg }) => {
   return (

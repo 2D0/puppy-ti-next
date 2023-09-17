@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ContentsInner, PositionCenterRow, PositionCenterCol, SizeLargeRem } from '@/style/Common.style.jsx';
+import { ContentsInner, PositionCenterRow, PositionCenterCol, SizeLargeRem, SizeMiddleRem } from '@/style/Common.style.jsx';
 
 // **************** 상단 퍼센트 헤드 ****************
 export const CheckTopInner = styled.div`
@@ -140,6 +140,10 @@ export const CheckTop = styled.article`
   padding-bottom: 1.25rem; //20px
   padding-top: calc(6.25rem + ${SizeLargeRem}); //100px
   overflow: hidden;
+
+  @media ${device.MaxWidthL} {
+    padding-top: calc(6.25rem + ${SizeMiddleRem});
+  }
 
   ${CheckTopChar} {
     left: ${({ percent }) => percent - 28}%;

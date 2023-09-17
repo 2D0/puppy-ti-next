@@ -33,7 +33,7 @@ const ButtonNext = ({ buttonData }) => {
   };
 
   return (
-    <NextButton type={buttonData.type} able={buttonData.able}>
+    <NextButton type={buttonData.type} $able={buttonData.able}>
       <TextDefault shape={buttonData.content} />
     </NextButton>
   );

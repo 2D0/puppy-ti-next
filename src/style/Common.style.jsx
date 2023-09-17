@@ -20,9 +20,11 @@ export const SizeFull = css`
 `;
 export const SizeMaxWidth = `750px`;
 export const SizeSmallRem = `0.625rem`; //10px
+export const SizeDefaultSmallRem = `0.938rem`; //15px;
 export const SizeDefaultRem = `1.063rem`; //17px;
 export const SizeRegularRem = `1.563rem`; //25px;
 export const SizeMediumRem = `2.5rem`; //40px;
+export const SizeMiddleRem = `3.75rem`; //60px;
 export const SizeMediumLargeRem = `5rem`; //80px;
 export const SizeLargeRem = `5.33rem`; //85px;
 export const SizeExtraRem = `6.875rem`; //110px;
@@ -95,8 +97,12 @@ export const BackGroundShadow = css`
 // ******************** 형태 ********************
 //컨텐츠 이너
 export const ContentsInner = css`
-  width: calc(100% - 3.75rem); //-60px
+  width: calc(100% - ${SizeMiddleRem});
   margin: 0 auto;
+
+  @media ${device.MaxWidthL} {
+    width: calc(100% - ${SizeRegularRem});
+  }
 `;
 //기본 버튼, 인풋 모양
 export const CommonShape = css`
@@ -105,6 +111,10 @@ export const CommonShape = css`
   border-radius: ${SizeSmallRem};
   text-align: center;
   font-size: ${SizeDefaultRem};
+
+  @media ${device.MaxWidthL} {
+    font-size: ${SizeDefaultSmallRem};
+  }
 `;
 
 // ******************** 기능 ********************
@@ -119,28 +129,6 @@ export const A11yHidden = styled.span`
   overflow: hidden;
   white-space: nowrap;
 `;
-export const TextList = styled.li`
-  ${CenterAlign};
-  gap: 0.5rem;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 0.875rem; //14px
-    background: ${({ color }) => color};
-  }
-  &:last-child:after {
-    display: none;
-  }
-`;
-
-//글자 사이 막대 추가 및 가로 정렬
-export const RowText = styled.div`
-  ${Center};
-  width: 100%;
-  gap: ${SizeSmallRem};
-`;
 //컴포넌트
 export const ColumnComponent = styled.div`
   ${CenterAlign};
@@ -148,6 +136,7 @@ export const ColumnComponent = styled.div`
   gap: 0.938rem;
   width: 100%;
 `;
+
 // ********************** 모양 **********************
 //컨텐츠
 export const Wrap = styled.div`

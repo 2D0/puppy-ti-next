@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Black, CenterAlign, SizeFull, SizeMediumRem, SizeLargeRem, WhitePurple, SizeMaxWidth } from '@/style/Common.style';
+import { Black, CenterAlign, SizeFull, SizeMediumRem, SizeLargeRem, WhitePurple, SizeMaxWidth, SizeMiddleRem } from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 export const Body = styled.body<{ percent: number }>`
@@ -14,6 +14,9 @@ export const Body = styled.body<{ percent: number }>`
 
   @media ${device.MaxHeightFull} {
     height: 100%;
+  }
+  @media ${device.MaxWidthL} {
+    padding-top: ${SizeMiddleRem};
   }
 `;
 export const Main = styled.main`

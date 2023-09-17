@@ -106,7 +106,7 @@ Component 생성 예시 코드
 
 const TextDefault = ({ shape }) => {
   return (
-    <DefaultText className={shape.font && FontGugi.className} color={shape.color}>
+    <DefaultText className={shape.font && FontGugi.className} $color={shape.color}>
       {shape.text}
     </DefaultText>
   );
@@ -115,7 +115,7 @@ export default TextDefault;
 ```
 Component 사용 예시 코드 
 ```JavaScript
-//** Footer.jsx **//
+//** Footer.tsx **//
 
 //컴포넌트
 import { TextDefault } from '@/components/atoms';
@@ -145,7 +145,7 @@ const Footer = () => {
         <RowText>
           {textList.map((item, index) => {
             return (
-              <TextList key={index} color={item.color}>
+              <TextList key={index} $color={item.color}>
                 <TextDefault shape={item} />
               </TextList>
             );

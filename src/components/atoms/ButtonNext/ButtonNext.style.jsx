@@ -7,9 +7,9 @@ export const NextButton = styled.button`
   ${CommonShape};
   ${CommonShadow};
 
-  ${({ able }) => {
+  ${({ $able }) => {
     //input에 텍스트 있을 경우 버튼 색상 보라색으로 전환
-    return able
+    return $able
       ? css`
           background: ${LightPurple};
         `

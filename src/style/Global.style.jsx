@@ -7,9 +7,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  html{
-
-  }
   body {
     font-size: 1rem; //16px
     font-weight: 400;

@@ -38,5 +38,9 @@ export const ResultPercentNames = styled.div`
 export const ResultPercentName = styled.span`
   font-size: ${SizeDefaultRem};
   font-weight: 500;
+
+  @media ${device.MaxWidthL} {
+    font-size: ${SizeDefaultSmallRem};
+  }
 `;
 export const ResultPercentNum = styled.span``;

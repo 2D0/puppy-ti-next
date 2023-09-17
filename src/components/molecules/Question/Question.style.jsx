@@ -19,6 +19,10 @@ export const QuestionQATit = styled.li`
   color: ${White};
   font-size: ${SizeDefaultRem};
   ${Center};
+
+  @media ${device.MaxWidthL} {
+    font-size: ${SizeDefaultSmallRem};
+  }
 `;
 export const QuestionQATitL = styled(QuestionQATit)`
   background-color: ${Pink};
@@ -38,6 +42,10 @@ export const QuestionQATxt = styled.span`
   white-space: break-spaces;
   text-align: center;
   font-size: ${SizeDefaultRem};
+
+  @media ${device.MaxWidthL} {
+    font-size: ${SizeDefaultSmallRem};
+  }
 `;
 export const QuestionQABtns = styled.div`
   gap: 0 ${SizeRegularRem};
