@@ -2,7 +2,9 @@
   "test-count": {
     "count": "165"
   },
-  "dog-name": {},
+  "dog-name": {
+    "name": "12"
+  },
   "state": {
     "type": null,
     "score": null

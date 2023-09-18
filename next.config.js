@@ -33,7 +33,7 @@ const nextConfig = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
-        use: ['@svgr/webpack', { loader: 'file-loader' }],
+        use: ['@svgr/webpack', { loader: 'file-loader' }, { loader: 'url-loader' }],
       },
     );
 
