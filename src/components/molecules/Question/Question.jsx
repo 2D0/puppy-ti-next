@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import questionData from '@/app/api/Check/questions.json';
-import { ReactComponent as Foot } from '@/assets/img/icons/ico-foot.svg?url';
+import { ReactComponent as Foot } from '@/assets/img/icons/ico-foot.svg';
 
 //스타일
 import * as M from '@/components/molecules/Question/Question.style';

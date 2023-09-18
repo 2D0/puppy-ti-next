@@ -1,15 +1,43 @@
 import React from 'react';
 
 //스타일
-import { CheckQABoxList, CheckQABoxs } from '@/components/organisms/QuestionList/QuestionList.style';
+import { CheckBoxListWrap, CheckBoxList, CheckButton } from '@/components/organisms/QuestionList/QuestionList.style';
+import { Gray, Pink, Purple } from '@/style/Common.style';
+
+//이미지
+import { ReactComponent as FootButton } from '@/assets/img/Icons/ico-foot.svg';
+import { TextDefault } from '@/components/atoms';
 
 const QuestionList = questionData => {
   return (
-    <CheckQABoxs>
+    <CheckBoxListWrap>
       {questionData.questionData.map(item => (
-        <CheckQABoxList key={item.id}>{item.text}</CheckQABoxList>
+        <CheckBoxList key={item.id}>
+          <TextDefault shape={item} />
+          <CheckButton>
+            <FootButton stroke={Pink} fill={Pink} />
+          </CheckButton>
+          <CheckButton>
+            <FootButton stroke={Pink} fill={Pink} />
+          </CheckButton>
+          <CheckButton>
+            <FootButton stroke={Pink} fill={Pink} />
+          </CheckButton>
+          <CheckButton>
+            <FootButton stroke={Gray} fill={Gray} />
+          </CheckButton>
+          <CheckButton>
+            <FootButton stroke={Purple} fill={Purple} />
+          </CheckButton>
+          <CheckButton>
+            <FootButton stroke={Purple} fill={Purple} />
+          </CheckButton>
+          <CheckButton>
+            <FootButton stroke={Purple} fill={Purple} />
+          </CheckButton>
+        </CheckBoxList>
       ))}
-    </CheckQABoxs>
+    </CheckBoxListWrap>
   );
 };
 export default QuestionList;
