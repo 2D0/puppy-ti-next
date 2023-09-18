@@ -1,5 +1,15 @@
 import styled from 'styled-components';
-import { Black, CenterAlign, SizeFull, SizeMediumRem, SizeLargeRem, WhitePurple, SizeMaxWidth, SizeMiddleRem } from '@/style/Common.style';
+import {
+  Black,
+  CenterAlign,
+  SizeFull,
+  SizeMediumRem,
+  SizeLargeRem,
+  WhitePurple,
+  SizeMaxWidth,
+  SizeMiddleRem,
+  SizeRegularRem,
+} from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 export const Body = styled.body<{ percent: number }>`
@@ -27,6 +37,11 @@ export const Main = styled.main`
   padding: 4.375rem 0; //68px
   position: relative;
   overflow-x: hidden;
+
+  @media ${device.MaxWidthL} {
+    padding: ${SizeMiddleRem} 0;
+    gap: ${SizeRegularRem};
+  }
 `;
 export const SlashBackground = styled.div`
   width: 83%;

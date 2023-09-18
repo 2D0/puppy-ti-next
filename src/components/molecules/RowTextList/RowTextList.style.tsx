@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Center, CenterAlign, SizeSmallRem } from '@/style/Common.style';
 
 //글자 사이 막대 추가 및 가로 정렬

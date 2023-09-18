@@ -29,11 +29,17 @@ const ButtonNext = ({ buttonData }) => {
   };
   const clickEvent = () => {
     //axios를 사용하지 않는 경우 router만 실행되게
-    // buttonData.axiosData ? postData(buttonData.axiosData) : router.push(buttonData.url);
+    buttonData.axiosData ? postData(buttonData.axiosData) : router.push(buttonData.url);
   };
 
   return (
-    <NextButton type={buttonData.type} $able={buttonData.able}>
+    <NextButton
+      onClick={() => {
+        clickEvent();
+      }}
+      type={buttonData.type}
+      $able={buttonData.able}
+    >
       <TextDefault shape={buttonData.content} />
     </NextButton>
   );

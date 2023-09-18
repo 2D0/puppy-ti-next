@@ -6,12 +6,18 @@ import { DefaultText, DefaultTextLink } from '@/components/atoms/TextDefault/Tex
 import FontGugi from '@/app/api/fonts/FontGugi';
 
 const TextDefault = ({ shape }: { shape: TypeTextData }) => {
-  console.log(shape.url);
-  const DefaultTextComponent = shape.url ? DefaultText : DefaultTextLink;
   return (
-    <DefaultTextComponent className={shape.font && FontGugi.className} $color={shape.color}>
-      {shape.text}
-    </DefaultTextComponent>
+    <>
+      {shape.url ? (
+        <DefaultTextLink href={shape.url} className={shape.font && FontGugi.className} $color={shape.color}>
+          {shape.text}
+        </DefaultTextLink>
+      ) : (
+        <DefaultText className={shape.font && FontGugi.className} $color={shape.color}>
+          {shape.text}
+        </DefaultText>
+      )}
+    </>
   );
 };
 export default TextDefault;

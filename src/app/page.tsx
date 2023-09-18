@@ -16,9 +16,9 @@ import { MainImg } from '@/assets/img/Character/index';
 import RowTextList from '@/components/molecules/RowTextList/RowTextList';
 
 const Home = () => {
-  const [buttonAble, setButtonAble] = useState(false);
-  const [testCount, setTestCount] = useState(0); //참여횟수
-  const [nameData, setNameData] = useState(''); //반려견 이름
+  const [buttonAble, setButtonAble] = useState<boolean>(false);
+  const [testCount, setTestCount] = useState<number>(0); //참여횟수
+  const [nameData, setNameData] = useState<string>(''); //반려견 이름
 
   //참여 횟수 디비에서 가져오기
   const getCountData = async () => {
@@ -36,18 +36,21 @@ const Home = () => {
 
   useEffect(() => {
     getCountData();
-    console.log(buttonAble);
   }, []);
+  useEffect(() => {
+    console.log(buttonAble);
+  }, [buttonAble]);
 
   //input에 value있을 경우 버튼 활성화
-  const inputEvent = event => {
+  const inputEvent = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setButtonAble(value ? true : false);
+    setNameData(value);
   };
+
   //props 데이터
   const inputData = {
     name: 'input',
-    // value: nameData,
     type: 'text',
     placeholder: '반려견 이름을 적어주세요.',
     event: inputEvent,

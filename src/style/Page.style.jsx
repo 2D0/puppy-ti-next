@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { SlashBackgroundAtom } from '@/components/atoms/BackgroundSlash/BackgroundSlash.style';
 import device from '@/style/Device.style';
 
 export const MainChar = styled.div`

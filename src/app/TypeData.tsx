@@ -1,9 +1,9 @@
-import TextDefault from '../components/atoms/TextDefault/TextDefault';
-
 export type TypeHeaderData = {
   pathName: string;
   scroll: boolean;
   percent: number;
+  colorChange: string;
+  logo: string;
 };
 
 export type TypeInputData = {
@@ -41,4 +41,8 @@ export type TypeTextData = {
     text: string;
     color: string;
   };
+};
+
+export type TypeImageData = {
+  name: 'LOGO' | 'BACK' | 'SHARE' | 'LINK' | 'FACEBOOK' | 'KAKAO' | 'TWITTER';
 };

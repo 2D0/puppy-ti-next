@@ -1,12 +1,8 @@
 import styled from 'styled-components';
-import Link from 'next/link';
 import device from '@/style/Device.style';
-import { SizeLargeRem, Center, White, DarkPurple, SizeMiddleRem, SizeMediumLargeRem } from '@/style/Common.style';
+import { SizeLargeRem, Center, DarkPurple, SizeMediumLargeRem } from '@/style/Common.style';
 
 // ********************** 푸터 **********************
-export const FooterColor = `
-  ${White}
-`;
 export const FooterWrap = styled.footer`
   ${Center};
   flex-direction: column;
@@ -23,11 +19,4 @@ export const FooterWrap = styled.footer`
 export const FooterInfo = styled.ul`
   ${Center};
   gap: 0.5rem;
-`;
-export const FooterInfoLink = styled(Link)`
-  padding: 0.188rem 0.125rem; //3px 2px
-  color: ${FooterColor};
-`;
-export const FooterCopy = styled.div`
-  color: ${FooterColor};
 `;

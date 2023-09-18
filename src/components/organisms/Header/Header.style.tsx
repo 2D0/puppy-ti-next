@@ -1,9 +1,19 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import device from '@/style/Device.style';
-import { CenterAlign, PositionCenter, SizeLargeRem, Black, WhitePurple, LightPurple, SizeMiddleRem, White } from '@/style/Common.style';
 import { TypeHeaderData } from '@/app/TypeData';
+import { CenterAlign, PositionCenter, SizeLargeRem, Black, WhitePurple, LightPurple, SizeMiddleRem, White } from '@/style/Common.style';
 
 // ********************** 헤더 **********************
+export const HeaderCont = styled.header<{ $headerData: TypeHeaderData }>`
+  width: 100%;
+  max-width: 750px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 998;
+  background-color: ${({ $headerData }) => $headerData};
+`;
 export const HeaderInner = styled.div`
   ${CenterAlign};
   justify-content: flex-end;
@@ -16,52 +26,23 @@ export const HeaderInner = styled.div`
     height: ${SizeMiddleRem};
   }
 `;
-export const HeaderLogo = styled.h1`
+export const HeaderLogo = styled.a`
   ${PositionCenter};
-  width: auto;
-  height: 60%;
+  width: 95.5px;
 
-  > a {
-    > svg {
-      > path {
-        fill: ${White};
+  > svg {
+    > path {
+      fill: ${({ $headerData }) => $headerData};
+      &:nth-child(7) {
+        fill: #ed02d0;
+      }
+      &:nth-child(8) {
+        fill: #2d0ed0;
       }
     }
   }
-`;
-export const HeaderLogoImg = styled.img`
-  display: block;
-  width: 100%;
-  height: 100%;
-`;
-export const HeaderCont = styled.header<{ $headerData: TypeHeaderData }>`
-  width: 100%;
-  max-width: 750px;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-  z-index: 998;
 
-  ${({ $headerData }) => {
-    $headerData.scroll &&
-      css`
-        box-shadow: 0 0 7px #dcd5e8;
-      `;
-
-    switch ($headerData.pathName) {
-      case '/check':
-        return css`
-          background-color: ${$headerData.percent === 100 ? Black : WhitePurple};
-        `;
-      case '/result':
-        return css`
-          background-color: ${WhitePurple};
-        `;
-      default:
-        return css`
-          background-color: ${LightPurple};
-        `;
-    }
-  }};
+  @media ${device.MaxWidthL} {
+    width: 76.4px;
+  }
 `;

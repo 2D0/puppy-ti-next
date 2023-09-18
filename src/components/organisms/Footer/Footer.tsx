@@ -3,7 +3,7 @@ import React from 'react';
 
 //스타일
 import { White } from '@/style/Common.style';
-import { FooterWrap, FooterInfo, FooterInfoLink, FooterCopy } from '@/components/organisms/Footer/Footer.style';
+import { FooterWrap, FooterInfo } from '@/components/organisms/Footer/Footer.style';
 
 //컴포넌트
 import { TextDefault } from '@/components/atoms';
@@ -11,7 +11,7 @@ import RowTextList from '@/components/molecules/RowTextList/RowTextList';
 
 const textListData = [
   {
-    url: '/team_member',
+    url: '/team-members',
     text: '팀원 소개',
     color: White,
   },
@@ -21,7 +21,7 @@ const textListData = [
     color: White,
   },
   {
-    url: '/source_license',
+    url: '/open-source',
     text: '라이센스',
     color: White,
   },

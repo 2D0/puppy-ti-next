@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { SizeDefaultRem, SizeDefaultSmallRem } from '@/style/Common.style';
 import device from '@/style/Device.style';
+import Link from 'next/link';
 
 export const DefaultTextShape = css`
   font-size: ${SizeDefaultRem};
@@ -14,6 +15,6 @@ export const DefaultTextShape = css`
 export const DefaultText = styled.span`
   ${DefaultTextShape}
 `;
-export const DefaultTextLink = styled.span`
+export const DefaultTextLink = styled(Link)`
   ${DefaultTextShape}
 `;
