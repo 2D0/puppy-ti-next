@@ -1,27 +1,16 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { UseContextData } from '@/app/ContextData';
 
 const ResultPage = () => {
+  const { localNameData } = UseContextData();
   const [resultData, setResultData] = useState([]);
   const [nameData, setNameData] = useState();
 
-  const getData = async () => {
-    await axios({
-      url: '/dog-name',
-      method: 'GET',
-    })
-      .then(response => {
-        setNameData(response.data.name);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
   useEffect(() => {
-    getData();
-  }, []);
+    setNameData(localStorage.getItem('dog-name'));
+  }, [nameData]);
   return (
     <div>
       ResultPage
