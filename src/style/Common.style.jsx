@@ -130,11 +130,14 @@ export const A11yHidden = styled.span`
   white-space: nowrap;
 `;
 //컴포넌트
-export const ColumnComponent = styled.div`
+export const ColumnComponentStyle = css`
   ${CenterAlign};
   flex-direction: column;
   gap: 0.938rem;
   width: 100%;
+`;
+export const ColumnComponent = styled.div`
+  ${ColumnComponentStyle}
 `;
 
 // ********************** 모양 **********************

@@ -13,7 +13,7 @@ export const BackgroundWrap = styled.div`
 export const WaveBlock = styled.div`
   width: 100%;
   height: fit-content;
-  padding-top: ${SizeLargeRem};
+  //padding-top: ${SizeLargeRem};
   overflow-x: hidden;
 
   > svg {

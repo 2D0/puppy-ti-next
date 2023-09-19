@@ -4,18 +4,19 @@ import React, { useEffect, useState } from 'react';
 import { QuestionList } from '@/components/organisms/index';
 import axios from 'axios';
 import { ButtonNext } from '@/components/atoms';
+import { UseContextData } from '@/app/ContextData';
 
 const CheckPage = () => {
-  const [percent, setPercent] = useState(0);
+  const { percent } = UseContextData();
   const [buttonAble, setButtonAble] = useState(false);
   const [questions, setQuestions] = useState([]);
+
   const getQuestionData = async () => {
     await axios({
       url: '/questions',
       method: 'GET',
     })
       .then(response => {
-        console.log(response.data);
         setQuestions(response.data);
       })
       .catch(error => {

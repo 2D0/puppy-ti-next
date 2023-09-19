@@ -1,6 +1,5 @@
 export type TypeHeaderData = {
   pathName: string;
-  scroll: boolean;
   percent: number;
   colorChange: string;
   logo: string;
@@ -19,10 +18,7 @@ export type TypeButtonData = {
   url: string;
   able: boolean;
   event: React.MouseEvent<HTMLElement>;
-  axiosData: {
-    url: string;
-    data: Record<string, any>;
-  };
+  axios: boolean;
   content: {
     text: string;
     font: boolean;

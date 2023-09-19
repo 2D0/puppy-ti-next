@@ -3,7 +3,7 @@ export { default as CommonStyle } from './Common.style';
 export { default as DeviceStyle } from './Device.style';
 export { default as GlobalStyle } from './Global.style';
 export { default as InquiryStyle } from './Inquiry.style';
-export { default as LayoutStyle } from './Layout.style';
+export { default as LayoutStyle } from './LayoutTemplate.style';
 export { default as MainStyle } from './Main.style';
 export { default as NoticeStyle } from './Notice.style';
 export { default as ResultStyle } from './Result.style';
