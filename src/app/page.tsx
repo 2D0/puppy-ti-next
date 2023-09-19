@@ -1,51 +1,64 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import axios from 'axios';
+import Image from 'next/image';
+import { UseContextData } from '@/app/ContextData';
 
 //스타일
-import { MainChar } from '@/style/Page.style';
+import { MainChar, MainForm } from '@/style/Page.style';
 
 //컴포넌트
-import { ColumnComponent, DarkPurple, Purple, Black } from '@/style/Common.style';
+import { ColumnComponent, DarkPurple, Purple } from '@/style/Common.style';
 import { ButtonNext, NameInput, TextSub } from '@/components/atoms/index';
-import { Share, TitleBox } from '@/components/molecules/index';
+import { TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
-import RowTextList from '@/components/molecules/RowTextList/RowTextList';
+import { useRouter } from 'next/navigation';
 
 const Home = () => {
+  const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
-  const [testCount, setTestCount] = useState<number>(0); //참여횟수
-  const [nameData, setNameData] = useState<string>(''); //반려견 이름
-
-  //참여 횟수 디비에서 가져오기
-  const getCountData = async () => {
-    await axios({
-      url: '/test-count',
-      method: 'GET',
-    })
-      .then(response => {
-        setTestCount(response.data.count);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    getCountData();
-  }, []);
-  useEffect(() => {
-    console.log(buttonAble);
-  }, [buttonAble]);
+  const [nameData, setNameData] = useState<string>(); //반려견 이름
+  const { localNameData, setLocalNameData, testCount, setTestCount } = UseContextData();
 
   //input에 value있을 경우 버튼 활성화
-  const inputEvent = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    setButtonAble(value ? true : false);
+  const inputEvent = (event: React.SyntheticEvent<HTMLInputElement>) => {
+    const {
+      currentTarget: { value },
+    } = event;
     setNameData(value);
+    setButtonAble(!!value);
+  };
+
+  //submit 이벤트
+  const onSubmit = (event: React.SyntheticEvent<HTMLInputElement>) => {
+    event.preventDefault();
+
+    const postData = async () => {
+      await axios({
+        url: '/main-data',
+        method: 'POST',
+        data: { count: testCount },
+      })
+        .then(response => {
+          //axios 통신 error가 났을 때 페이지 이동을 막기 위해 then에 router 기능 추가
+          router.push(buttonData.url);
+          console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    };
+    postData();
+  };
+
+  const countUp = () => {
+    //로컬 스토리지에 강아지 이름 추가
+    typeof window !== 'undefined' && localStorage.setItem('dog-name', `${nameData}`);
+
+    //시작하기 버튼 누르면 참여횟수 1증가
+    setTestCount(testCount + 1);
   };
 
   //props 데이터
@@ -58,15 +71,18 @@ const Home = () => {
   const buttonData = {
     type: 'submit',
     url: '/check',
+    method: 'POST',
     able: buttonAble,
-    axiosData: {
-      url: '/dog-name',
-      data: { name: `${nameData}` },
-    },
+    event: countUp,
+    axios: true,
     content: {
       text: '시작하기',
       font: true,
     },
+  };
+  const subTextData = {
+    text: '나의 반려견은 어떤 성향일까?',
+    font: true,
   };
   const titleData = {
     bigSize: true,
@@ -78,20 +94,6 @@ const Home = () => {
     },
     lastText: '티아이',
   };
-  const subTextData = {
-    text: '나의 반려견은 어떤 성향일까?',
-    font: true,
-  };
-  const textListData = [
-    {
-      text: '참여 횟수',
-      color: Black,
-    },
-    {
-      text: testCount.toString(),
-      color: Black,
-    },
-  ];
 
   return (
     <>
@@ -102,12 +104,10 @@ const Home = () => {
         <TextSub shape={subTextData} />
         <TitleBox shape={titleData} />
       </ColumnComponent>
-      <ColumnComponent>
+      <MainForm onSubmit={onSubmit}>
         <NameInput inputData={inputData} />
         <ButtonNext buttonData={buttonData} />
-      </ColumnComponent>
-      <RowTextList textListData={textListData} />
-      <Share />
+      </MainForm>
     </>
   );
 };
