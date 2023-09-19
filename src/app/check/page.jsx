@@ -28,11 +28,16 @@ const CheckPage = () => {
     getQuestionData();
   }, []);
 
+  const clickEvent = () => {
+    console.log('click');
+  };
+
   const buttonData = {
     type: 'button',
     url: '/result',
     able: buttonAble,
-    event: null,
+    axios: true,
+    event: clickEvent,
     content: {
       text: '결과보기',
       font: true,

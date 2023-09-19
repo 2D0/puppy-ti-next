@@ -20,7 +20,7 @@ const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const [nameData, setNameData] = useState<string>(); //반려견 이름
-  const { localNameData, setLocalNameData, testCount, setTestCount } = UseContextData();
+  const { testCount, setTestCount } = UseContextData();
 
   //input에 value있을 경우 버튼 활성화
   const inputEvent = (event: React.SyntheticEvent<HTMLInputElement>) => {

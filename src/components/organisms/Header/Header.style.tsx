@@ -29,12 +29,13 @@ export const HeaderLogo = styled.a`
 export const HeaderCont = styled.header<{ $headerData: TypeHeaderData }>`
   width: 100%;
   max-width: 750px;
-  height: ${SizeLargeRem};
+  height: fit-content;
   ${PositionCenterRow};
   position: fixed;
   top: 0;
   z-index: 998;
   background-color: ${({ $headerData }) => $headerData};
+  ${({ $scroll, $headerData }) => $headerData !== Black && $scroll && IconShadow}
 
   ${HeaderLogo} {
     > svg {
@@ -60,12 +61,12 @@ export const HeaderCont = styled.header<{ $headerData: TypeHeaderData }>`
   }
 `;
 export const HeaderInner = styled.div`
-  ${SizeFull};
+  width: 100%;
+  height: ${SizeLargeRem};
   ${CenterAlign};
   justify-content: flex-end;
   margin: 0 auto;
   position: relative;
-  ${({ $scroll, $headerData }) => $headerData !== Black && $scroll && IconShadow}
 
   @media ${device.MaxWidthL} {
     height: ${SizeMiddleRem};

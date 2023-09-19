@@ -9,28 +9,18 @@ import { HeaderCont, HeaderInner, HeaderLogo } from '@/components/organisms/Head
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
 import { SvgComponent } from '@/components/atoms';
 import { UseContextData } from '@/app/ContextData';
+import { usePathname } from 'next/navigation';
 
-//이미지
-const imageData = {
-  name: 'LOGO',
-};
 export function Header() {
+  const pathName = usePathname(); //현재 주소
   const [scroll, setScroll] = useState<boolean>(false); //스크롤 감지
+  const { percent, logoChange, colorChange } = UseContextData();
 
-  const { pathName, percent, colorChange } = UseContextData();
-
-  //props 데이터
-  const headerData = {
-    pathName: `${pathName}`,
-    scroll: scroll,
-    percent: percent,
-    colorChange: colorChange,
-  };
+  //스크롤 시 헤더 및 그림자 효과
   const handleScroll = () => {
     const scrollPosition = window.scrollY; //스크롤 위치
     setScroll(scrollPosition > 20);
   };
-
   useEffect(() => {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
@@ -40,13 +30,15 @@ export function Header() {
   }, [scroll]);
 
   return (
-    <HeaderCont $headerData={headerData.colorChange}>
-      <HeaderInner $scroll={scroll}>
-        <HeaderLogo href={'/'} $headerData={headerData.logoChange}>
-          <SvgComponent imageData={imageData} />
+    <HeaderCont $headerData={colorChange} $scroll={scroll}>
+      <HeaderInner>
+        <HeaderLogo href={'/'} $headerData={logoChange}>
+          <SvgComponent imageData={{ name: 'LOGO' }} />
         </HeaderLogo>
       </HeaderInner>
-      {/*{headerData.pathName === '/check' && <CheckHead percent={headerData.percent} />}*/}
+
+      {pathName === '/check' && <CheckHead percent={percent} />}
+      {console.log(pathName)}
     </HeaderCont>
   );
 }

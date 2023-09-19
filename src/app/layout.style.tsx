@@ -17,7 +17,9 @@ export const Body = styled.body<{ percent: number }>`
   height: 100vh;
   max-width: ${SizeMaxWidth};
   margin: 0 auto;
-  padding-top: ${SizeLargeRem};
+  padding-top: ${({ $pathName }) => {
+    return $pathName === '/check' ? `calc(6.25rem + ${SizeLargeRem})` : SizeLargeRem;
+  }};
   position: relative;
   overflow-y: auto;
   background-color: ${({ percent }) => (percent === 100 ? Black : WhitePurple)};

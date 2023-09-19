@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
-import { ContentsInner, PositionCenterRow, PositionCenterCol, SizeLargeRem, SizeMiddleRem } from '@/style/Common.style.jsx';
+import { ContentsInner, PositionCenterRow, PositionCenterCol, SizeLargeRem, SizeMiddleRem, SizeRegularRem } from '@/style/Common.style.jsx';
+import device from '@/style/Device.style';
 
 // **************** 상단 퍼센트 헤드 ****************
 export const CheckTopInner = styled.div`
@@ -61,10 +62,10 @@ export const CheckTopCharImg = styled.img`
 
 //산책 캐릭터
 export const CheckTopChar = styled.div`
-  width: 11.563rem; //185px
-  height: 11.563rem; //185px
+  width: fit-content;
+  height: fit-content;
   position: absolute;
-  bottom: 3.125rem; //50px
+  bottom: ${SizeRegularRem};
   transition: all 0.5s ease;
   z-index: 1;
 `;
@@ -146,7 +147,7 @@ export const CheckTop = styled.article`
   }
 
   ${CheckTopChar} {
-    left: ${({ percent }) => percent - 28}%;
+    left: ${({ percent }) => `calc(${percent}% - (178px + (${SizeMiddleRem} / 2)))`};
   }
 
   // 폭죽 별

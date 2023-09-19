@@ -21,7 +21,7 @@ const ContextData = createContext<TypeContext | undefined>(undefined);
 // 컨텍스트 프로바이더
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [testCount, setTestCount] = useState<number>(0);
-  const [percent, setPercent] = useState<number>(0); // 질문 개수 선택률
+  const [percent, setPercent] = useState<number>(30); // 질문 개수 선택률
   const [colorChange, setColorChange] = useState<string>(LightPurple); //헤더 및 배경 색상
 
   return (
@@ -44,7 +44,7 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
 export const UseContextData = () => {
   const context = useContext(ContextData);
   if (!context) {
-    throw new Error('UseContextData must be used within a ContextProvider');
+    console.log('UseContextData must be used within a ContextProvider');
   }
   return context;
 };
