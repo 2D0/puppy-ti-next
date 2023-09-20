@@ -9,7 +9,7 @@ const ResultPage = () => {
   const [nameData, setNameData] = useState();
 
   useEffect(() => {
-    setNameData(localStorage.getItem('dog-name'));
+    setNameData(sessionStorage.getItem('dog-name'));
   }, [nameData]);
   return (
     <div>

@@ -39,7 +39,7 @@ const Home = () => {
       await axios({
         url: '/main-data',
         method: 'POST',
-        data: { count: testCount },
+        data: { name: nameData, count: testCount },
       })
         .then(response => {
           //axios 통신 error가 났을 때 페이지 이동을 막기 위해 then에 router 기능 추가
@@ -54,8 +54,8 @@ const Home = () => {
   };
 
   const countUp = () => {
-    //로컬 스토리지에 강아지 이름 추가
-    typeof window !== 'undefined' && localStorage.setItem('dog-name', `${nameData}`);
+    //세션 스토리지에 강아지 이름 추가
+    typeof window !== 'undefined' && sessionStorage.setItem('dog-name', `${nameData}`);
 
     //시작하기 버튼 누르면 참여횟수 1증가
     setTestCount(testCount + 1);
