@@ -25,6 +25,7 @@ export const SizeDefaultRem = `1.063rem`; //17px;
 export const SizeRegularRem = `1.563rem`; //25px;
 export const SizeMediumRem = `2.5rem`; //40px;
 export const SizeMiddleRem = `3.75rem`; //60px;
+export const SizeMiddleLargeRem = `4.375rem`; //68px;
 export const SizeMediumLargeRem = `5rem`; //80px;
 export const SizeLargeRem = `5.33rem`; //85px;
 export const SizeExtraRem = `6.875rem`; //110px;

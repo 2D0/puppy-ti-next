@@ -14,7 +14,7 @@ import { usePathname } from 'next/navigation';
 export function Header() {
   const pathName = usePathname(); //현재 주소
   const [scroll, setScroll] = useState<boolean>(false); //스크롤 감지
-  const { percent, logoChange, colorChange } = UseContextData();
+  const { percent, colorChange } = UseContextData();
 
   //스크롤 시 헤더 및 그림자 효과
   const handleScroll = () => {
@@ -32,13 +32,12 @@ export function Header() {
   return (
     <HeaderCont $headerData={colorChange} $scroll={scroll}>
       <HeaderInner>
-        <HeaderLogo href={'/'} $headerData={logoChange}>
+        <HeaderLogo href={'/'}>
           <SvgComponent imageData={{ name: 'LOGO' }} />
         </HeaderLogo>
       </HeaderInner>
 
-      {pathName === '/check' && <CheckHead percent={percent} />}
-      {console.log(pathName)}
+      {pathName === '/check' && <CheckHead />}
     </HeaderCont>
   );
 }

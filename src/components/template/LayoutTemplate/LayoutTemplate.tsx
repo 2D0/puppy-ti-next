@@ -84,7 +84,7 @@ const LayoutTemplate = ({ children }) => {
   return (
     <>
       <Header />
-      <Main>
+      <Main $pathName={pathName}>
         {children}
 
         <RowTextList textListData={textListData} />

@@ -23,7 +23,7 @@ export const HeaderLogo = styled.a`
   width: 95.5px;
 
   @media ${device.MaxWidthL} {
-    width: 76.4px;
+    width: 60.61px;
   }
 `;
 export const HeaderCont = styled.header<{ $headerData: TypeHeaderData }>`
