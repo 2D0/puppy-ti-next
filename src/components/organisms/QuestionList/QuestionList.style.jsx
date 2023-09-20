@@ -9,8 +9,3 @@ export const CheckBoxListWrap = styled.ul`
   gap: ${SizeMediumRem} 0;
 `;
 export const CheckBoxList = styled.li``;
-export const CheckButton = styled.button``;
-export const CheckQATop = styled.ul`
-  display: flex;
-  height: ${SizeMediumRem};
-`;

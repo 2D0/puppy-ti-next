@@ -7,9 +7,10 @@ import { ButtonNext } from '@/components/atoms';
 import { UseContextData } from '@/app/ContextData';
 
 const CheckPage = () => {
+  const [checkPercent, setCheckPercent] = useState<number>(10);
   const { percent } = UseContextData();
-  const [buttonAble, setButtonAble] = useState(false);
-  const [questions, setQuestions] = useState([]);
+  const [buttonAble, setButtonAble] = useState<boolean>(false);
+  const [questions, setQuestions] = useState<object>([]);
 
   const getQuestionData = async () => {
     await axios({
