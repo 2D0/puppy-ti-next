@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import StyledComponentsRegistry from '@/../lib/registry';
+import { usePathname } from 'next/navigation';
 import { ContextProvider } from '@/app/ContextData';
 
 //스타일
@@ -12,7 +13,6 @@ import spoqaFont from '@/app/api/fonts/FontSpoca';
 
 //컴포넌트
 import LayoutTemplate from '@/components/template/LayoutTemplate/LayoutTemplate';
-import { usePathname } from 'next/navigation';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const pathName = usePathname(); //현재 주소

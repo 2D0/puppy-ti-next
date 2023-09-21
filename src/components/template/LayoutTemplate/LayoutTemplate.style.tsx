@@ -12,7 +12,7 @@ export const Main = styled.main`
   padding: ${({ $pathName }) => ($pathName === '/check' ? `0 0 ${SizeMiddleLargeRem} 0` : ` ${SizeMiddleLargeRem} 0`)};
 
   @media ${device.MaxWidthL} {
-    padding: ${({ $pathName }) => ($pathName === '/check' ? `0 0 ${SizeMiddleRem}} 0` : ` ${SizeMiddleRem}} 0`)};
+    padding: ${({ $pathName }) => ($pathName === '/check' ? `0 0 ${SizeMiddleRem} 0` : ` ${SizeMiddleRem} 0`)};
     gap: ${SizeRegularRem};
   }
 `;

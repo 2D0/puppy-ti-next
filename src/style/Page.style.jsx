@@ -16,5 +16,7 @@ export const MainChar = styled.div`
   }
 `;
 export const MainForm = styled.form`
-  ${ColumnComponentStyle}
+  ${ColumnComponentStyle};
+  width: 100%;
+  align-items: center;
 `;

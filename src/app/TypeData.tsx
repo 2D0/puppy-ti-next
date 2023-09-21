@@ -26,19 +26,37 @@ export type TypeButtonData = {
 };
 
 export type TypeTextData = {
-  firstText: string;
   text: string;
-  lastText: string;
-  bigSize: boolean;
   color: string;
-  font: boolean;
   url: string;
+  font: boolean;
+  bigSize: boolean;
+  first: {
+    text: string;
+    color: string;
+    font: boolean;
+  };
   accent: {
     text: string;
     color: string;
+    font: boolean;
+  };
+  last: {
+    text: string;
+    color: string;
+    font: boolean;
   };
 };
 
 export type TypeImageData = {
   name: 'LOGO' | 'BACK' | 'SHARE' | 'LINK' | 'FACEBOOK' | 'KAKAO' | 'TWITTER' | 'FIREWORK' | 'WALKING';
+};
+
+export type percentBarData = {
+  percent: number;
+  height: boolean;
+  top: {
+    first: TypeTextData;
+    last: TypeTextData;
+  };
 };

@@ -18,10 +18,14 @@ import {
 import { SvgComponent } from '@/components/atoms';
 import { UseContextData } from '@/app/ContextData';
 import PercentBar from '@/components/molecules/PercentBar/PercentBar';
+import { LightPurple } from '@/style/Common.style';
 
 const CheckHead = () => {
   const { percent } = UseContextData();
 
+  const percentBarData = {
+    percent: percent,
+  };
   return (
     <CheckTop percent={percent}>
       <CheckTopInner>
@@ -44,7 +48,7 @@ const CheckHead = () => {
         </FireworkLeft3>
       </Fireworks>
       <CheckTopBar>
-        <PercentBar percent={percent} />
+        <PercentBar shape={percentBarData} />
       </CheckTopBar>
     </CheckTop>
   );

@@ -9,10 +9,14 @@ import { TitleWrap, TextAccent } from './TitleBox.style';
 
 const TitleBox = ({ shape }: { shape: TypeTextData }) => {
   return (
-    <TitleWrap $bigSize={shape.bigSize} className={shape.font && gugiFont.className} $color={shape.color}>
-      <span>{shape.firstText}</span>
-      <TextAccent $color={shape.accent.color}>{shape.accent.text}</TextAccent>
-      <span>{shape.lastText}</span>
+    <TitleWrap $bigSize={shape.bigSize} $color={shape.color}>
+      {shape.first && <span className={shape.first?.font && gugiFont.className}>{shape.first.text}</span>}
+      {shape.accent && (
+        <TextAccent className={shape.accent?.font && gugiFont.className} $color={shape.accent?.color}>
+          {shape.accent.text}
+        </TextAccent>
+      )}
+      {shape.last && <span className={shape.last?.font && gugiFont.className}>{shape.last.text}</span>}
     </TitleWrap>
   );
 };

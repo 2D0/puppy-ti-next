@@ -1,4 +1,4 @@
-//반응형 전용 device size 데이터
+9; //반응형 전용 device size 데이터
 const size = {
   MaxWidthS: '375px',
   MaxWidthM: '425px',
@@ -13,6 +13,6 @@ const device = {
   MaxWidthL: `(max-width: ${size.MaxWidthL})`,
   MaxWidthFull: `(max-width: ${size.MaxWidthFull})`,
   MaxHeightS: `(max-height: ${size.MaxHeightS})`,
-  MaxHeightFull: `(max-height: ${size.MaxWidthFull})`,
+  MaxHeightFull: `(max-height: ${size.MaxHeightFull})`,
 };
 export default device;

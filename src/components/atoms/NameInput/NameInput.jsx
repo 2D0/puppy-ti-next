@@ -4,6 +4,6 @@ import React from 'react';
 import { InputBox } from './NameInput.style';
 
 const NameInput = ({ inputData }) => {
-  return <InputBox onChange={inputData.event} type={inputData.type} placeholder={inputData.placeholder} />;
+  return <InputBox onChange={inputData?.event} type={inputData?.type} placeholder={inputData?.placeholder} />;
 };
 export default NameInput;

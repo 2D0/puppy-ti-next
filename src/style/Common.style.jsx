@@ -108,7 +108,7 @@ export const ContentsInner = css`
 //기본 버튼, 인풋 모양
 export const CommonShape = css`
   ${ContentsInner};
-  ${SizeMiddleRem};
+  height: ${SizeMiddleRem};
   border-radius: ${SizeSmallRem};
   text-align: center;
   font-size: ${SizeDefaultRem};
@@ -132,13 +132,14 @@ export const A11yHidden = styled.span`
 `;
 //컴포넌트
 export const ColumnComponentStyle = css`
-  ${CenterAlign};
+  ${Flex};
   flex-direction: column;
   gap: 0.938rem;
-  width: 100%;
 `;
 export const ColumnComponent = styled.div`
-  ${ColumnComponentStyle}
+  ${ColumnComponentStyle};
+  width: 100%;
+  align-items: center;
 `;
 
 // ********************** 모양 **********************

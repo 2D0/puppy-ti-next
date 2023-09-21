@@ -8,7 +8,7 @@ import { UseContextData } from '@/app/ContextData';
 import { MainChar, MainForm } from '@/style/Page.style';
 
 //컴포넌트
-import { ColumnComponent, DarkPurple, Purple } from '@/style/Common.style';
+import { ColumnComponent, DarkPurple, LightPurple, Purple } from '@/style/Common.style';
 import { ButtonNext, NameInput, TextSub } from '@/components/atoms/index';
 import { TitleBox } from '@/components/molecules/index';
 
@@ -83,16 +83,20 @@ const Home = () => {
   const subTextData = {
     text: '나의 반려견은 어떤 성향일까?',
     font: true,
+    color: LightPurple,
   };
   const titleData = {
     bigSize: true,
-    color: DarkPurple,
-    font: true,
     accent: {
       text: '퍼피',
       color: Purple,
+      font: true,
     },
-    lastText: '티아이',
+    last: {
+      text: '티아이',
+      color: DarkPurple,
+      font: true,
+    },
   };
 
   return (

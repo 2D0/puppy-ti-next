@@ -89,8 +89,8 @@ const LayoutTemplate = ({ children }) => {
 
         <RowTextList textListData={textListData} />
         {useShare && <Share />}
-        {useBackground && <Background />}
       </Main>
+      {useBackground && <Background />}
       <Footer />
     </>
   );

@@ -1,16 +1,33 @@
-import styled from 'styled-components';
-import { White, LightPurple, CommonShadow, PositionFit, SizeSmallRem, SizeRegularRem, SizeDefaultSmallRem } from '@/style/Common.style.jsx';
+import styled, { css } from 'styled-components';
+import {
+  White,
+  LightPurple,
+  CommonShadow,
+  PositionFit,
+  SizeSmallRem,
+  SizeRegularRem,
+  SizeDefaultSmallRem,
+  SizeMediumRem,
+} from '@/style/Common.style.jsx';
 
 // ********************* 퍼센트 바 ********************
-export const PercentBar = styled.div`
+export const PercentBarWrap = styled.div``;
+export const PercentBarBox = styled.div`
   width: 100%;
-  height: ${SizeDefaultSmallRem};
-  border-radius: 0.25rem; //4px
   overflow: hidden;
   position: relative;
   background-color: ${White};
-
-  ${({ $percent }) => $percent !== 100 && CommonShadow};
+  ${({ $shape }) =>
+    $shape.height
+      ? css`
+          height: ${SizeMediumRem};
+          border-radius: ${SizeSmallRem};
+        `
+      : css`
+          height: ${SizeDefaultSmallRem};
+          border-radius: 0.25rem; //4px
+        `};
+  ${({ $shape }) => $shape.percent !== 100 && CommonShadow}
 `;
 export const PercentBarFill = styled.div`
   ${PositionFit};

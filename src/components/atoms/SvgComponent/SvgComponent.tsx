@@ -14,7 +14,7 @@ import { ReactComponent as Walking } from '@/assets/img/Icons/check-walking.svg'
 
 const SvgComponent = ({ imageData }: { imageData: TypeImageData }) => {
   const isDiscernIcon = ({ imageData }) => {
-    switch (imageData.name) {
+    switch (imageData?.name) {
       case 'LOGO':
         return Logo;
       case 'BACK':

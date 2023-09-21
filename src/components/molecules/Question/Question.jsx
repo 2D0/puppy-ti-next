@@ -10,7 +10,11 @@ import {
   CheckButton,
   QuestionBoxText,
 } from '@/components/molecules/Question/Question.style';
+
+//이미지
 import { ReactComponent as FootButton } from '@/assets/img/Icons/ico-foot.svg';
+
+//컴포넌트
 import { TextDefault } from '@/components/atoms';
 
 const CheckQuestion = () => {

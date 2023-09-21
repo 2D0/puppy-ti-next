@@ -12,19 +12,19 @@ const ButtonNext = ({ buttonData }) => {
 
   const clickEvent = () => {
     //axios를 사용하지 않는 경우 router만 실행되게
-    !buttonData.axios && router.push(buttonData.url);
+    !buttonData?.axios && router.push(buttonData?.url);
   };
 
   return (
     <NextButton
       onClick={() => {
         clickEvent();
-        buttonData.event();
+        buttonData?.event();
       }}
-      type={buttonData.type}
-      $able={buttonData.able}
+      type={buttonData?.type}
+      $able={buttonData?.able}
     >
-      <TextDefault shape={buttonData.content} />
+      <TextDefault shape={buttonData?.content} />
     </NextButton>
   );
 };

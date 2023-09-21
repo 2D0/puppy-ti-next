@@ -1,17 +1,5 @@
 import styled from 'styled-components';
-import {
-  Black,
-  CenterAlign,
-  SizeFull,
-  SizeMediumRem,
-  SizeLargeRem,
-  WhitePurple,
-  SizeMaxWidth,
-  SizeMiddleRem,
-  SizeRegularRem,
-  SizeExtraRem,
-  SizeDefaultSmallRem,
-} from '@/style/Common.style';
+import { Black, SizeLargeRem, WhitePurple, SizeMaxWidth, SizeMiddleRem, SizeExtraRem, SizeDefaultSmallRem } from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 export const Body = styled.body<{ percent: number }>`

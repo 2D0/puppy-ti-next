@@ -1,17 +1,26 @@
 import React from 'react';
+import { percentBarData } from '@/app/TypeData';
 
 //스타일
 import { A11yHidden } from '@/style/Common.style';
-import { PercentBar, PercentBarFill } from '@/components/molecules/PercentBar/PercentBar.style';
+import { PercentBarWrap, PercentBarBox, PercentBarFill } from '@/components/molecules/PercentBar/PercentBar.style';
+import { PercentBarText } from '@/style/Result.style';
+import { TextDefault } from '@/components/atoms';
 
-const CheckHead = ({ percent }) => {
+const PercentBar = ({ shape }: { shape: percentBarData }) => {
   return (
-    <PercentBar $percent={percent}>
-      <PercentBarFill $percent={percent}>
-        <A11yHidden>{percent}%</A11yHidden>
-      </PercentBarFill>
-    </PercentBar>
+    <PercentBarWrap>
+      <PercentBarText>
+        <TextDefault shape={shape.top?.first} />
+        <TextDefault shape={shape.top?.last} />
+      </PercentBarText>
+      <PercentBarBox $shape={shape}>
+        <PercentBarFill $percent={shape?.percent}>
+          <A11yHidden>{shape?.percent}%</A11yHidden>
+        </PercentBarFill>
+      </PercentBarBox>
+    </PercentBarWrap>
   );
 };
 
-export default CheckHead;
+export default PercentBar;

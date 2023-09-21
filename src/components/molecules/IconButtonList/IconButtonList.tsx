@@ -11,7 +11,7 @@ const IconButtonList = ({ iconData }) => {
     <IconButtonListWrap>
       {iconData.map(item => {
         return (
-          <IconButton key={item.name} href="/">
+          <IconButton key={item?.name} href="/">
             <SvgComponent imageData={item} />
           </IconButton>
         );
