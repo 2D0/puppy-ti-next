@@ -108,7 +108,7 @@ export const ContentsInner = css`
 //기본 버튼, 인풋 모양
 export const CommonShape = css`
   ${ContentsInner};
-  height: 3.75rem; //60px
+  ${SizeMiddleRem};
   border-radius: ${SizeSmallRem};
   text-align: center;
   font-size: ${SizeDefaultRem};

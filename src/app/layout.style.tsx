@@ -20,8 +20,7 @@ export const Body = styled.body<{ percent: number }>`
   max-width: ${SizeMaxWidth};
   margin: 0 auto;
   padding-top: ${({ $pathName }) =>
-    $pathName === '/check' ? `calc(6.25rem + ${SizeExtraRem} + (${SizeDefaultSmallRem} * 2) )` : '4.375rem 0'};
-
+    $pathName === '/check' ? `calc(6.25rem + ${SizeExtraRem} + (${SizeDefaultSmallRem} * 2) )` : '4.375rem'};
   position: relative;
   overflow-y: auto;
   background-color: ${({ percent }) => (percent === 100 ? Black : WhitePurple)};
