@@ -17,7 +17,7 @@ import { ReactComponent as FootButton } from '@/assets/img/Icons/ico-foot.svg';
 //컴포넌트
 import { TextDefault } from '@/components/atoms';
 
-const CheckQuestion = () => {
+const CheckQuestion = ({ questionData }) => {
   return (
     <QuestionBox>
       <QuestionSelect>
@@ -29,7 +29,7 @@ const CheckQuestion = () => {
         </li>
       </QuestionSelect>
       <QuestionBoxContent>
-        <QuestionBoxText>질문</QuestionBoxText>
+        <QuestionBoxText>{questionData.text}</QuestionBoxText>
         <CheckButtons>
           <CheckButton>
             <FootButton stroke={Pink} fill={Pink} />

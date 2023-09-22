@@ -24,22 +24,22 @@ import {
 
 //이미지
 import Intj from '@/assets/img/Character/mbti-INFP.png';
-import { Black, DarkPurple, Gray, LightGray, Purple } from '@/style/Common.style';
+import { Black, DarkPurple, Gray, LightGray, LightPurple, Purple } from '@/style/Common.style';
 
 //컴포넌트
 import { TextSub } from '@/components/atoms';
 import { TitleBox } from '@/components/molecules';
 import PercentBar from '@/components/molecules/PercentBar/PercentBar';
+import { LoadingWrap, ToeComponent1, ToeComponent2, ToeComponent3, ToeComponent4, ToeComponentBody, ToesWrap } from '@/style/loading.style';
 
 const ResultPage = () => {
-  const { localNameData } = UseContextData();
+  const {} = UseContextData();
   const [resultData, setResultData] = useState([]);
   const [nameData, setNameData] = useState();
 
   useEffect(() => {
     setNameData(sessionStorage.getItem('dog-name'));
-  }, [nameData]);
-
+  }, []);
   const titleData = {
     first: {
       text: '"',
@@ -97,6 +97,7 @@ const ResultPage = () => {
       font: true,
     },
   };
+
   return (
     <>
       <ResultPuppyName>
@@ -111,7 +112,7 @@ const ResultPage = () => {
       </ResultCharBox>
       <PercentBarList>
         {percentBarData.map(item => (
-          <PercentBar key={item.top} shape={item} />
+          <PercentBar key={item.top.first.text} shape={item} />
         ))}
       </PercentBarList>
       <ResultTxtBox>

@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 //스타일
@@ -27,13 +28,13 @@ const CheckHead = () => {
     percent: percent,
   };
   return (
-    <CheckTop percent={percent}>
+    <CheckTop $percent={percent}>
       <CheckTopInner>
         <CheckTopChar>
           <SvgComponent imageData={{ name: 'WALKING' }} />
         </CheckTopChar>
       </CheckTopInner>
-      <Fireworks percent={percent}>
+      <Fireworks $percent={percent}>
         <FireworksTopRight>
           <SvgComponent imageData={{ name: 'FIREWORK' }} />
         </FireworksTopRight>

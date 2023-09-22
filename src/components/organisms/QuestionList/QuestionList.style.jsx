@@ -7,5 +7,6 @@ export const CheckBoxListWrap = styled.ul`
   display: flex;
   flex-direction: column;
   gap: ${SizeMediumRem} 0;
+  width: 100%;
 `;
 export const CheckBoxList = styled.li``;

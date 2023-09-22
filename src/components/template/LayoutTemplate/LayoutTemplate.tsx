@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { usePathname } from 'next/navigation';
 import { UseContextData } from '@/app/ContextData';
+import { usePathname } from 'next/navigation';
+import axios from 'axios';
 
 //스타일
 import { Black, LightPurple, WhitePurple } from '@/style/Common.style';
@@ -13,29 +13,11 @@ import { Header, Footer, Background } from '@/components/organisms/index';
 import { Share, RowTextList } from '@/components/molecules';
 
 const LayoutTemplate = ({ children }) => {
+  //ContextData
+  const { testCount, setTestCount, setColorChange, percent } = UseContextData();
   const pathName = usePathname(); //현재 주소
   const [useBackground, setUseBackground] = useState<boolean>(true);
   const [useShare, setUseShare] = useState<boolean>(true); //공유하기
-
-  //ContextData
-  const { testCount, setTestCount, setColorChange, percent } = UseContextData();
-
-  //참여 횟수 디비에서 가져오기
-  const getCountData = async () => {
-    await axios({
-      url: '/main-data',
-      method: 'GET',
-    })
-      .then(response => {
-        setTestCount(response.data.count);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-  useEffect(() => {
-    getCountData();
-  }, []);
 
   //페이지 경로에 따라 Background color change 및 Component on off
   useEffect(() => {
@@ -90,7 +72,7 @@ const LayoutTemplate = ({ children }) => {
         <RowTextList textListData={textListData} />
         {useShare && <Share />}
       </Main>
-      {useBackground && <Background />}
+      <Background useBackground={useBackground} />
       <Footer />
     </>
   );

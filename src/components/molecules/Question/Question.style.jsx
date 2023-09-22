@@ -10,12 +10,14 @@ import {
   SizeDefaultSmallRem,
   SizeRegularRem,
   ContentsInner,
+  CommonShadow,
 } from '@/style/Common.style';
 import device from '@/style/Device.style';
 
 // ******************** 질문 박스 ********************
 export const QuestionBox = styled.li`
   background-color: ${White};
+  ${CommonShadow};
 `;
 export const QuestionSelect = styled.ul`
   display: grid;

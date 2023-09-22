@@ -1,14 +1,15 @@
 'use client';
-
 import React, { useEffect, useState } from 'react';
-import { QuestionList } from '@/components/organisms/index';
-import axios from 'axios';
-import { ButtonNext } from '@/components/atoms';
 import { UseContextData } from '@/app/ContextData';
+import axios from 'axios';
+
+//컴포넌트
+import { ButtonNext } from '@/components/atoms';
+import { QuestionList } from '@/components/organisms/index';
 
 const CheckPage = () => {
   const [checkPercent, setCheckPercent] = useState<number>(10);
-  const { percent } = UseContextData();
+  const { nameData, setNameData, percent } = UseContextData();
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const [questions, setQuestions] = useState<object>([]);
 
@@ -27,6 +28,9 @@ const CheckPage = () => {
 
   useEffect(() => {
     getQuestionData();
+    setNameData(sessionStorage.getItem('dog-name'));
+    console.log(sessionStorage.getItem('dog-name'), '0');
+    console.log(nameData, '0');
   }, []);
 
   const clickEvent = () => {

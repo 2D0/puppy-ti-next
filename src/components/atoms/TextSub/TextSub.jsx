@@ -7,7 +7,7 @@ import FontGugi from '@/app/api/fonts/FontGugi';
 const TextSub = ({ shape }) => {
   return (
     <SubText className={shape?.font && FontGugi.className} $color={shape?.color}>
-      {shape.text}
+      {shape?.text}
     </SubText>
   );
 };

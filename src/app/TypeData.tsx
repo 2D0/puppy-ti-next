@@ -26,7 +26,7 @@ export type TypeButtonData = {
 };
 
 export type TypeTextData = {
-  text: string;
+  text: string | number;
   color: string;
   url: string;
   font: boolean;

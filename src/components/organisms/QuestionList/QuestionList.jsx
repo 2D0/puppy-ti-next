@@ -10,11 +10,8 @@ import Question from '@/components/molecules/Question/Question';
 const QuestionList = questionData => {
   return (
     <CheckBoxListWrap>
-      <Question />
       {questionData.questionData.map(item => (
-        <CheckBoxList key={item.id}>
-          <TextDefault shape={item} />
-        </CheckBoxList>
+        <Question key={item.id} questionData={item} />
       ))}
     </CheckBoxListWrap>
   );

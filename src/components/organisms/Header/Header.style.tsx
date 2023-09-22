@@ -15,6 +15,7 @@ import {
   IconShadow,
   SizeFull,
   PositionCenterRow,
+  SizeMaxWidth,
 } from '@/style/Common.style';
 
 // ********************** 헤더 **********************
@@ -28,7 +29,7 @@ export const HeaderLogo = styled.a`
 `;
 export const HeaderCont = styled.header<{ $headerData: TypeHeaderData }>`
   width: 100%;
-  max-width: 750px;
+  max-width: ${SizeMaxWidth};
   height: fit-content;
   ${PositionCenterRow};
   position: fixed;

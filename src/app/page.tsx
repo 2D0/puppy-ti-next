@@ -39,7 +39,7 @@ const Home = () => {
       await axios({
         url: '/main-data',
         method: 'POST',
-        data: { name: nameData, count: testCount },
+        data: { count: testCount },
       })
         .then(response => {
           //axios 통신 error가 났을 때 페이지 이동을 막기 위해 then에 router 기능 추가

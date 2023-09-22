@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 //스타일
@@ -7,12 +8,14 @@ import { BackgroundWrap, WaveBlock, SlashTop, SlashBottom } from '@/components/o
 import { ReactComponent as WaveSvg } from '@/assets/img/Background/back-top-wave.svg';
 import { ReactComponent as SlashSvg } from '@/assets/img/Background/back-slash.svg';
 
-const Background = () => {
+const Background = ({ useBackground }) => {
   return (
     <BackgroundWrap>
-      <WaveBlock>
-        <WaveSvg />
-      </WaveBlock>
+      {useBackground && (
+        <WaveBlock>
+          <WaveSvg />
+        </WaveBlock>
+      )}
       <SlashTop>
         <SlashSvg />
       </SlashTop>

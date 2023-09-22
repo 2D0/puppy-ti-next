@@ -13,6 +13,7 @@ import {
   Purple,
   White,
   Pink,
+  SizeMaxWidth,
 } from '@/style/Common.style.jsx';
 import device from '@/style/Device.style';
 
@@ -73,7 +74,7 @@ export const CheckTopChar = styled.div`
 
 //폭죽들
 export const Fireworks = styled.div`
-  display: ${({ percent }) => (percent === 100 ? 'block' : 'none')};
+  display: ${({ $percent }) => ($percent === 100 ? 'block' : 'none')};
   width: calc(${SizeExtraRem} + (${SizeMiddleRem} / 2));
   height: ${SizeExtraRem};
   position: absolute;
@@ -157,31 +158,31 @@ export const FireworksTopRight = styled.div`
 //체크 탑
 export const CheckTop = styled.article`
   width: 100%;
-  max-width: 750px;
+  max-width: ${SizeMaxWidth};
   padding: ${SizeDefaultSmallRem} 0;
   box-sizing: initial;
   overflow: hidden;
   position: relative;
 
   ${CheckTopChar} {
-    left: ${({ percent }) => `calc(${percent}% - ${SizeExtraRem})`};
+    left: ${({ $percent }) => `calc(${$percent}% - ${SizeExtraRem})`};
 
     @media ${device.MaxWidthL} {
-      left: ${({ percent }) => `calc(${percent}% - ${SizeLargeRem})`};
+      left: ${({ $percent }) => `calc(${$percent}% - ${SizeLargeRem})`};
     }
   }
 
   // 폭죽 별
   ${FireworksTopRight} {
-    ${({ percent }) => percent === 100 && fadeOption(5, 0)};
+    ${({ $percent }) => $percent === 100 && fadeOption(5, 0)};
   }
   ${FireworkLeft1} {
-    ${({ percent }) => percent === 100 && fadeOption(3, 0)};
+    ${({ $percent }) => $percent === 100 && fadeOption(3, 0)};
   }
   ${FireworkLeft2} {
-    ${({ percent }) => percent === 100 && fadeOption(5, 3)};
+    ${({ $percent }) => $percent === 100 && fadeOption(5, 3)};
   }
   ${FireworkLeft3} {
-    ${({ percent }) => percent === 100 && fadeOption(3, 2)};
+    ${({ $percent }) => $percent === 100 && fadeOption(3, 2)};
   }
 `;

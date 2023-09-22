@@ -94,55 +94,6 @@ export const ResultBoxCharImg = styled(Image)`
 export const ResultPercentCont = styled.div`
   margin-bottom: 40px;
 `;
-export const ResultPercentBox = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-bottom: 40px;
-`;
-export const ResultPercentList = styled.li`
-  ${PercentBarFill} {
-    ${({ percent }) =>
-      percent >= 100 - percent
-        ? css`
-            left: 0;
-            right: initial;
-            width: ${percent}%;
-          `
-        : css`
-            left: initial;
-            right: 0;
-            width: ${100 - percent}%;
-          `};
-  }
-`;
-export const ResultPercentInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 2;
-`;
-export const ResultPercentNames = styled.div`
-  gap: 0 10px;
-  ${flexItemCenter}
-
-  > span {
-    ${FontGray}
-
-    ${({ resultType }) =>
-      resultType &&
-      css`
-        ${FontDarkPurple}
-      `}
-`;
-export const ResultPercentName = styled.span`
-  font-weight: 500;
-  font-size: ${SizeDefaultRem};
-`;
-export const ResultPercentNum = styled.span`
-  font-size: ${SizeDefaultRem};
-`;
 export const ResultTxtBox = styled.div`
   ${ResultBoxShape};
   padding: ${SizeMediumRem} calc(${SizeMediumRem} / 2);
