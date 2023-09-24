@@ -35,7 +35,7 @@ const Home = () => {
   const onSubmit = (event: React.SyntheticEvent<HTMLInputElement>) => {
     event.preventDefault();
 
-    const postData = async () => {
+    const postData = async (): Promise<void> => {
       await axios({
         url: '/main-data',
         method: 'POST',
@@ -82,7 +82,7 @@ const Home = () => {
   };
   const subTextData = {
     text: '나의 반려견은 어떤 성향일까?',
-    font: true,
+    font: false,
     color: LightPurple,
   };
   const titleData = {

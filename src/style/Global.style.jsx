@@ -1,6 +1,45 @@
 import { createGlobalStyle } from 'styled-components';
+import gugiRegular from '@/app/fonts/Gugi/Gugi-Regular.ttf';
+import spoqaRegularTtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Regular.ttf';
+import spoqaRegularOtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Regular.otf';
+import spoqaMediumTtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Medium.ttf';
+import spoqaMediumOtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Medium.otf';
+import spoqaBoldOtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Bold.ttf';
+import spoqaBoldTtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Bold.otf';
 
 const GlobalStyle = createGlobalStyle`
+  // **************** 폰트 ****************
+  //구기 (Gugi)
+  @font-face {
+    font-family: 'gugi';
+    font-weight: 400;
+    src: local('gugi'), local('gugi');
+    src: url(${gugiRegular}) format('truetype');
+  }
+  
+  //스포카한산스 (SpoqaHanSansNeo)
+  @font-face {
+    font-family: 'SpoqaHan';
+    font-weight: 400;
+    src: local('spoqaRegularTtf'), local('spoqaRegularOtf');
+    src: url(${spoqaRegularTtf}) format('truetype'),
+    url(${spoqaRegularOtf}) format('opentype');
+  }
+  @font-face {
+    font-family: 'SpoqaHan';
+    font-weight: 500;
+    src: local('spoqaMediumTtf'), local('spoqaMediumOtf');
+    src: url(${spoqaMediumTtf}) format('truetype'),
+    url(${spoqaMediumOtf}) format('opentype');
+  }
+  @font-face {
+    font-family: 'SpoqaHan';
+    font-weight: 700;
+    src: local('spoqaBoldOtf'), local('spoqaBoldTtf');
+    src: url(${spoqaBoldOtf}) format('truetype'),
+    url(${spoqaBoldTtf}) format('opentype');
+  }
+  
   // **************** reset ****************
   * {
     margin: 0;

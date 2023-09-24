@@ -33,7 +33,18 @@ const nextConfig = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: /url/ }, // exclude if *.svg?url
-        use: ['@svgr/webpack', { loader: 'file-loader' }, { loader: 'url-loader' }],
+        use: ['@svgr/webpack', { loader: 'url-loader' }],
+      },
+      //폰트 로더
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            publicPath: '/_next/',
+            name: 'fonts/[name].[ext]',
+          },
+        },
       },
     );
 

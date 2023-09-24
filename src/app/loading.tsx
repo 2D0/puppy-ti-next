@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 
-import { ReactComponent as Toe1 } from '@/assets/img/Icons/ico-finger1.svg';
-import { ReactComponent as Toe2 } from '@/assets/img/Icons/ico-finger2.svg';
-import { ReactComponent as Toe3 } from '@/assets/img/Icons/ico-finger3.svg';
-import { ReactComponent as Toe4 } from '@/assets/img/Icons/ico-finger4.svg';
+import { ReactComponent as Toe1 } from '@/assets/img/Icons/ico-toe1.svg';
+import { ReactComponent as Toe2 } from '@/assets/img/Icons/ico-toe2.svg';
+import { ReactComponent as Toe3 } from '@/assets/img/Icons/ico-toe3.svg';
+import { ReactComponent as Toe4 } from '@/assets/img/Icons/ico-toe4.svg';
 import { ReactComponent as ToeBody } from '@/assets/img/Icons/ico-footbody.svg';
 import { TitleBox } from '@/components/molecules';
 import { LightPurple } from '@/style/Common.style';
