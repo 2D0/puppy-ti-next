@@ -1,12 +1,16 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { UseContextData } from '@/app/ContextData';
 import { usePathname } from 'next/navigation';
-import axios from 'axios';
+import StyledComponentsRegistry from '@/../lib/registry';
+
+//상태관리
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { colorChangeState, percentState, testCountState } from '@/app/state';
 
 //스타일
+import GlobalStyle from '@/style/Global.style';
 import { Black, LightPurple, WhitePurple } from '@/style/Common.style';
-import { Main } from './LayoutTemplate.style';
+import { Main, Body } from './LayoutTemplate.style';
 
 //컴포넌트
 import { Header, Footer, Background } from '@/components/organisms/index';
@@ -14,10 +18,12 @@ import { Share, RowTextList } from '@/components/molecules';
 
 const LayoutTemplate = ({ children }) => {
   //ContextData
-  const { testCount, setTestCount, setColorChange, percent } = UseContextData();
   const pathName = usePathname(); //현재 주소
   const [useBackground, setUseBackground] = useState<boolean>(true);
   const [useShare, setUseShare] = useState<boolean>(true); //공유하기
+  const testCount = useRecoilValue(testCountState);
+  const setColorChange = useSetRecoilState(colorChangeState);
+  const percent = useRecoilValue(percentState);
 
   //페이지 경로에 따라 Background color change 및 Component on off
   useEffect(() => {
@@ -64,17 +70,20 @@ const LayoutTemplate = ({ children }) => {
   ];
 
   return (
-    <>
-      <Header />
-      <Main $pathName={pathName}>
-        {children}
+    <StyledComponentsRegistry>
+      <GlobalStyle />
+      <Body $pathName={pathName}>
+        <Header />
+        <Main $pathName={pathName}>
+          {children}
 
-        <RowTextList textListData={textListData} />
-        {useShare && <Share />}
-      </Main>
-      <Background useBackground={useBackground} />
-      <Footer />
-    </>
+          <RowTextList textListData={textListData} />
+          {useShare && <Share />}
+        </Main>
+        <Background useBackground={useBackground} />
+        <Footer />
+      </Body>
+    </StyledComponentsRegistry>
   );
 };
 export default LayoutTemplate;

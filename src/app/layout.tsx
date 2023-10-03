@@ -1,35 +1,24 @@
-'use client';
 import React from 'react';
-import { ContextProvider } from '@/app/ContextData';
-import StyledComponentsRegistry from '@/../lib/registry';
-import { usePathname } from 'next/navigation';
-
-//스타일
-import GlobalStyle from '@/style/Global.style';
-import { Body } from '../style/layout.style';
-
-//폰트
-import spoqaFont from '@/app/api/fonts/FontSpoca';
+import { RecoilRoot } from 'recoil';
+import { Metadata } from 'next';
 
 //컴포넌트
 import LayoutTemplate from '@/components/template/LayoutTemplate/LayoutTemplate';
-import Loading from '@/app/loading';
+//폰트
+import spoqaFont from '@/app/api/fonts/FontSpoca';
+import RecoilRootProvider from '@/RecoilProvider';
+
+//head태그 meta data
+export const metadata: Metadata = {
+  title: '퍼피티아이',
+  description: '강아지 MBTI 테스트',
+};
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const pathName = usePathname(); //현재 주소
-
   return (
-    <StyledComponentsRegistry>
-      <ContextProvider>
-        <GlobalStyle />
-        <html lang="en" className={spoqaFont.className}>
-          <head />
-          <Body $pathName={pathName}>
-            <LayoutTemplate children={children} />
-          </Body>
-        </html>
-      </ContextProvider>
-    </StyledComponentsRegistry>
+    <html lang="en" className={spoqaFont.className}>
+      <RecoilRootProvider children={children} />
+    </html>
   );
 };
 export default Layout;

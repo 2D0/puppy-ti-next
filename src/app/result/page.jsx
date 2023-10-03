@@ -1,8 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { UseContextData } from '@/app/ContextData';
 import Image from 'next/image';
+
+//상태관리
+import { useRecoilState } from 'recoil';
+import { nameState } from '@/app/state';
 
 //스타일
 import {
@@ -30,15 +32,13 @@ import { Black, DarkPurple, Gray, LightGray, LightPurple, Purple } from '@/style
 import { TextSub } from '@/components/atoms';
 import { TitleBox } from '@/components/molecules';
 import PercentBar from '@/components/molecules/PercentBar/PercentBar';
-import { LoadingWrap, ToeComponent1, ToeComponent2, ToeComponent3, ToeComponent4, ToeComponentBody, ToesWrap } from '@/style/loading.style';
 
 const ResultPage = () => {
-  const {} = UseContextData();
   const [resultData, setResultData] = useState([]);
-  const [nameData, setNameData] = useState();
+  const [nameData, setNameData] = useRecoilState(nameState);
 
   useEffect(() => {
-    setNameData(sessionStorage.getItem('dog-name'));
+    // setNameData(sessionStorage.getItem('dog-name'));
   }, []);
   const titleData = {
     first: {

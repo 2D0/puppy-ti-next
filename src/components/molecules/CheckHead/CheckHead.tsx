@@ -1,6 +1,10 @@
 'use client';
 import React from 'react';
 
+//상태관리
+import { useRecoilValue } from 'recoil';
+import { percentState } from '@/app/state';
+
 //스타일
 import * as A from './CheckHead.style';
 import {
@@ -19,10 +23,9 @@ import {
 import { SvgComponent } from '@/components/atoms';
 import { UseContextData } from '@/app/ContextData';
 import PercentBar from '@/components/molecules/PercentBar/PercentBar';
-import { LightPurple } from '@/style/Common.style';
 
 const CheckHead = () => {
-  const { percent } = UseContextData();
+  const percent = useRecoilValue(percentState);
 
   const percentBarData = {
     percent: percent,

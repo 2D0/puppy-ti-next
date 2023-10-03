@@ -2,7 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
-import { UseContextData } from '@/app/ContextData';
+import { useRouter } from 'next/navigation';
+
+//상태관리
+import { useRecoilState } from 'recoil';
+import { testCountState } from '@/app/state';
 
 //스타일
 import { MainChar, MainForm } from '@/style/Page.style';
@@ -14,13 +18,12 @@ import { TitleBox } from '@/components/molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
-import { useRouter } from 'next/navigation';
 
 const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const [nameData, setNameData] = useState<string>(); //반려견 이름
-  const { testCount, setTestCount } = UseContextData();
+  const [testCount, setTestCount] = useRecoilState<number>(testCountState);
 
   //input에 value있을 경우 버튼 활성화
   const inputEvent = (event: React.SyntheticEvent<HTMLInputElement>) => {
@@ -55,7 +58,7 @@ const Home = () => {
 
   const countUp = () => {
     //세션 스토리지에 강아지 이름 추가
-    typeof window !== 'undefined' && sessionStorage.setItem('dog-name', `${nameData}`);
+    // typeof window !== 'undefined' && sessionStorage.setItem('dog-name', `${nameData}`);
 
     //시작하기 버튼 누르면 참여횟수 1증가
     setTestCount(testCount + 1);
@@ -82,7 +85,7 @@ const Home = () => {
   };
   const subTextData = {
     text: '나의 반려견은 어떤 성향일까?',
-    font: false,
+    font: true,
     color: LightPurple,
   };
   const titleData = {
