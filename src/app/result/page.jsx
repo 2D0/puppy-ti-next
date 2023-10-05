@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 //상태관리
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { nameState } from '@/app/state';
 
 //스타일
@@ -35,7 +35,7 @@ import PercentBar from '@/components/molecules/PercentBar/PercentBar';
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState([]);
-  const [nameData, setNameData] = useRecoilState(nameState);
+  const nameData = useRecoilValue(nameState);
 
   useEffect(() => {
     // setNameData(sessionStorage.getItem('dog-name'));

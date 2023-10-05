@@ -21,7 +21,6 @@ import {
 
 //이미지
 import { SvgComponent } from '@/components/atoms';
-import { UseContextData } from '@/app/ContextData';
 import PercentBar from '@/components/molecules/PercentBar/PercentBar';
 
 const CheckHead = () => {

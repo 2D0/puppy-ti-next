@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 //상태관리
-import { useRecoilState } from 'recoil';
-import { testCountState } from '@/app/state';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { nameState, testCountState } from '@/app/state';
 
 //스타일
 import { MainChar, MainForm } from '@/style/Page.style';
@@ -22,7 +22,7 @@ import { MainImg } from '@/assets/img/Character/index';
 const Home = () => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
-  const [nameData, setNameData] = useState<string>(); //반려견 이름
+  const setNameData = useSetRecoilState<string>(nameState); //반려견 이름
   const [testCount, setTestCount] = useRecoilState<number>(testCountState);
 
   //input에 value있을 경우 버튼 활성화

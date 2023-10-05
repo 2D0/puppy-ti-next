@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypeTextData } from '@/app/TypeData';
+import { TypeTextData } from '@/./../interface';
 
 //스타일
 import { DefaultText, DefaultTextLink } from '@/components/atoms/TextDefault/TextDefault.style';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypeTextData } from '@/app/TypeData';
+import { TypeTextData } from '@/./../interface';
 
 //폰트
 import gugiFont from '@/app/api/fonts/FontGugi';

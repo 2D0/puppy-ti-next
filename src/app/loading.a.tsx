@@ -17,7 +17,7 @@ const loadingTextData = {
     font: true,
   },
 };
-const Loading = () => {
+const LoadingA = () => {
   return (
     <>
       <LoadingWrap>
@@ -43,4 +43,4 @@ const Loading = () => {
     </>
   );
 };
-export default Loading;
+export default LoadingA;

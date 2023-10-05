@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { TypeHeaderData } from '@/app/TypeData';
+import { TypeHeaderData } from '@/./../interface';
 
 //상태관리
 import { colorChangeState, percentState } from '@/app/state';

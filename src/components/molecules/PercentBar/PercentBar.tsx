@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { percentBarData } from '@/app/TypeData';
+import { percentBarData } from '@/./../interface';
 
 //스타일
 import { A11yHidden } from '@/style/Common.style';

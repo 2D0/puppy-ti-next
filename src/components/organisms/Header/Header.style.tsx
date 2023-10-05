@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import device from '@/style/Device.style';
-import { TypeHeaderData } from '@/app/TypeData';
+import { TypeHeaderData } from '@/./../interface';
 import {
   CenterAlign,
   PositionCenter,
