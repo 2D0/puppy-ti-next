@@ -1,25 +1,25 @@
 module.exports = {
-    singleQuote: true,
     // 문자열은 작은 따옴표로 통일
+    singleQuote: true,
 
-    semi: true,
     //코드 마지막에 세미콜론이 자동 생성
+    semi: true,
 
-    useTabs: false,
     //탭의 사용을 금하고 스페이스바 사용으로 대체
+    useTabs: false,
 
-    tabWidth: 2,
     // 들여쓰기 너비는 2칸
+    tabWidth: 2,
 
-    trailingComma: 'all',
     // 객체나 배열 키:값 뒤에 콤마 생성
+    trailingComma: 'all',
 
-    printWidth: 140,
-    // 코드 한줄이 maximum 140칸
+    // 코드 한줄이 maximum 80칸
+    printWidth: 80,
 
-    arrowParens: 'avoid',
     // 화살표 함수가 하나의 매개변수를 받을 때 괄호 생략
+    arrowParens: 'avoid',
 
-    bracketSpacing: true
     // {foo:bar} => { foo: bar }로 {}와 속성간에 거리 벌려준다.
+    bracketSpacing: true
 };
