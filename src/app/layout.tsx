@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 
 //폰트
 import spoqaFont from '@/app/api/fonts/FontSpoca';
-import RecoilRootProvider from '@/RecoilProvider';
+import RecoilRootProvider from '@/app/RecoilProvider';
 
 //head태그 meta data
 export const metadata: Metadata = {

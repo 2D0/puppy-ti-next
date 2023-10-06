@@ -5,14 +5,12 @@ import axios from 'axios';
 //컴포넌트
 import { ButtonNext } from '@/components/atoms';
 import { QuestionList } from '@/components/organisms/index';
-import { useRecoilState, useSetRecoilState } from 'recoil';
-import { nameState } from '@/app/state';
 
 const CheckPage = () => {
   const [checkPercent, setCheckPercent] = useState<number>(10);
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const [questions, setQuestions] = useState<object>([]);
-  const setNameData = useSetRecoilState(nameState);
+
 
   const getQuestionData = async () => {
     await axios({
@@ -29,7 +27,6 @@ const CheckPage = () => {
 
   useEffect(() => {
     getQuestionData();
-    // setNameData(sessionStorage.getItem('dog-name'));
     console.log(sessionStorage.getItem('dog-name'), '0');
   }, []);
 

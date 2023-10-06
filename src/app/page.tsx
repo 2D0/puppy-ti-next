@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 //상태관리
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { nameState, testCountState } from '@/app/state';
+import {nameAtom, testCountState} from '@/app/state';
 
 //스타일
 import { MainChar, MainForm } from '@/style/Page.style';
@@ -20,9 +20,10 @@ import { TitleBox } from '@/components/molecules/index';
 import { MainImg } from '@/assets/img/Character/index';
 
 const Home = () => {
+  const [nameData, setNameData] = useState<string>()
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
-  const setNameData = useSetRecoilState<string>(nameState); //반려견 이름
+  const nameState = useSetRecoilState(nameAtom); //반려견 이름
   const [testCount, setTestCount] = useRecoilState<number>(testCountState);
 
   //input에 value있을 경우 버튼 활성화
@@ -59,6 +60,7 @@ const Home = () => {
   const countUp = () => {
     //세션 스토리지에 강아지 이름 추가
     // typeof window !== 'undefined' && sessionStorage.setItem('dog-name', `${nameData}`);
+    nameState(nameData);
 
     //시작하기 버튼 누르면 참여횟수 1증가
     setTestCount(testCount + 1);
