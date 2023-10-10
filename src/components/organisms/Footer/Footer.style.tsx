@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import device from '@/style/Device.style';
-import { SizeLargeRem, Center, DarkPurple, SizeMediumLargeRem } from '@/style/Common.style';
+import device from '@styles/Device.style';
+import { SizeLargeRem, Center, DarkPurple, SizeMediumLargeRem } from '@styles/Common.style';
 
 // ********************** 푸터 **********************
 export const FooterWrap = styled.footer`

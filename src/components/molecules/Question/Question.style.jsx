@@ -11,8 +11,8 @@ import {
   SizeRegularRem,
   ContentsInner,
   CommonShadow,
-} from '@/style/Common.style';
-import device from '@/style/Device.style';
+} from '@styles/Common.style';
+import device from '@styles/Device.style';
 
 // ******************** 질문 박스 ********************
 export const QuestionBox = styled.li`

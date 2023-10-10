@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 //스타일
-import { Gray, Pink, Purple, White } from '@/style/Common.style';
+import { Gray, Pink, Purple, White } from '@styles/Common.style';
 import {
   QuestionBox,
   QuestionSelect,
@@ -15,17 +15,17 @@ import {
 import { ReactComponent as FootButton } from '@/assets/img/Icons/ico-foot.svg';
 
 //컴포넌트
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 
 const CheckQuestion = ({ questionData }) => {
   return (
     <QuestionBox>
       <QuestionSelect>
         <li>
-          <TextDefault shape={{ text: '아니다', color: White }} />
+          <TextDefault textDefaultShape={{ text: '아니다', color: White }} />
         </li>
         <li>
-          <TextDefault shape={{ text: '그렇다', color: White }} />
+          <TextDefault textDefaultShape={{ text: '그렇다', color: White }} />
         </li>
       </QuestionSelect>
       <QuestionBoxContent>

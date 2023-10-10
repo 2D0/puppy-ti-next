@@ -20,7 +20,7 @@ import {
 } from './CheckHead.style';
 
 //이미지
-import { SvgComponent } from '@/components/atoms';
+import { SvgComponent } from '@atoms/index';
 import PercentBar from '@/components/molecules/PercentBar/PercentBar';
 
 const CheckHead = () => {

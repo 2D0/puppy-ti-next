@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
-import { TypeTextData } from '@/./../interface';
+import { TypeTextData } from 'interface';
 
 //스타일
 import { RowTextWrap, TextList } from './RowTextList.style';
 
 //컴포넌트
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 
 const RowTextList = ({ textListData }: { textListData: TypeTextData }) => {
   return (
@@ -14,7 +14,7 @@ const RowTextList = ({ textListData }: { textListData: TypeTextData }) => {
       {textListData.map((item, index) => {
         return (
           <TextList key={index} $color={item.color}>
-            <TextDefault shape={item} />
+            <TextDefault textDefaultShape={item} />
           </TextList>
         );
       })}

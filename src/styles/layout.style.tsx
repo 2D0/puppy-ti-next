@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Black, SizeLargeRem, WhitePurple, SizeMaxWidth, SizeMiddleRem, SizeExtraRem, SizeDefaultSmallRem } from '@/style/Common.style';
-import device from '@/style/Device.style';
+import { Black, SizeLargeRem, WhitePurple, SizeMaxWidth, SizeMiddleRem, SizeExtraRem, SizeDefaultSmallRem } from '@styles/Common.style';
+import device from '@styles/Device.style';
 
 export const Body = styled.body<{ percent: number }>`
   width: 100%;

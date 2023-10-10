@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
-import { WhitePurple, PositionFit, Center, SmallIconShadow, SizeMaxWidth } from '@/style/Common.style';
-import device from '@/style/Device.style';
+import { WhitePurple, PositionFit, Center, SmallIconShadow, SizeMaxWidth } from '@styles/Common.style';
+import device from '@styles/Device.style';
 const keyframeOption = (first, second, tired) => keyframes`
 0%{${first}}
 50%{ ${second}}

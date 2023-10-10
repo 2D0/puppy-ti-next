@@ -2,10 +2,10 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 
 //스타일
-import { NextButton } from '@/components/atoms/ButtonNext/ButtonNext.style';
+import { NextButton } from '@atoms/ButtonNext/ButtonNext.style';
 
 //컴포넌트
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 
 const ButtonNext = ({ buttonData }) => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
@@ -24,7 +24,7 @@ const ButtonNext = ({ buttonData }) => {
       type={buttonData?.type}
       $able={buttonData?.able}
     >
-      <TextDefault shape={buttonData?.content} />
+      <TextDefault textDefaultShape={buttonData?.content} />
     </NextButton>
   );
 };

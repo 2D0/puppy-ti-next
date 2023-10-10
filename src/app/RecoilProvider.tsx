@@ -4,7 +4,7 @@ import React from 'react';
 import { RecoilRoot } from 'recoil';
 
 //컴포넌트
-import LayoutTemplate from '@/components/template/LayoutTemplate/LayoutTemplate';
+import LayoutTemplate from '@template/LayoutTemplate/LayoutTemplate';
 
 export default function RecoilRootProvider({ children }) {
   return (

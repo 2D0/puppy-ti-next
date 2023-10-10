@@ -29,7 +29,7 @@ import {
   SizeSmallRem,
   ColumnComponentStyle,
   LightGray,
-} from '@styles/Common.style.jsx';
+} from '@styles/Common.style.js';
 import device from '@styles/Device.style';
 
 // ******************** 컨텐츠 ********************

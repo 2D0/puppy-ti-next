@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { PositionFit, BackGroundShadow, SizeLargeRem, SizeMiddleRem, PositionAbsolute, SizeMediumLargeRem } from '@/style/Common.style';
-import device from '@/style/Device.style';
+import { PositionFit, BackGroundShadow, SizeLargeRem, SizeMiddleRem, PositionAbsolute, SizeMediumLargeRem } from '@styles/Common.style';
+import device from '@styles/Device.style';
 
 // ********************** 배경 **********************
 export const BackgroundWrap = styled.div`

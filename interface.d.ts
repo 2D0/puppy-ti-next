@@ -1,68 +1,86 @@
-declare module '*.svg' {
-  import React = require('react');
-  export const ReactComponent: React.SFC<React.SVGProps<SVGSVGElement>>;
-  const src: string;
-  export default src;
-}
-export type TypeHeaderData = {
-  pathName: string;
+import React from 'react';
+
+type  textContent = string | number;
+type  url = `${'/'}${string}`;
+type  input = 'text' | 'button' | 'submit';
+
+export interface  TypeHeaderData {
+  pathName: textContent;
   percent: number;
   colorChange: string;
   logo: string;
 };
 
-export type TypeInputData = {
-  type: 'text' | 'submit';
-  name: string;
-  value: string;
-  placeholder: string;
-  event: React.ChangeEvent<HTMLInputElement>;
+export interface  TypeInputData {
+  type : input;
+  name: textContent;
+  value?: textContent;
+  placeholder?: textContent;
+  event?: (event: React.SyntheticEvent<HTMLInputElement>) => void;
 };
 
-export type TypeButtonData = {
-  type: 'button' | 'submit';
-  url: string;
+export interface  TypeButtonData {
+  type : input;
   able: boolean;
-  event: React.MouseEvent<HTMLElement>;
-  axios: boolean;
+  event: () => void;
+  axios?: boolean;
+  method?:'GET'|'POST';
+  url?: url;
   content: {
     text: string;
-    font: boolean;
+    font?: boolean;
   };
 };
 
-export type TypeTextData = {
-  text: string | number;
-  color: string;
-  url: string;
-  font: boolean;
-  bigSize: boolean;
-  first: {
-    text: string;
-    color: string;
-    font: boolean;
+export interface  TypeTextData {
+  text: textContent;
+  color?: string;
+  url?: url;
+  font?: boolean;
+  bigSize?: boolean;
+}
+export interface  TypeCustomTextData {
+  color?: string;
+  bigSize?: boolean;
+  url?: url;
+  first?: {
+    text: textContent;
+    color?: string;
+    font?: boolean;
   };
-  accent: {
-    text: string;
-    color: string;
-    font: boolean;
+  accent?: {
+    text: textContent;
+    color?: string;
+    font?: boolean;
   };
-  last: {
-    text: string;
-    color: string;
-    font: boolean;
+  last?: {
+    text: textContent;
+    color?: string;
+    font?: boolean;
   };
-};
+}
 
-export type TypeImageData = {
+export interface  TypeImageData {
   name: 'LOGO' | 'BACK' | 'SHARE' | 'LINK' | 'FACEBOOK' | 'KAKAO' | 'TWITTER' | 'FIREWORK' | 'WALKING';
 };
 
-export type percentBarData = {
+export interface percentBarData {
   percent: number;
   height: boolean;
-  top: {
-    first: TypeTextData;
-    last: TypeTextData;
+  top?: {
+    first: {
+      text: textContent;
+      color?: string;
+      url?: url;
+      font?: boolean;
+      bigSize?: boolean;
+    };
+    last: {
+      text: textContent;
+      color?: string;
+      url?: url;
+      font?: boolean;
+      bigSize?: boolean;
+    };
   };
 };

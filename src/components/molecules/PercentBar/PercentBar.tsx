@@ -1,19 +1,19 @@
 'use client';
 import React from 'react';
-import { percentBarData } from '@/./../interface';
+import { percentBarData } from 'interface';
 
 //스타일
-import { A11yHidden } from '@/style/Common.style';
+import { A11yHidden } from '@styles/Common.style';
 import { PercentBarWrap, PercentBarBox, PercentBarFill } from '@/components/molecules/PercentBar/PercentBar.style';
-import { PercentBarText } from '@/style/Result.style';
-import { TextDefault } from '@/components/atoms';
+import { PercentBarText } from '@styles/Result.style';
+import { TextDefault } from '@atoms/index';
 
 const PercentBar = ({ shape }: { shape: percentBarData }) => {
   return (
     <PercentBarWrap>
       <PercentBarText>
-        <TextDefault shape={shape.top?.first} />
-        <TextDefault shape={shape.top?.last} />
+        <TextDefault textDefaultShape={shape.top?.first} />
+        <TextDefault textDefaultShape={shape.top?.last} />
       </PercentBarText>
       <PercentBarBox $shape={shape}>
         <PercentBarFill $percent={shape?.percent}>

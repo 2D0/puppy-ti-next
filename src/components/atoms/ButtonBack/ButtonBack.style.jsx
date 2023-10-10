@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { SizeRegularRem, Center, SizeSmallRem } from '@/style/Common.style.jsx';
+import { SizeRegularRem, Center, SizeSmallRem } from '@styles/Common.style.tsx';
 
 export const BackButtonAtom = styled(Link)`
   padding: ${SizeSmallRem};

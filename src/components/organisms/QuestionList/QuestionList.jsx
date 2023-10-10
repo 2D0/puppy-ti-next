@@ -4,7 +4,7 @@ import React from 'react';
 import { CheckBoxListWrap, CheckBoxList } from '@/components/organisms/QuestionList/QuestionList.style';
 
 //이미지
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 import Question from '@/components/molecules/Question/Question';
 
 const QuestionList = questionData => {

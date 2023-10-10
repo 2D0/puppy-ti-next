@@ -118,7 +118,7 @@ Component 사용 예시 코드
 //** Footer.tsx **//
 
 //컴포넌트
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 
 const textList = [
   {
@@ -146,7 +146,7 @@ const Footer = () => {
           {textList.map((item, index) => {
             return (
               <TextList key={index} $color={item.color}>
-                <TextDefault shape={item} />
+                <TextDefault textDefaultShape={item} />
               </TextList>
             );
           })}

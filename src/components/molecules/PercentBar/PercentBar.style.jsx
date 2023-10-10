@@ -8,7 +8,7 @@ import {
   SizeRegularRem,
   SizeDefaultSmallRem,
   SizeMediumRem,
-} from '@/style/Common.style.jsx';
+} from '@styles/Common.style.tsx';
 
 // ********************* 퍼센트 바 ********************
 export const PercentBarWrap = styled.div``;

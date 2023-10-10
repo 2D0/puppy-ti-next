@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import device from '@/style/Device.style';
-import { TypeHeaderData } from '@/./../interface';
+import device from '@styles/Device.style';
+import { TypeHeaderData } from 'interface';
 import {
   CenterAlign,
   PositionCenter,
@@ -16,7 +16,7 @@ import {
   SizeFull,
   PositionCenterRow,
   SizeMaxWidth,
-} from '@/style/Common.style';
+} from '@styles/Common.style';
 
 // ********************** 헤더 **********************
 export const HeaderLogo = styled.a`

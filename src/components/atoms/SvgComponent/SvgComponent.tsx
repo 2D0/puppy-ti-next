@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypeImageData } from '@/./../interface';
+import { TypeImageData } from 'interface';
 
 //이미지
 import { ReactComponent as Logo } from '@/assets/img/Logo/logo.svg';

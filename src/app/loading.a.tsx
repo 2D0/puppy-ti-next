@@ -6,11 +6,12 @@ import { ReactComponent as Toe2 } from '@/assets/img/Icons/ico-toe2.svg';
 import { ReactComponent as Toe3 } from '@/assets/img/Icons/ico-toe3.svg';
 import { ReactComponent as Toe4 } from '@/assets/img/Icons/ico-toe4.svg';
 import { ReactComponent as ToeBody } from '@/assets/img/Icons/ico-footbody.svg';
-import { TitleBox } from '@/components/molecules';
-import { LightPurple } from '@/style/Common.style';
-import { LoadingWrap, ToeComponent1, ToeComponent2, ToeComponent3, ToeComponent4, ToeComponentBody, ToesWrap } from '@/style/loading.style';
+import { TitleBox } from '@molecules/index';
+import { LightPurple } from '@styles/Common.style';
+import { LoadingWrap, ToeComponent1, ToeComponent2, ToeComponent3, ToeComponent4, ToeComponentBody, ToesWrap } from '@styles/loading.style';
+import {TypeCustomTextData} from "../../interface";
 
-const loadingTextData = {
+const loadingTextData:TypeCustomTextData = {
   accent: {
     text: 'LOADING',
     color: LightPurple,
@@ -38,7 +39,7 @@ const LoadingA = () => {
             <ToeBody />
           </ToeComponentBody>
         </ToesWrap>
-        <TitleBox shape={loadingTextData} />
+        <TitleBox titleBoxShape={loadingTextData} />
       </LoadingWrap>
     </>
   );

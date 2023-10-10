@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Center, White, CommonShape, CommonShadow, LightPurple, LightGray } from '@/style/Common.style.jsx';
+import { Center, White, CommonShape, CommonShadow, LightPurple, LightGray } from '@styles/Common.style.tsx';
 
 export const NextButton = styled.button`
   background: ${LightGray};

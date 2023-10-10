@@ -1,8 +1,8 @@
 import React from 'react';
 
 //스타일
-import * as A from '@/components/atoms/ButtonBack/ButtonBack.style';
-import backButtonText from '@/components/atoms/TextButton/TextButton';
+import * as A from '@atoms/ButtonBack/ButtonBack.style';
+import backButtonText from '@atoms/TextButton/TextButton';
 
 //이미지
 

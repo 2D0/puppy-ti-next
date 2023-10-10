@@ -1,8 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { TypeHeaderData } from '@/./../interface';
+import { TypeHeaderData } from 'interface';
+import { usePathname } from 'next/navigation';
 
 //상태관리
+import { useRecoilValue } from 'recoil';
 import { colorChangeState, percentState } from '@/app/state';
 
 //스타일
@@ -10,9 +12,7 @@ import { HeaderCont, HeaderInner, HeaderLogo } from '@/components/organisms/Head
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
-import { SvgComponent } from '@/components/atoms';
-import { usePathname } from 'next/navigation';
-import { useRecoilValue } from 'recoil';
+import { SvgComponent } from '@atoms/index';
 
 export function Header() {
   const pathName = usePathname(); //현재 주소

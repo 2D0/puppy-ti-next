@@ -4,7 +4,7 @@ import React from 'react';
 import { IconButtonListWrap, IconButton } from '@/components/molecules/IconButtonList/IconButtonList.style';
 
 //컴포넌트
-import { SvgComponent } from '@/components/atoms';
+import { SvgComponent } from '@atoms/index';
 
 const IconButtonList = ({ iconData }) => {
   return (

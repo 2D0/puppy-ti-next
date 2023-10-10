@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { SizeDefaultRem, DarkPurple, Gray, CenterAlign, SizeSmallRem, SizeMediumRem } from '@/style/Common.style';
+import { SizeDefaultRem, DarkPurple, Gray, CenterAlign, SizeSmallRem, SizeMediumRem } from '@styles/Common.style';
 
 export const ResultPercentCont = styled.div``;
 export const ResultPercentBox = styled.ul`

@@ -14,8 +14,8 @@ import {
   White,
   Pink,
   SizeMaxWidth,
-} from '@/style/Common.style.jsx';
-import device from '@/style/Device.style';
+} from '@styles/Common.style.tsx';
+import device from '@styles/Device.style';
 
 // **************** 상단 퍼센트 헤드 ****************
 export const CheckTopInner = styled.div`

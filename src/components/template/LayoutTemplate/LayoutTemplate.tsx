@@ -8,13 +8,13 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { colorChangeState, percentState, testCountState } from '@/app/state';
 
 //스타일
-import GlobalStyle from '@/style/Global.style';
-import { Black, LightPurple, WhitePurple } from '@/style/Common.style';
+import GlobalStyle from '@styles/Global.style';
+import { Black, LightPurple, WhitePurple } from '@styles/Common.style';
 import { Main, Body } from './LayoutTemplate.style';
 
 //컴포넌트
-import { Header, Footer, Background } from '@/components/organisms/index';
-import { Share, RowTextList } from '@/components/molecules';
+import { Header, Footer, Background } from '@organisms/index';
+import { Share, RowTextList } from '@molecules/index';
 
 const LayoutTemplate = ({ children }) => {
   //ContextData

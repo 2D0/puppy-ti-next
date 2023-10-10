@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {BackGroundShadow} from '@/style/Common.style.jsx';
+import {BackGroundShadow} from '@styles/Common.style.tsx';
 
 export const WaveBackImgAtom = styled.img`
   width: 100%;

@@ -12,8 +12,8 @@ import {
   Black,
   WhitePurple,
   SizeLargeRem,
-} from '@/style/Common.style';
-import device from '@/style/Device.style';
+} from '@styles/Common.style';
+import device from '@styles/Device.style';
 
 export const Main = styled.main`
   ${CenterAlign};

@@ -2,11 +2,11 @@
 import React from 'react';
 
 //스타일
-import { White } from '@/style/Common.style';
+import { White } from '@styles/Common.style';
 import { FooterWrap, FooterInfo } from '@/components/organisms/Footer/Footer.style';
 
 //컴포넌트
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 import RowTextList from '@/components/molecules/RowTextList/RowTextList';
 
 const textListData = [
@@ -38,7 +38,7 @@ const Footer = () => {
       <FooterInfo>
         <RowTextList textListData={textListData} />
       </FooterInfo>
-      <TextDefault shape={copyrightData} />
+      <TextDefault textDefaultShape={copyrightData} />
     </FooterWrap>
   );
 };

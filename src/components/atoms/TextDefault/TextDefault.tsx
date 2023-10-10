@@ -1,20 +1,20 @@
 import React from 'react';
-import { TypeTextData } from '@/./../interface';
+import { TypeTextData } from 'interface';
 
 //스타일
-import { DefaultText, DefaultTextLink } from '@/components/atoms/TextDefault/TextDefault.style';
+import { DefaultText, DefaultTextLink } from '@atoms/TextDefault/TextDefault.style';
 import FontGugi from '@/app/api/fonts/FontGugi';
 
-const TextDefault = ({ shape }: { shape: TypeTextData }) => {
+const TextDefault = ({ textDefaultShape }: { textDefaultShape: TypeTextData }) => {
   return (
     <>
-      {shape?.url ? (
-        <DefaultTextLink href={shape?.url} className={shape?.font && FontGugi.className} $color={shape?.color}>
-          {shape?.text}
+      {textDefaultShape?.url ? (
+        <DefaultTextLink href={textDefaultShape?.url} className={textDefaultShape?.font && FontGugi.className} $color={textDefaultShape?.color}>
+          {textDefaultShape?.text}
         </DefaultTextLink>
       ) : (
-        <DefaultText className={shape?.font && FontGugi.className} $color={shape?.color}>
-          {shape?.text}
+        <DefaultText className={textDefaultShape?.font && FontGugi.className} $color={textDefaultShape?.color}>
+          {textDefaultShape?.text}
         </DefaultText>
       )}
     </>

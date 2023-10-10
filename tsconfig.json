@@ -1,7 +1,16 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@template/*": ["src/components/template/*"],
+      "@styles/*": ["src/styles/*"],
+      "@fonts/*": ["src/app/fonts/*"],
+      "@images/*": ["src/assets/img/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

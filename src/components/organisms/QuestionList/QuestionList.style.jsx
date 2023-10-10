@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { SizeMediumRem, SizeRegularRem } from '@/style/Common.style';
+import { SizeMediumRem, SizeRegularRem } from '@styles/Common.style';
 
 // ******************** 질문 박스 ********************
 

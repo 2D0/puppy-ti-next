@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 //상태관리
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { nameState } from '@/app/state';
+import { nameAtom } from '@app/state';
 
 //스타일
 import {
@@ -14,25 +14,26 @@ import {
   ResultPuppyName,
   ResultTxt,
   ResultTxtBox,
-} from '@/styles/Result.style';
+} from '@styles/Result.style';
 
 //이미지
-import Intj from '@/assets/img/Character/mbti-INFP.png';
+import Intj from '@img/Character/mbti-INFP.png';
 import { Black, DarkPurple, Gray, LightGray, LightPurple, Purple } from '@styles/Common.style';
 
 //컴포넌트
-import { TextSub } from '@/components/atoms';
-import { TitleBox } from '@/components/molecules';
-import PercentBar from '@/components/molecules/PercentBar/PercentBar';
+import { TextSub } from '@atoms/index';
+import { TitleBox } from '@molecules/index';
+import PercentBar from '@molecules/PercentBar/PercentBar';
+import {percentBarData, TypeCustomTextData} from "interface";
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState([]);
-  const nameData = useRecoilValue(nameState);
+  const nameData = useRecoilValue(nameAtom);
 
   useEffect(() => {
     // setNameData(sessionStorage.getItem('dog-name'));
   }, []);
-  const titleData = {
+  const titleData: TypeCustomTextData = {
     first: {
       text: '"',
       color: DarkPurple,
@@ -48,7 +49,7 @@ const ResultPage = () => {
     },
   };
 
-  const percentBarData = [
+  const percentBarData: percentBarData[] = [
     {
       percent: 10,
       height: true,
@@ -82,7 +83,7 @@ const ResultPage = () => {
       },
     },
   ];
-  const mbtiNameData = {
+  const mbtiNameData:TypeCustomTextData = {
     bigSize: true,
     accent: {
       text: `INTJ`,
@@ -93,11 +94,11 @@ const ResultPage = () => {
   return (
     <>
       <ResultPuppyName>
-        <TitleBox shape={titleData} />
-        <TextSub shape={{ text: '는(은)' }} />
+        <TitleBox titleBoxShape={titleData} />
+        <TextSub textSubShape={{ text: '는(은)' }} />
       </ResultPuppyName>
       <ResultCharBox>
-        <TitleBox shape={mbtiNameData} />
+        <TitleBox titleBoxShape={mbtiNameData} />
         <ResultBoxChar>
           <Image src={Intj} alt={'Intj'} />
         </ResultBoxChar>

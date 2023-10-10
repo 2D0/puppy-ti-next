@@ -1,14 +1,14 @@
 import React from 'react';
-import { TypeTextData } from '@/./../interface';
+import { TypeTextData } from 'interface';
 
 //스타일
-import { SubText } from '@/components/atoms/TextSub/TextSub.style';
+import { SubText } from '@atoms/TextSub/TextSub.style';
 import FontGugi from '@/app/api/fonts/FontGugi';
 
-const TextSub = ({ shape }: { shape: TypeTextData }) => {
+const TextSub = ({ textSubShape }: { textSubShape: TypeTextData }) => {
   return (
-    <SubText $font={shape.font} $color={shape.color}>
-      {shape.text}
+    <SubText $font={textSubShape.font} $color={textSubShape.color}>
+      {textSubShape.text}
     </SubText>
   );
 };

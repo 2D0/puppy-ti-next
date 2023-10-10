@@ -2,11 +2,11 @@ import React from 'react';
 
 //스타일
 import { ShareTit } from '@/components/molecules/Share/Share.style';
-import { ColumnComponent } from '@/style/Common.style';
+import { ColumnComponent } from '@styles/Common.style';
 
 //컴포넌트
-import { TextDefault, SvgComponent } from '@/components/atoms';
-import { IconButtonList } from '@/components/molecules/index';
+import { TextDefault, SvgComponent } from '@atoms/index';
+import { IconButtonList } from '@molecules/index';
 
 const Share = () => {
   const shareImgData = {
@@ -20,7 +20,7 @@ const Share = () => {
     <ColumnComponent>
       <ShareTit>
         <SvgComponent imageData={shareImgData} />
-        <TextDefault shape={titleData} />
+        <TextDefault textDefaultShape={titleData} />
       </ShareTit>
       <IconButtonList iconData={snsImgData} />
     </ColumnComponent>

@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 //컴포넌트
-import { ButtonNext } from '@/components/atoms';
-import { QuestionList } from '@/components/organisms/index';
+import { ButtonNext } from '@atoms/index';
+import { QuestionList } from '@organisms/index';
 
 const CheckPage = () => {
   const [checkPercent, setCheckPercent] = useState<number>(10);
