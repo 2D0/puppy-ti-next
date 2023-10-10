@@ -9,24 +9,16 @@ import { nameState } from '@/app/state';
 //스타일
 import {
   PercentBarList,
-  PercentBarText,
   ResultBoxChar,
-  ResultBoxCharImg,
-  ResultBoxCharInner,
-  ResultBoxMbtiName,
   ResultCharBox,
-  ResultCharBoxInner,
-  ResultCont,
-  ResultPercentCont,
   ResultPuppyName,
-  ResultPuppyNamePoint,
   ResultTxt,
   ResultTxtBox,
-} from '@/style/Result.style';
+} from '@/styles/Result.style';
 
 //이미지
 import Intj from '@/assets/img/Character/mbti-INFP.png';
-import { Black, DarkPurple, Gray, LightGray, LightPurple, Purple } from '@/style/Common.style';
+import { Black, DarkPurple, Gray, LightGray, LightPurple, Purple } from '@styles/Common.style';
 
 //컴포넌트
 import { TextSub } from '@/components/atoms';

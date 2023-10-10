@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import device from '@/style/Device.style';
+import device from '@styles/Device.style';
 
 // ********************** 색상 **********************
 export const White = `#fff`;

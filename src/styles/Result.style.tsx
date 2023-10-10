@@ -29,8 +29,8 @@ import {
   SizeSmallRem,
   ColumnComponentStyle,
   LightGray,
-} from '@/style/Common.style.jsx';
-import device from '@/style/Device.style';
+} from '@styles/Common.style.jsx';
+import device from '@styles/Device.style';
 
 // ******************** 컨텐츠 ********************
 //컨텐츠

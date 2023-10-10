@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import device from '@/style/Device.style';
-import { ColumnComponentStyle } from '@/style/Common.style';
+import device from '@styles/Device.style';
+import { ColumnComponentStyle } from '@styles/Common.style';
 
 export const MainChar = styled.div`
   width: 75%;

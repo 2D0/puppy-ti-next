@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import device from '@/style/Device.style';
+import device from '@styles/Device.style';
 import FontGugi from '@/app/api/fonts/FontGugi';
 
 export const SubText = styled.span`
