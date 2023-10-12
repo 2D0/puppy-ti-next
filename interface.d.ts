@@ -1,68 +1,121 @@
 import React from 'react';
+import {
+  White,
+  Black,
+  LightGray,
+  Gray,
+  Purple,
+  WhitePurple,
+  LightPurple,
+  DarkPurple,
+  Pink,
+} from '@styles/Common.style';
 
-type  textContent = string | number;
-type  url = `${'/'}${string}`;
-type  input = 'text' | 'button' | 'submit';
+type textContent = string | number;
+type url = `${'/'}${string}`;
+type input = 'text' | 'button' | 'submit';
+type color =
+  | White
+  | Black
+  | LightGray
+  | Gray
+  | Purple
+  | WhitePurple
+  | LightPurple
+  | DarkPurple
+  | Pink
+  | `${'#'}${string}`;
 
-export interface  TypeHeaderData {
+export interface TypeDefault {
+  textData: string | number;
+  url: string;
+  color:
+    | White
+    | Black
+    | LightGray
+    | Gray
+    | Purple
+    | WhitePurple
+    | LightPurple
+    | DarkPurple
+    | Pink
+    | `${'#'}${string}`;
+  name: string;
+  able: boolean;
+  inputEvent: React.ChangeEvent<HTMLInputElement>;
+  buttonEvent: React.MouseEvent<HTMLButtonElement>;
+  event: () => void;
+}
+
+export interface TypeHeaderData {
   pathName: textContent;
   percent: number;
-  colorChange: string;
+  colorChange: color;
   logo: string;
-};
+}
 
-export interface  TypeInputData {
-  type : input;
+export interface TypeInputData {
+  type: React.InputHTMLAttributes.type;
   name: textContent;
   value?: textContent;
   placeholder?: textContent;
   event?: (event: React.SyntheticEvent<HTMLInputElement>) => void;
-};
+}
 
-export interface  TypeButtonData {
-  type : input;
+export interface TypeButtonData {
+  type: input;
   able: boolean;
   event: () => void;
   axios?: boolean;
-  method?:'GET'|'POST';
+  method?: 'GET' | 'POST';
   url?: url;
   content: {
     text: string;
     font?: boolean;
   };
-};
+}
 
-export interface  TypeTextData {
+export interface TypeTextData {
   text: textContent;
-  color?: string;
+  color?: color;
   url?: url;
   font?: boolean;
   bigSize?: boolean;
 }
-export interface  TypeCustomTextData {
-  color?: string;
+
+export interface TypeCustomTextData {
+  color?: color;
   bigSize?: boolean;
   url?: url;
   first?: {
     text: textContent;
-    color?: string;
+    color?: color;
     font?: boolean;
   };
   accent?: {
     text: textContent;
-    color?: string;
+    color?: color;
     font?: boolean;
   };
   last?: {
     text: textContent;
-    color?: string;
+    color?: color;
     font?: boolean;
   };
 }
 
-export interface  TypeImageData {
-  name: 'LOGO' | 'BACK' | 'SHARE' | 'LINK' | 'FACEBOOK' | 'KAKAO' | 'TWITTER' | 'FIREWORK' | 'WALKING';
-};
+export interface TypeImageData {
+  name:
+    | 'LOGO'
+    | 'BACK'
+    | 'SHARE'
+    | 'LINK'
+    | 'FACEBOOK'
+    | 'KAKAO'
+    | 'TWITTER'
+    | 'FIREWORK'
+    | 'WALKING';
+}
 
 export interface percentBarData {
   percent: number;
@@ -70,17 +123,17 @@ export interface percentBarData {
   top?: {
     first: {
       text: textContent;
-      color?: string;
+      color?: color;
       url?: url;
       font?: boolean;
       bigSize?: boolean;
     };
     last: {
       text: textContent;
-      color?: string;
+      color?: color;
       url?: url;
       font?: boolean;
       bigSize?: boolean;
     };
   };
-};
+}
