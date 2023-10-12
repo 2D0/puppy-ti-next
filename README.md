@@ -104,7 +104,7 @@ Component 생성 예시 코드
 ```JavaScript
 //** DefaultText.jsx  **//
 
-const TextDefault = ({ shape }) => {
+const TextDefault = ({ textDefaultData }) => {
   return (
     <DefaultText className={shape.font && FontGugi.className} $color={shape.color}>
       {shape.text}
@@ -146,7 +146,7 @@ const Footer = () => {
           {textList.map((item, index) => {
             return (
               <TextList key={index} $color={item.color}>
-                <TextDefault textDefaultShape={item} />
+                <TextDefault textDefaultData={item} />
               </TextList>
             );
           })}
