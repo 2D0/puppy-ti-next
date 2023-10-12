@@ -5,10 +5,10 @@ import { TypeTextData } from 'interface';
 import { SubText } from '@atoms/TextSub/TextSub.style';
 import FontGugi from '@/app/api/fonts/FontGugi';
 
-const TextSub = ({ textSubShape }: { textSubShape: TypeTextData }) => {
+const TextSub = ({ textSubData }: { textSubData: TypeTextData }) => {
   return (
-    <SubText $font={textSubShape.font} $color={textSubShape.color}>
-      {textSubShape.text}
+    <SubText $font={textSubData.font} $color={textSubData.color}>
+      {textSubData.text}
     </SubText>
   );
 };

@@ -51,7 +51,7 @@ const CheckHead = () => {
         </FireworkLeft3>
       </Fireworks>
       <CheckTopBar>
-        <PercentBar shape={percentBarData} />
+        <PercentBar percentBarData={percentBarData} />
       </CheckTopBar>
     </CheckTop>
   );

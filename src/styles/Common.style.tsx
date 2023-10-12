@@ -88,10 +88,13 @@ export const IconShadow = css`
     8px 6px 15px rgba(0, 0, 0, 0.11);
 `;
 export const SmallIconShadow = css`
-  filter: drop-shadow(2px 2px 7px rgba(39, 0, 121, 0.07)) drop-shadow(-1px -1px 9px #ffffff) drop-shadow(8px 6px 15px rgba(0, 0, 0, 0.11));
+  filter: drop-shadow(2px 2px 7px rgba(39, 0, 121, 0.07))
+    drop-shadow(-1px -1px 9px #ffffff)
+    drop-shadow(8px 6px 15px rgba(0, 0, 0, 0.11));
 `;
 export const BackGroundShadow = css`
-  filter: drop-shadow(4px 4px 11px rgba(39, 0, 121, 0.07)) drop-shadow(-4px -4px 20px rgba(79, 0, 216, 0.3))
+  filter: drop-shadow(4px 4px 11px rgba(39, 0, 121, 0.07))
+    drop-shadow(-4px -4px 20px rgba(79, 0, 216, 0.3))
     drop-shadow(10px 2px 36px rgba(219, 206, 242, 0.3));
 `;
 
@@ -144,13 +147,13 @@ export const ColumnComponent = styled.div`
 
 // ********************** 모양 **********************
 //컨텐츠
-export const Wrap = styled.div`
-  width: 100%;
-  max-width: ${SizeMaxWidth};
-  margin: 0 auto;
-  padding-top: ${SizeLargeRem};
-  box-shadow: 0 0 15px rgb(0 0 0 / 15%);
-  position: relative;
-  overflow: hidden;
-  background-color: ${({ percent }) => (percent === 100 ? Black : White)};
-`;
+// export const Wrap = styled.div`
+//   width: 100%;
+//   max-width: ${SizeMaxWidth};
+//   margin: 0 auto;
+//   padding-top: ${SizeLargeRem};
+//   box-shadow: 0 0 15px rgb(0 0 0 / 15%);
+//   position: relative;
+//   overflow: hidden;
+//   background-color: ${({ percent }) => (percent === 100 ? Black : White)};
+// `;

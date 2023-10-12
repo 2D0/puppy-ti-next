@@ -24,7 +24,7 @@ const ButtonNext = ({ buttonData }) => {
       type={buttonData?.type}
       $able={buttonData?.able}
     >
-      <TextDefault textDefaultShape={buttonData?.content} />
+      <TextDefault textDefaultData={buttonData?.content} />
     </NextButton>
   );
 };

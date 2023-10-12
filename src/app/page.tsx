@@ -6,22 +6,26 @@ import { useRouter } from 'next/navigation';
 
 //상태관리
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import {nameAtom, testCountState} from '@/app/state';
+import { nameAtom, testCountState } from '@/app/state';
 
 //스타일
 import { MainChar, MainForm } from '@styles/Page.style';
 
 //컴포넌트
-import { ColumnComponent, DarkPurple, LightPurple, Purple } from '@styles/Common.style';
+import {
+  ColumnComponent,
+  DarkPurple,
+  LightPurple,
+  Purple,
+} from '@styles/Common.style';
 import { ButtonNext, NameInput, TextSub } from '@atoms/index';
 import { TitleBox } from '@molecules/index';
 
 //이미지
 import { MainImg } from '@/assets/img/Character/index';
-import {TypeButtonData, TypeCustomTextData, TypeInputData, TypeTextData} from "../../interface";
 
 const Home = () => {
-  const [nameData, setNameData] = useState<string>()
+  const [nameData, setNameData] = useState<string>();
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const nameState = useSetRecoilState(nameAtom); //반려견 이름
@@ -68,13 +72,13 @@ const Home = () => {
   };
 
   //props 데이터
-  const inputData:TypeInputData = {
+  const inputData = {
     name: 'input',
     type: 'text',
     placeholder: '반려견 이름을 적어주세요.',
     event: inputEvent,
   };
-  const buttonData:TypeButtonData = {
+  const buttonData = {
     type: 'submit',
     able: buttonAble,
     event: countUp,
@@ -86,12 +90,12 @@ const Home = () => {
       font: true,
     },
   };
-  const subTextData:TypeTextData = {
+  const subTextData = {
     text: '나의 반려견은 어떤 성향일까?',
     font: true,
     color: LightPurple,
   };
-  const titleData:TypeCustomTextData = {
+  const titleData = {
     bigSize: true,
     accent: {
       text: '퍼피',
@@ -111,8 +115,8 @@ const Home = () => {
         <Image src={MainImg} alt={'퍼피티아이'} />
       </MainChar>
       <ColumnComponent>
-        <TextSub textSubShape={subTextData} />
-        <TitleBox titleBoxShape={titleData} />
+        <TextSub textSubData={subTextData} />
+        <TitleBox titleBoxData={titleData} />
       </ColumnComponent>
       <MainForm onSubmit={onSubmit}>
         <NameInput inputData={inputData} />

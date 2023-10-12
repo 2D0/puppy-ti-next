@@ -1,24 +1,8 @@
 import styled, { css } from 'styled-components';
 import Image from 'next/image';
 import {
-  FontFamilySub,
-  FontPurple,
   ContentsInner,
-  SizeDefaultRem,
-  Square,
-  SquareInner,
-  BgWhite,
-  PhotoContain,
   CommonShadow,
-  FontMediumSize,
-  FontExtraSize,
-  FontBigSize,
-  defaultContMargin,
-  subContMargin,
-  FontDarkPurple,
-  flexItemCenter,
-  FontGray,
-  PercentBarFill,
   White,
   Purple,
   SizeMediumRem,
@@ -29,7 +13,7 @@ import {
   SizeSmallRem,
   ColumnComponentStyle,
   LightGray,
-} from '@styles/Common.style.js';
+} from '@styles/Common.style';
 import device from '@styles/Device.style';
 
 // ******************** 컨텐츠 ********************

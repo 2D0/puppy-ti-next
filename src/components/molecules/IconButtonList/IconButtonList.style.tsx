@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import { CenterAlign, IconShadow, SizeMediumRem } from '@styles/Common.style.js';
+import { CenterAlign, IconShadow, SizeMediumRem } from '@styles/Common.style';
 
 export const IconButtonListWrap = styled.div`
   gap: 0.938rem; //15px

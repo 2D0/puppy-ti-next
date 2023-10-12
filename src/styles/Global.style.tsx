@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
-import gugiRegular from '@/app/fonts/Gugi/Gugi-Regular.ttf';
-import spoqaRegularTtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Regular.ttf';
-import spoqaRegularOtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Regular.otf';
-import spoqaMediumTtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Medium.ttf';
-import spoqaMediumOtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Medium.otf';
-import spoqaBoldOtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Bold.ttf';
-import spoqaBoldTtf from '@/app/fonts/Spoqa/SpoqaHanSansNeo-Bold.otf';
+import gugiRegular from '@fonts/Gugi/Gugi-Regular.ttf';
+import spoqaRegularTtf from '@fonts/Spoqa/SpoqaHanSansNeo-Regular.ttf';
+import spoqaRegularOtf from '@fonts/Spoqa/SpoqaHanSansNeo-Regular.otf';
+import spoqaMediumTtf from '@fonts/Spoqa/SpoqaHanSansNeo-Medium.ttf';
+import spoqaMediumOtf from '@fonts/Spoqa/SpoqaHanSansNeo-Medium.otf';
+import spoqaBoldOtf from '@fonts/Spoqa/SpoqaHanSansNeo-Bold.ttf';
+import spoqaBoldTtf from '@fonts/Spoqa/SpoqaHanSansNeo-Bold.otf';
 
 const GlobalStyle = createGlobalStyle`
   // **************** 폰트 ****************

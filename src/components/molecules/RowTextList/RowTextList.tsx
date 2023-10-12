@@ -8,13 +8,13 @@ import { RowTextWrap, TextList } from './RowTextList.style';
 //컴포넌트
 import { TextDefault } from '@atoms/index';
 
-const RowTextList = ({ textListData }: { textListData: TypeTextData }) => {
+const RowTextList = ({ textListData }: { textListData: TypeTextData[] }) => {
   return (
     <RowTextWrap>
       {textListData.map((item, index) => {
         return (
-          <TextList key={index} $color={item.color}>
-            <TextDefault textDefaultShape={item} />
+          <TextList key={index} $textListData={item}>
+            <TextDefault textDefaultData={item} />
           </TextList>
         );
       })}

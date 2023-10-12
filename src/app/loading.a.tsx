@@ -8,10 +8,18 @@ import { ReactComponent as Toe4 } from '@/assets/img/Icons/ico-toe4.svg';
 import { ReactComponent as ToeBody } from '@/assets/img/Icons/ico-footbody.svg';
 import { TitleBox } from '@molecules/index';
 import { LightPurple } from '@styles/Common.style';
-import { LoadingWrap, ToeComponent1, ToeComponent2, ToeComponent3, ToeComponent4, ToeComponentBody, ToesWrap } from '@styles/loading.style';
-import {TypeCustomTextData} from "../../interface";
+import {
+  LoadingWrap,
+  ToeComponent1,
+  ToeComponent2,
+  ToeComponent3,
+  ToeComponent4,
+  ToeComponentBody,
+  ToesWrap,
+} from '@styles/loading.style';
+import { TypeCustomTextData } from '../../interface';
 
-const loadingTextData:TypeCustomTextData = {
+const loadingTextData: TypeCustomTextData = {
   accent: {
     text: 'LOADING',
     color: LightPurple,
@@ -39,7 +47,7 @@ const LoadingA = () => {
             <ToeBody />
           </ToeComponentBody>
         </ToesWrap>
-        <TitleBox titleBoxShape={loadingTextData} />
+        <TitleBox titleBoxData={loadingTextData} />
       </LoadingWrap>
     </>
   );

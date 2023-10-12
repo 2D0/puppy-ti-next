@@ -18,13 +18,20 @@ import {
 
 //이미지
 import Intj from '@img/Character/mbti-INFP.png';
-import { Black, DarkPurple, Gray, LightGray, LightPurple, Purple } from '@styles/Common.style';
+import {
+  Black,
+  DarkPurple,
+  Gray,
+  LightGray,
+  LightPurple,
+  Purple,
+} from '@styles/Common.style';
 
 //컴포넌트
 import { TextSub } from '@atoms/index';
 import { TitleBox } from '@molecules/index';
 import PercentBar from '@molecules/PercentBar/PercentBar';
-import {percentBarData, TypeCustomTextData} from "interface";
+import { percentBarData, TypeCustomTextData } from 'interface';
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState([]);
@@ -83,7 +90,7 @@ const ResultPage = () => {
       },
     },
   ];
-  const mbtiNameData:TypeCustomTextData = {
+  const mbtiNameData: TypeCustomTextData = {
     bigSize: true,
     accent: {
       text: `INTJ`,
@@ -94,18 +101,18 @@ const ResultPage = () => {
   return (
     <>
       <ResultPuppyName>
-        <TitleBox titleBoxShape={titleData} />
-        <TextSub textSubShape={{ text: '는(은)' }} />
+        <TitleBox titleBoxData={titleData} />
+        <TextSub textSubData={{ text: '는(은)' }} />
       </ResultPuppyName>
       <ResultCharBox>
-        <TitleBox titleBoxShape={mbtiNameData} />
+        <TitleBox titleBoxData={mbtiNameData} />
         <ResultBoxChar>
           <Image src={Intj} alt={'Intj'} />
         </ResultBoxChar>
       </ResultCharBox>
       <PercentBarList>
         {percentBarData.map(item => (
-          <PercentBar key={item.top.first.text} shape={item} />
+          <PercentBar key={item.top.first.text} percentBarData={item} />
         ))}
       </PercentBarList>
       <ResultTxtBox>

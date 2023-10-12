@@ -1,5 +1,5 @@
 import React from 'react';
-import {TypeCustomTextData, TypeTextData} from 'interface';
+import { TypeCustomTextData, TypeTextData } from 'interface';
 
 //폰트
 import gugiFont from '@app/api/fonts/FontGugi';
@@ -7,16 +7,27 @@ import gugiFont from '@app/api/fonts/FontGugi';
 //스타일
 import { TitleWrap, TextAccent } from './TitleBox.style';
 
-const TitleBox = ({ titleBoxShape }: { titleBoxShape: TypeCustomTextData }) => {
+const TitleBox = ({ titleBoxData }: { titleBoxData: TypeCustomTextData }) => {
   return (
-    <TitleWrap $bigSize={titleBoxShape.bigSize} $color={titleBoxShape.color}>
-      {titleBoxShape.first && <span className={titleBoxShape.first.font && gugiFont.className}>{titleBoxShape.first.text}</span>}
-      {titleBoxShape.accent && (
-        <TextAccent className={titleBoxShape.accent.font && gugiFont.className} $color={titleBoxShape.accent.color}>
-          {titleBoxShape.accent.text}
+    <TitleWrap $bigSize={titleBoxData.bigSize} $color={titleBoxData.color}>
+      {titleBoxData.first && (
+        <span className={titleBoxData.first.font && gugiFont.className}>
+          {titleBoxData.first.text}
+        </span>
+      )}
+      {titleBoxData.accent && (
+        <TextAccent
+          className={titleBoxData.accent.font && gugiFont.className}
+          $color={titleBoxData.accent.color}
+        >
+          {titleBoxData.accent.text}
         </TextAccent>
       )}
-      {titleBoxShape?.last && <span className={titleBoxShape.last.font && gugiFont.className}>{titleBoxShape.last.text}</span>}
+      {titleBoxData?.last && (
+        <span className={titleBoxData.last.font && gugiFont.className}>
+          {titleBoxData.last.text}
+        </span>
+      )}
     </TitleWrap>
   );
 };
