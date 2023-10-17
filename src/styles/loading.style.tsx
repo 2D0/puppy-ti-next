@@ -1,6 +1,13 @@
 import styled, { css, keyframes } from 'styled-components';
-import { WhitePurple, PositionFit, Center, SmallIconShadow, SizeMaxWidth } from '@styles/Common.style';
+import {
+  WhitePurple,
+  PositionFit,
+  Center,
+  SmallIconShadow,
+  SizeMaxWidth,
+} from '@styles/Common.style';
 import device from '@styles/Device.style';
+
 const keyframeOption = (first, second, tired) => keyframes`
 0%{${first}}
 50%{ ${second}}
@@ -52,13 +59,21 @@ export const ToeComponent1 = styled(ToeComponent)`
   height: 73.5px;
   top: 60px;
   left: 0;
-  ${upAndDownOption(keyframeOption('top:60px', 'top:35px', 'top:60px'), 1.4, 0)};
+  ${upAndDownOption(
+    keyframeOption('top:60px', 'top:35px', 'top:60px'),
+    1.4,
+    0,
+  )};
 
   @media ${device.MaxWidthL} {
     width: 42.1px;
     height: 47.93px;
     top: 43px;
-    ${upAndDownOption(keyframeOption('top:43px', 'top:30px', 'top:43px'), 1.4, 0)};
+    ${upAndDownOption(
+      keyframeOption('top:43px', 'top:30px', 'top:43px'),
+      1.4,
+      0,
+    )};
   }
 `;
 
@@ -73,7 +88,11 @@ export const ToeComponent2 = styled(ToeComponent)`
     width: 39.94px;
     height: 53.68px;
     left: 44px;
-    ${upAndDownOption(keyframeOption('top:0px', 'top:-13px', 'top:0'), 1.4, 0.3)};
+    ${upAndDownOption(
+      keyframeOption('top:0px', 'top:-13px', 'top:0'),
+      1.4,
+      0.3,
+    )};
   }
 `;
 export const ToeComponent3 = styled(ToeComponent)`
@@ -95,13 +114,21 @@ export const ToeComponent4 = styled(ToeComponent)`
   height: 78.5px;
   top: 55px;
   right: 0;
-  ${upAndDownOption(keyframeOption('top:55px', 'top:30px', 'top:55px'), 1.4, 0.9)};
+  ${upAndDownOption(
+    keyframeOption('top:55px', 'top:30px', 'top:55px'),
+    1.4,
+    0.9,
+  )};
 
   @media ${device.MaxWidthL} {
     width: 39.94px;
     height: 51.69px;
     top: 39px;
-    ${upAndDownOption(keyframeOption('top:39px', 'top:26px', 'top:39px'), 1.4, 0.9)};
+    ${upAndDownOption(
+      keyframeOption('top:39px', 'top:26px', 'top:39px'),
+      1.4,
+      0.9,
+    )};
   }
 `;
 export const ToeComponentBody = styled(ToeComponent)`
