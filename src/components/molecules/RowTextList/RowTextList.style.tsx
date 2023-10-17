@@ -3,7 +3,7 @@ import { Center, CenterAlign, SizeSmallRem } from '@styles/Common.style';
 import { percentBarData, TypeTextData } from '../../../../interface';
 
 //글자 사이 막대 추가 및 가로 정렬
-export const RowTextWrap = styled.div`
+export const RowTextWrap = styled.ul`
   ${Center};
   width: 100%;
   gap: ${SizeSmallRem};
