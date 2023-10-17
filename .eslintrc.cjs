@@ -26,19 +26,7 @@ module.exports = {
   'rules': {
     'react/jsx-filename-extension': [
       'error',
-      {extensions: ['.vue', '.js', '.jsx', '.json', '.ts', '.tsx', '.css', '.scss']},
-    ],
-    /*'indent': [
-        'error',
-        'tab'
-    ],
-    'quotes': [
-        'error',
-        'double'
-    ],
-    'semi': [
-        'error',
-        'always'
-    ]*/
+      {extensions: ['.js', '.jsx', '.ts', '.tsx']},
+    ]
   }
 };

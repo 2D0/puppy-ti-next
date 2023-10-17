@@ -1,8 +1,7 @@
 {
-  "test-count": {
-    "count": "165"
+  "main-data": {
+    "count": 6
   },
-  "dog-name": {},
   "state": {
     "type": null,
     "score": null

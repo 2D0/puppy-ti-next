@@ -1,15 +1,12 @@
 import styled from 'styled-components';
-import { SizeMediumRem, SizeRegularRem } from '@/style/Common.style';
+import { SizeMediumRem, SizeRegularRem } from '@styles/Common.style';
 
 // ******************** 질문 박스 ********************
 
-export const CheckQABoxs = styled.ul`
+export const CheckBoxListWrap = styled.ul`
   display: flex;
   flex-direction: column;
   gap: ${SizeMediumRem} 0;
+  width: 100%;
 `;
-export const CheckQABoxList = styled.li``;
-export const CheckQATop = styled.ul`
-  display: flex;
-  height: ${SizeMediumRem};
-`;
+export const CheckBoxList = styled.li``;

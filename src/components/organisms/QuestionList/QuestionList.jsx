@@ -1,15 +1,22 @@
 import React from 'react';
 
 //스타일
-import { CheckQABoxList, CheckQABoxs } from '@/components/organisms/QuestionList/QuestionList.style';
+import {
+  CheckBoxListWrap,
+  CheckBoxList,
+} from '@/components/organisms/QuestionList/QuestionList.style';
+
+//이미지
+import { TextDefault } from '@atoms/index';
+import Question from '@molecules/Question/Question';
 
 const QuestionList = questionData => {
   return (
-    <CheckQABoxs>
+    <CheckBoxListWrap>
       {questionData.questionData.map(item => (
-        <CheckQABoxList key={item.id}>{item.text}</CheckQABoxList>
+        <Question key={item.id} questionData={item} />
       ))}
-    </CheckQABoxs>
+    </CheckBoxListWrap>
   );
 };
 export default QuestionList;

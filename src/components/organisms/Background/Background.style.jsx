@@ -1,24 +1,50 @@
 import styled, { css } from 'styled-components';
-import device from '@/style/Device.style';
-import { LightPurple } from '@/style/Common.style';
+import { PositionFit, BackGroundShadow, SizeLargeRem, SizeMiddleRem, PositionAbsolute, SizeMediumLargeRem } from '@styles/Common.style';
+import device from '@styles/Device.style';
 
 // ********************** 배경 **********************
-//컨텐츠 상단 배경
-export const ContentsBack = styled.div`
+export const BackgroundWrap = styled.div`
+  ${PositionFit};
   width: 100%;
-  height: calc(45vh - 250px);
-  position: relative;
-  z-index: 2;
-  background-color: ${LightPurple};
-  @media ${device.MaxHeightS} {
-    height: 17.5rem; //280px
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+`;
+export const WaveBlock = styled.div`
+  width: 100%;
+  height: fit-content;
+  //padding-top: ${SizeLargeRem};
+  overflow-x: hidden;
+
+  > svg {
+    ${BackGroundShadow};
+  }
+
+  @media ${device.MaxWidthL} {
+    padding-top: ${SizeMiddleRem};
   }
 `;
-//배경 박스 전체
-export const BackCont = styled.div`
+export const SlashBlock = css`
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+  ${PositionAbsolute};
+`;
+export const SlashPositionColumn = `calc(-20% - -${SizeLargeRem})`;
+export const SlashPositionRow = `-32%`;
+export const SlashTop = styled.div`
+  ${SlashBlock};
+  top: ${SlashPositionColumn};
+  right: ${SlashPositionRow};
+
+  @media ${device.MaxWidthL} {
+    top: calc(-20% - -${SizeMiddleRem});
+  }
+`;
+export const SlashBottom = styled.div`
+  ${SlashBlock};
+  bottom: ${SlashPositionColumn};
+  left: ${SlashPositionRow};
+
+  @media ${device.MaxWidthL} {
+    bottom: calc(-20% - -${SizeMediumLargeRem});
+  }
 `;
