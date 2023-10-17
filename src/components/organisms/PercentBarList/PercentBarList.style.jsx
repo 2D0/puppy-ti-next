@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { SizeDefaultRem, DarkPurple, Gray, CenterAlign, SizeSmallRem, SizeMediumRem } from '@/style/Common.style';
+import { SizeDefaultRem, DarkPurple, Gray, CenterAlign, SizeSmallRem, SizeMediumRem } from '@styles/Common.style';
 
 export const ResultPercentCont = styled.div``;
 export const ResultPercentBox = styled.ul`
@@ -38,5 +38,9 @@ export const ResultPercentNames = styled.div`
 export const ResultPercentName = styled.span`
   font-size: ${SizeDefaultRem};
   font-weight: 500;
+
+  @media ${device.MaxWidthL} {
+    font-size: ${SizeDefaultSmallRem};
+  }
 `;
 export const ResultPercentNum = styled.span``;

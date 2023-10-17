@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { CommonShape, CommonShadow, SizeDefaultRem, Gray, White } from '@/style/Common.style.jsx';
+import { CommonShape, CommonShadow, Gray, White } from '@styles/Common.style.tsx';
 export const InputBox = styled.input`
   border: none;
   background-color: ${White};

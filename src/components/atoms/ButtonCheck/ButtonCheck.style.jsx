@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { IconShadow } from '@/style/Common.style';
+import { IconShadow } from '@styles/Common.style';
 
 export const StrockeWidth = `0.25rem`; //4px
 export const CheckFootShape = css`

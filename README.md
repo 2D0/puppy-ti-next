@@ -104,9 +104,10 @@ Component 생성 예시 코드
 ```JavaScript
 //** DefaultText.jsx  **//
 
-const TextDefault = ({ shape }) => {
+
+const TextDefault = ({ textDefaultData }) => {
   return (
-    <DefaultText className={shape.font && FontGugi.className} color={shape.color}>
+    <DefaultText className={shape.font && FontGugi.className} $color={shape.color}>
       {shape.text}
     </DefaultText>
   );
@@ -115,10 +116,10 @@ export default TextDefault;
 ```
 Component 사용 예시 코드 
 ```JavaScript
-//** Footer.jsx **//
+//** Footer.tsx **//
 
 //컴포넌트
-import { TextDefault } from '@/components/atoms';
+import { TextDefault } from '@atoms/index';
 
 const textList = [
   {
@@ -145,8 +146,8 @@ const Footer = () => {
         <RowText>
           {textList.map((item, index) => {
             return (
-              <TextList key={index} color={item.color}>
-                <TextDefault shape={item} />
+              <TextList key={index} $color={item.color}>
+                <TextDefault textDefaultData={item} />
               </TextList>
             );
           })}
