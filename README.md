@@ -106,7 +106,6 @@ Component 생성 예시 코드
 const TextDefault = ({ textDefaultData }) => {
   return (
     <DefaultText className={shape.font && FontGugi.className} $color={shape.color}>
-      
       {shape.text}
     </DefaultText>
   );
