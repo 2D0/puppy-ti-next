@@ -82,6 +82,7 @@ const Home = () => {
     type: 'submit',
     able: buttonAble,
     event: countUp,
+    // axios 같은건 event에서 처리
     axios: true,
     method: 'POST',
     url: '/check',

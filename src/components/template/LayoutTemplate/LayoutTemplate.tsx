@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import { usePathname } from 'next/navigation';
 import StyledComponentsRegistry from '@/../lib/registry';
 
@@ -15,6 +15,7 @@ import { Main, Body } from './LayoutTemplate.style';
 //컴포넌트
 import { Header, Footer, Background } from '@organisms/index';
 import { Share, RowTextList } from '@molecules/index';
+import * as path from "path";
 
 const LayoutTemplate = ({ children }) => {
   //ContextData
@@ -24,6 +25,22 @@ const LayoutTemplate = ({ children }) => {
   const testCount = useRecoilValue(testCountState);
   const setColorChange = useSetRecoilState(colorChangeState);
   const percent = useRecoilValue(percentState);
+
+  useEffect(() => {
+    console.log('pathName Changed', pathName)
+  }, [pathName])
+
+  useEffect(() => {
+    console.log('useBackground Changed', useBackground)
+  }, [useBackground])
+
+  useEffect(() => {
+    console.log('useShare Changed', useShare)
+  }, [useShare])
+
+  useEffect(() => {
+    console.log('testCount Changed', testCount)
+  }, [testCount])
 
   //페이지 경로에 따라 Background color change 및 Component on off
   useEffect(() => {
@@ -58,21 +75,23 @@ const LayoutTemplate = ({ children }) => {
   }, [pathName]);
 
   //props 데이터
-  const textListData = [
-    {
-      text: '참여 횟수',
-      color: Black,
-    },
-    {
-      text: testCount,
-      color: Black,
-    },
-  ];
-
+  const textListData = useMemo(() => {
+    return [
+      {
+        text: '참여 횟수',
+        color: Black,
+      },
+      {
+        text: testCount,
+        color: Black,
+      },
+    ];
+  }, []);
+  console.log("rendering")
   return (
     <StyledComponentsRegistry>
       <GlobalStyle />
-      <Body $pathName={pathName}>
+      <Body $pathName={pathName} percent={0}>
         <Header />
         <Main $pathName={pathName}>
           {children}

@@ -26,12 +26,11 @@ export function Header() {
     setScroll(scrollPosition > 20);
   };
   useEffect(() => {
-    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scroll]);
+  }, []);
 
   return (
     <HeaderCont $headerData={colorChange} $scroll={scroll}>
