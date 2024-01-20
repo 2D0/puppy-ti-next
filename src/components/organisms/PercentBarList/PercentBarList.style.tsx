@@ -1,5 +1,14 @@
 import styled, { css } from 'styled-components';
-import { SizeDefaultRem, DarkPurple, Gray, CenterAlign, SizeSmallRem, SizeMediumRem } from '@styles/Common.style';
+import {
+  SizeDefaultRem,
+  DarkPurple,
+  Gray,
+  CenterAlign,
+  SizeSmallRem,
+  SizeMediumRem,
+  SizeDefaultSmallRem,
+} from '@styles/Common.style';
+import Device from '@styles/Device.style';
 
 export const ResultPercentCont = styled.div``;
 export const ResultPercentBox = styled.ul`
@@ -7,18 +16,20 @@ export const ResultPercentBox = styled.ul`
   flex-direction: column;
   gap: ${SizeMediumRem};
 `;
-export const ResultPercentList = styled.li`
-  ${({ percent }) =>
-    percent >= 100 - percent
+export const ResultPercentList = styled.li<{
+  $percent: number;
+}>`
+  ${({ $percent }) =>
+    $percent >= 100 - $percent
       ? css`
           left: 0;
           right: initial;
-          width: ${percent}%;
+          width: ${$percent}%;
         `
       : css`
           left: initial;
           right: 0;
-          width: ${100 - percent}%;
+          width: ${100 - $percent}%;
         `};
 `;
 export const ResultPercentInfo = styled.div`
@@ -28,18 +39,11 @@ export const ResultPercentInfo = styled.div`
   position: relative;
   z-index: 2;
 `;
-export const ResultPercentNames = styled.div`
-  ${CenterAlign};
-  gap: 0 ${SizeSmallRem};
-  
-  > span {
-    ${({ resultType }) => (resultType ? DarkPurple : Gray)}
-`;
 export const ResultPercentName = styled.span`
   font-size: ${SizeDefaultRem};
   font-weight: 500;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     font-size: ${SizeDefaultSmallRem};
   }
 `;

@@ -17,8 +17,9 @@ import {
   DarkPurple,
   LightPurple,
   Purple,
+  SizeExtraRem,
 } from '@styles/Common.style';
-import { ButtonNext, NameInput, TextSub } from '@atoms/index';
+import { ButtonNext, NameInput, TextDefault } from '@atoms/index';
 import { TitleBox } from '@molecules/index';
 
 //이미지
@@ -87,25 +88,29 @@ const Home = () => {
     url: '/check',
     content: {
       text: '시작하기',
-      font: true,
+      font: 'gugi',
     },
   };
   const subTextData = {
     text: '나의 반려견은 어떤 성향일까?',
-    font: true,
+    size: '2.25rem',
+    family: 'gugi',
     color: LightPurple,
   };
+  const commonTextData = {
+    family: 'gugi',
+    size: SizeExtraRem,
+  };
   const titleData = {
-    bigSize: true,
     accent: {
+      ...commonTextData,
       text: '퍼피',
       color: Purple,
-      font: true,
     },
     last: {
+      ...commonTextData,
       text: '티아이',
       color: DarkPurple,
-      font: true,
     },
   };
 
@@ -115,7 +120,7 @@ const Home = () => {
         <Image src={MainImg} alt={'퍼피티아이'} />
       </MainChar>
       <ColumnComponent>
-        <TextSub textSubData={subTextData} />
+        <TextDefault textDefaultData={subTextData} />
         <TitleBox titleBoxData={titleData} />
       </ColumnComponent>
       <MainForm onSubmit={onSubmit}>

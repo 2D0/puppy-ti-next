@@ -7,7 +7,7 @@ import { NextButton } from '@atoms/ButtonNext/ButtonNext.style';
 //컴포넌트
 import { TextDefault } from '@atoms/index';
 
-const ButtonNext = ({ buttonData }) => {
+const ButtonNext = ({ buttonData }): any => {
   const router = useRouter(); //react router 페이지 핸들링하는 함수
 
   const clickEvent = () => {

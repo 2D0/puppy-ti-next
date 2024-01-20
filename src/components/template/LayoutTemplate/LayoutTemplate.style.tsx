@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { TypeUrl } from 'interface';
+
 import {
   CenterAlign,
   SizeFull,
@@ -13,10 +15,9 @@ import {
   WhitePurple,
   SizeLargeRem,
 } from '@styles/Common.style';
-import device from '@styles/Device.style';
-import { TypeDefault } from 'interface';
+import Device from '@styles/Device.style';
 
-export const Main = styled.main<{ $pathName: TypeDefault['textData'] }>`
+export const Main = styled.main<{ $pathName: TypeUrl }>`
   ${CenterAlign};
   ${SizeFull};
   flex-direction: column;
@@ -28,7 +29,7 @@ export const Main = styled.main<{ $pathName: TypeDefault['textData'] }>`
       ? `0 0 ${SizeMiddleLargeRem} 0`
       : ` ${SizeMiddleLargeRem} 0`};
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     padding: ${({ $pathName }) =>
       $pathName === '/check'
         ? `0 0 ${SizeMiddleRem} 0`
@@ -37,8 +38,8 @@ export const Main = styled.main<{ $pathName: TypeDefault['textData'] }>`
   }
 `;
 export const Body = styled.body<{
-  $pathName: TypeDefault['textData'];
-  percent: number;
+  $pathName: TypeUrl;
+  $percent: number;
 }>`
   width: 100%;
   height: 100vh;
@@ -50,12 +51,13 @@ export const Body = styled.body<{
       : '4.375rem'};
   position: relative;
   overflow-y: auto;
-  background-color: ${({ percent }) => (percent === 100 ? Black : WhitePurple)};
+  background-color: ${({ $percent }) =>
+    $percent === 100 ? Black : WhitePurple};
 
-  @media ${device.MaxHeightFull} {
+  @media ${Device.MaxHeightFull} {
     height: 100%;
   }
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     padding-top: ${({ $pathName }) =>
       $pathName === '/check'
         ? `calc(${SizeLargeRem} + (${SizeExtraRem} * 2) )`

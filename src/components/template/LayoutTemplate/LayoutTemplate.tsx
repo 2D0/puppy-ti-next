@@ -16,7 +16,7 @@ import { Main, Body } from './LayoutTemplate.style';
 import { Header, Footer, Background } from '@organisms/index';
 import { Share, RowTextList } from '@molecules/index';
 
-const LayoutTemplate = ({ children }) => {
+const LayoutTemplate = ({ children }): any => {
   //ContextData
   const pathName = usePathname(); //현재 주소
   const [useBackground, setUseBackground] = useState<boolean>(true);
@@ -72,7 +72,7 @@ const LayoutTemplate = ({ children }) => {
   return (
     <StyledComponentsRegistry>
       <GlobalStyle />
-      <Body $pathName={pathName}>
+      <Body $pathName={pathName} $percent={percent}>
         <Header />
         <Main $pathName={pathName}>
           {children}

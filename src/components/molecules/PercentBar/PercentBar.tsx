@@ -10,18 +10,23 @@ import {
   PercentBarFill,
 } from '@molecules/PercentBar/PercentBar.style';
 import { PercentBarText } from '@styles/Result.style';
+
+//컴포넌트
 import { TextDefault } from '@atoms/index';
 
 const PercentBar = ({ percentBarData }: { percentBarData: percentBarData }) => {
+  const { top, percent } = percentBarData || {};
   return (
     <PercentBarWrap>
-      <PercentBarText>
-        <TextDefault textDefaultData={percentBarData.top.first} />
-        <TextDefault textDefaultData={percentBarData.top.last} />
-      </PercentBarText>
+      {top && (
+        <PercentBarText>
+          <TextDefault textDefaultData={top?.first} />
+          <TextDefault textDefaultData={top?.last} />
+        </PercentBarText>
+      )}
       <PercentBarBox $percentBarData={percentBarData}>
         <PercentBarFill $percentBarData={percentBarData}>
-          <A11yHidden>{percentBarData.percent}%</A11yHidden>
+          <A11yHidden>{percent}%</A11yHidden>
         </PercentBarFill>
       </PercentBarBox>
     </PercentBarWrap>

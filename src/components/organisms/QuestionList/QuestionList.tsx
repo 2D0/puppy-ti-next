@@ -4,13 +4,13 @@ import React from 'react';
 import {
   CheckBoxListWrap,
   CheckBoxList,
-} from '@/components/organisms/QuestionList/QuestionList.style';
+} from '@organisms/QuestionList/QuestionList.style';
 
 //이미지
 import { TextDefault } from '@atoms/index';
 import Question from '@molecules/Question/Question';
 
-const QuestionList = questionData => {
+const QuestionList = ({ questionData }): any => {
   return (
     <CheckBoxListWrap>
       {questionData.questionData.map(item => (

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
-import device from '@styles/Device.style';
-import { SizeLargeRem, Center, DarkPurple, SizeMediumLargeRem } from '@styles/Common.style';
+import Device from '@styles/Device.style';
+import {
+  SizeLargeRem,
+  Center,
+  DarkPurple,
+  SizeMediumLargeRem,
+} from '@styles/Common.style';
 
 // ********************** 푸터 **********************
 export const FooterWrap = styled.footer`
@@ -11,7 +16,7 @@ export const FooterWrap = styled.footer`
   gap: 0.5rem;
   background-color: ${DarkPurple};
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     height: ${SizeMediumLargeRem};
     gap: 0.25rem;
   }

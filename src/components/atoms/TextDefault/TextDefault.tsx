@@ -1,37 +1,36 @@
 import React from 'react';
-import { TypeTextData } from 'interface';
+import { TypeText } from 'interface';
 
 //스타일
-import {
-  DefaultText,
-  DefaultTextLink,
-} from '@atoms/TextDefault/TextDefault.style';
+import { DefaultText, DefaultTextLink } from './TextDefault.style';
 import FontGugi from '@/app/api/fonts/FontGugi';
 
 const TextDefault = ({
   textDefaultData,
+  addTextDefaultData,
 }: {
-  textDefaultData: TypeTextData;
+  textDefaultData: TypeText;
+  addTextDefaultData?: Omit<TypeText, 'text'>;
 }) => {
-  return (
-    <>
-      {textDefaultData.url ? (
-        <DefaultTextLink
-          href={textDefaultData.url}
-          className={textDefaultData.font && FontGugi.className}
-          $color={textDefaultData.color}
-        >
-          {textDefaultData.text}
-        </DefaultTextLink>
-      ) : (
-        <DefaultText
-          className={textDefaultData.font && FontGugi.className}
-          $color={textDefaultData.color}
-        >
-          {textDefaultData.text}
-        </DefaultText>
-      )}
-    </>
+  const finalTextData = Object.assign({}, textDefaultData, addTextDefaultData);
+  const { url, text, target, family } = finalTextData;
+
+  return url ? (
+    <DefaultTextLink
+      href={url}
+      target={target || '_self'}
+      $textDefaultData={finalTextData}
+      className={family && FontGugi.className}
+    >
+      {text}
+    </DefaultTextLink>
+  ) : (
+    <DefaultText
+      $textDefaultData={finalTextData}
+      className={family && FontGugi.className}
+    >
+      {text}
+    </DefaultText>
   );
 };
 export default TextDefault;

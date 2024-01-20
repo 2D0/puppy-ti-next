@@ -8,11 +8,16 @@ import { useRecoilValue } from 'recoil';
 import { colorChangeState, percentState } from '@/app/state';
 
 //스타일
-import { HeaderCont, HeaderInner, HeaderLogo } from '@/components/organisms/Header/Header.style';
+import {
+  HeaderCont,
+  HeaderInner,
+  HeaderLogo,
+} from '@/components/organisms/Header/Header.style';
 
 //컴포넌트
 import CheckHead from '@/components/molecules/CheckHead/CheckHead';
 import { SvgComponent } from '@atoms/index';
+import Logo from '@images/Logo/logo.svg';
 
 export function Header() {
   const pathName = usePathname(); //현재 주소
@@ -26,18 +31,17 @@ export function Header() {
     setScroll(scrollPosition > 20);
   };
   useEffect(() => {
-    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scroll]);
+  }, []);
 
   return (
-    <HeaderCont $headerData={colorChange} $scroll={scroll}>
+    <HeaderCont $headerData={{ colorChange: colorChange, scroll: scroll }}>
       <HeaderInner>
         <HeaderLogo href={'/'}>
-          <SvgComponent imageData={{ name: 'LOGO' }} />
+          <Logo />
         </HeaderLogo>
       </HeaderInner>
 

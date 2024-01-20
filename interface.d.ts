@@ -1,18 +1,5 @@
-import React from 'react';
-import {
-  White,
-  Black,
-  LightGray,
-  Gray,
-  Purple,
-  WhitePurple,
-  LightPurple,
-  DarkPurple,
-  Pink,
-} from '@styles/Common.style';
-
 type textContent = string | number;
-type url = `${'/'}${string}`;
+type TypeUrl = string | `${'/'}${string}`;
 type input = 'text' | 'button' | 'submit';
 type color =
   | White
@@ -28,7 +15,7 @@ type color =
 
 export interface TypeDefault {
   textData: string | number;
-  url: string;
+  url: TypeUrl;
   color:
     | White
     | Black
@@ -52,6 +39,7 @@ export interface TypeHeaderData {
   percent: number;
   colorChange: color;
   logo: string;
+  scroll: boolean;
 }
 
 export interface TypeInputData {
@@ -68,40 +56,42 @@ export interface TypeButtonData {
   event: () => void;
   axios?: boolean;
   method?: 'GET' | 'POST';
-  url?: url;
+  url?: TypeUrl;
   content: {
     text: string;
     font?: boolean;
   };
 }
+export interface TypeLink {
+  url?: TypeDefault.url | TypeUrl;
+  target?: TypeDefault.target;
+}
+export interface TypeText extends TypeLink {
+  text?: TypeDefault.textData;
+  color?: TypeDefault.color;
+  size?:
+    | SizeDefaultSmallRem
+    | SizeDefaultRem
+    | SizeRegularRem
+    | SizeMiddleRem
+    | TypeUnit;
+  weight?: TypeDefault.weight;
+  family?: string;
+  background?: TypeDefault.color;
+}
 
 export interface TypeTextData {
   text: textContent;
   color?: color;
-  url?: url;
+  url?: TypeUrl;
   font?: boolean;
   bigSize?: boolean;
 }
 
-export interface TypeCustomTextData {
-  color?: color;
-  bigSize?: boolean;
-  url?: url;
-  first?: {
-    text: textContent;
-    color?: color;
-    font?: boolean;
-  };
-  accent?: {
-    text: textContent;
-    color?: color;
-    font?: boolean;
-  };
-  last?: {
-    text: textContent;
-    color?: color;
-    font?: boolean;
-  };
+export interface TypeTitleBoxData {
+  first?: TypeText;
+  accent?: TypeText;
+  last?: TypeText;
 }
 
 export interface TypeImageData {
@@ -119,19 +109,19 @@ export interface TypeImageData {
 
 export interface percentBarData {
   percent: number;
-  height: boolean;
+  height?: boolean;
   top?: {
     first: {
       text: textContent;
       color?: color;
-      url?: url;
+      url?: TypeUrl;
       font?: boolean;
       bigSize?: boolean;
     };
     last: {
       text: textContent;
       color?: color;
-      url?: url;
+      url?: TypeUrl;
       font?: boolean;
       bigSize?: boolean;
     };

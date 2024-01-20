@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import Device from '@styles/Device.style';
 import {
   ContentsInner,
   PositionCenterRow,
@@ -14,8 +15,7 @@ import {
   White,
   Pink,
   SizeMaxWidth,
-} from '@styles/Common.style.tsx';
-import device from '@styles/Device.style';
+} from '@styles/Common.style';
 
 // **************** 상단 퍼센트 헤드 ****************
 export const CheckTopInner = styled.div`
@@ -25,7 +25,7 @@ export const CheckTopInner = styled.div`
   z-index: 3;
   overflow-x: hidden;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     height: ${SizeLargeRem};
   }
 `;
@@ -66,14 +66,16 @@ export const CheckTopChar = styled.div`
   transition: all 0.5s ease;
   z-index: 1;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     width: ${SizeLargeRem};
     height: ${SizeLargeRem};
   }
 `;
 
 //폭죽들
-export const Fireworks = styled.div`
+export const Fireworks = styled.div<{
+  $percent: number;
+}>`
   display: ${({ $percent }) => ($percent === 100 ? 'block' : 'none')};
   width: calc(${SizeExtraRem} + (${SizeMiddleRem} / 2));
   height: ${SizeExtraRem};
@@ -81,7 +83,7 @@ export const Fireworks = styled.div`
   top: 0;
   right: 0;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     width: calc(${SizeExtraRem} + (${SizeRegularRem} / 2));
   }
 `;
@@ -92,7 +94,7 @@ export const FireworkLeftShape = css`
   height: calc(${SizeMiddleRem} / 2);
   position: absolute;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     width: calc(${SizeMiddleRem} / 2.5);
     height: calc(${SizeMiddleRem} / 2.5);
   }
@@ -108,7 +110,7 @@ export const FireworkLeft1 = styled.div`
     }
   }
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     top: 0.5rem;
     left: 1rem;
   }
@@ -123,7 +125,7 @@ export const FireworkLeft2 = styled.div`
       fill: ${Pink};
     }
   }
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     left: 1.5rem;
   }
 `;
@@ -134,7 +136,7 @@ export const FireworkLeft3 = styled.div`
   bottom: 1rem;
   left: -1rem;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     width: calc(${SizeMiddleRem} / 1.7);
     height: calc(${SizeMiddleRem} / 1.7);
     bottom: 2.5rem;
@@ -150,13 +152,15 @@ export const FireworksTopRight = styled.div`
   top: 0;
   right: 1rem;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     right: 0.5rem;
   }
 `;
 
 //체크 탑
-export const CheckTop = styled.article`
+export const CheckTop = styled.article<{
+  $percent: number;
+}>`
   width: 100%;
   max-width: ${SizeMaxWidth};
   padding: ${SizeDefaultSmallRem} 0;
@@ -167,7 +171,7 @@ export const CheckTop = styled.article`
   ${CheckTopChar} {
     left: ${({ $percent }) => `calc(${$percent}% - ${SizeExtraRem})`};
 
-    @media ${device.MaxWidthL} {
+    @media ${Device.MaxWidthL} {
       left: ${({ $percent }) => `calc(${$percent}% - ${SizeLargeRem})`};
     }
   }

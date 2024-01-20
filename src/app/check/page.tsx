@@ -11,7 +11,6 @@ const CheckPage = () => {
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const [questions, setQuestions] = useState<object>([]);
 
-
   const getQuestionData = async () => {
     await axios({
       url: '/questions',
@@ -42,7 +41,7 @@ const CheckPage = () => {
     event: clickEvent,
     content: {
       text: '결과보기',
-      font: true,
+      font: 'gugi',
     },
   };
   return (

@@ -1,7 +1,16 @@
 import styled, { css } from 'styled-components';
-import { Center, White, CommonShape, CommonShadow, LightPurple, LightGray } from '@styles/Common.style.tsx';
+import {
+  Center,
+  White,
+  CommonShape,
+  CommonShadow,
+  LightPurple,
+  LightGray,
+} from '@styles/Common.style';
 
-export const NextButton = styled.button`
+export const NextButton = styled.button<{
+  $able: boolean;
+}>`
   background: ${LightGray};
   ${Center};
   ${CommonShape};

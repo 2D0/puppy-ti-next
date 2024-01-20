@@ -14,7 +14,7 @@ import {
   ColumnComponentStyle,
   LightGray,
 } from '@styles/Common.style';
-import device from '@styles/Device.style';
+import Device from '@styles/Device.style';
 
 // ******************** 컨텐츠 ********************
 //컨텐츠
@@ -53,7 +53,7 @@ export const ResultCharBox = styled.div`
   aspect-ratio: 1;
   padding: 7% 5% 5%;
 
-  @media ${device.MaxWidthL} {
+  @media ${Device.MaxWidthL} {
     grid-template-rows: 16vw 1fr;
   }
 `;

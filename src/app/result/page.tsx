@@ -25,13 +25,15 @@ import {
   LightGray,
   LightPurple,
   Purple,
+  SizeExtraRem,
+  SizeMediumLargeRem,
 } from '@styles/Common.style';
 
 //컴포넌트
-import { TextSub } from '@atoms/index';
+import { TextDefault } from '@atoms/index';
 import { TitleBox } from '@molecules/index';
 import PercentBar from '@molecules/PercentBar/PercentBar';
-import { percentBarData, TypeCustomTextData } from 'interface';
+import { percentBarData, TypeTitleBoxData } from 'interface';
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState([]);
@@ -40,17 +42,23 @@ const ResultPage = () => {
   useEffect(() => {
     // setNameData(sessionStorage.getItem('dog-name'));
   }, []);
-  const titleData: TypeCustomTextData = {
+  const commonTitle = {
+    size: SizeMediumLargeRem,
+  };
+  const titleData = {
     first: {
+      ...commonTitle,
       text: '"',
       color: DarkPurple,
     },
     accent: {
+      ...commonTitle,
       text: `${nameData}`,
       color: Purple,
-      font: true,
+      font: 'gugi',
     },
     last: {
+      ...commonTitle,
       text: '"',
       color: DarkPurple,
     },
@@ -90,11 +98,12 @@ const ResultPage = () => {
       },
     },
   ];
-  const mbtiNameData: TypeCustomTextData = {
+  const mbtiNameData = {
     bigSize: true,
     accent: {
       text: `INTJ`,
-      font: true,
+      font: 'gugi',
+      size: SizeExtraRem,
     },
   };
 
@@ -102,7 +111,9 @@ const ResultPage = () => {
     <>
       <ResultPuppyName>
         <TitleBox titleBoxData={titleData} />
-        <TextSub textSubData={{ text: '는(은)' }} />
+        <TextDefault
+          textDefaultData={{ text: '는(은)', size: '2.25rem', family: 'gugi' }}
+        />
       </ResultPuppyName>
       <ResultCharBox>
         <TitleBox titleBoxData={mbtiNameData} />
@@ -116,10 +127,10 @@ const ResultPage = () => {
         ))}
       </PercentBarList>
       <ResultTxtBox>
-        <ResultTxt>결과</ResultTxt>
+        <TextDefault textDefaultData={{ text: '결과', size: '1rem' }} />
       </ResultTxtBox>
       <ResultTxtBox>
-        <ResultTxt>결과</ResultTxt>
+        <TextDefault textDefaultData={{ text: '결과', size: '1rem' }} />
       </ResultTxtBox>
     </>
   );
