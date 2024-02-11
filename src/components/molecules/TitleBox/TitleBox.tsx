@@ -1,26 +1,32 @@
 import React from 'react';
-import { TypeTitleBoxData, TypeTextData } from 'interface';
+import { TypeCustomTextData, TypeTextData } from 'interface';
 
 //폰트
-import gugiFont from '@app/api/fonts/FontGugi';
+import gugiFont from '@fonts/gugi/FontGugi';
 
 //스타일
-import { TitleWrap } from './TitleBox.style';
+import { TitleWrap, TextAccent } from './TitleBox.style';
 
-//컴포넌트
-import { TextDefault } from '@atoms/index';
-
-const TitleBox = ({ titleBoxData }: { titleBoxData: TypeTitleBoxData }) => {
+const TitleBox = ({ titleBoxData }: { titleBoxData: TypeCustomTextData }) => {
   return (
-    <TitleWrap>
+    <TitleWrap $bigSize={titleBoxData.bigSize} $color={titleBoxData.color}>
       {titleBoxData.first && (
-        <TextDefault textDefaultData={titleBoxData.first} />
+        <span className={titleBoxData.first.font && gugiFont.className}>
+          {titleBoxData.first.text}
+        </span>
       )}
       {titleBoxData.accent && (
-        <TextDefault textDefaultData={titleBoxData.accent} />
+        <TextAccent
+          className={titleBoxData.accent.font && gugiFont.className}
+          $color={titleBoxData.accent.color}
+        >
+          {titleBoxData.accent.text}
+        </TextAccent>
       )}
       {titleBoxData?.last && (
-        <TextDefault textDefaultData={titleBoxData.last} />
+        <span className={titleBoxData.last.font && gugiFont.className}>
+          {titleBoxData.last.text}
+        </span>
       )}
     </TitleWrap>
   );

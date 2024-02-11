@@ -1,12 +1,5 @@
 import React from 'react';
 
-//이미지
-import ShareSvg from '@images/Icons/ico-share.svg';
-import FacebookSvg from '@/assets/img/Icons/ico-facebook.svg';
-import KakaoSvg from '@/assets/img/Icons/ico-kakao.svg';
-import TwitterSvg from '@/assets/img/Icons/ico-twitter.svg';
-import LinkSvg from '@/assets/img/Icons/ico-link.svg';
-
 //스타일
 import { ShareTit } from '@molecules/Share/Share.style';
 import { ColumnComponent } from '@styles/Common.style';
@@ -20,10 +13,10 @@ const Share = () => {
     name: 'SHARE',
   };
   const snsImgData = [
-    { img: ShareSvg },
-    { img: FacebookSvg },
-    { img: KakaoSvg },
-    { img: LinkSvg },
+    { name: 'FACEBOOK' },
+    { name: 'KAKAO' },
+    { name: 'TWITTER' },
+    { name: 'LINK' },
   ];
   const titleData = {
     text: '공유하기',
@@ -31,7 +24,7 @@ const Share = () => {
   return (
     <ColumnComponent>
       <ShareTit>
-        <ShareSvg />
+        <SvgComponent imageData={shareImgData} />
         <TextDefault textDefaultData={titleData} />
       </ShareTit>
       <IconButtonList iconData={snsImgData} />

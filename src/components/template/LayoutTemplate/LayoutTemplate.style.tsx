@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { TypeUrl } from 'interface';
-
 import {
   CenterAlign,
   SizeFull,
@@ -15,9 +13,10 @@ import {
   WhitePurple,
   SizeLargeRem,
 } from '@styles/Common.style';
-import Device from '@styles/Device.style';
+import device from '@styles/Device.style';
+import { TypeDefault } from '@/interface';
 
-export const Main = styled.main<{ $pathName: TypeUrl }>`
+export const Main = styled.main<{ $pathName: TypeDefault['textData'] }>`
   ${CenterAlign};
   ${SizeFull};
   flex-direction: column;
@@ -29,7 +28,7 @@ export const Main = styled.main<{ $pathName: TypeUrl }>`
       ? `0 0 ${SizeMiddleLargeRem} 0`
       : ` ${SizeMiddleLargeRem} 0`};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     padding: ${({ $pathName }) =>
       $pathName === '/check'
         ? `0 0 ${SizeMiddleRem} 0`
@@ -38,7 +37,7 @@ export const Main = styled.main<{ $pathName: TypeUrl }>`
   }
 `;
 export const Body = styled.body<{
-  $pathName: TypeUrl;
+  $pathName: string;
   $percent: number;
 }>`
   width: 100%;
@@ -54,10 +53,10 @@ export const Body = styled.body<{
   background-color: ${({ $percent }) =>
     $percent === 100 ? Black : WhitePurple};
 
-  @media ${Device.MaxHeightFull} {
+  @media ${device.MaxHeightFull} {
     height: 100%;
   }
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     padding-top: ${({ $pathName }) =>
       $pathName === '/check'
         ? `calc(${SizeLargeRem} + (${SizeExtraRem} * 2) )`

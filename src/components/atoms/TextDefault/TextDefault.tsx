@@ -1,36 +1,39 @@
 import React from 'react';
-import { TypeText } from 'interface';
+import { TypeTextData } from '@/interface';
 
 //스타일
-import { DefaultText, DefaultTextLink } from './TextDefault.style';
-import FontGugi from '@/app/api/fonts/FontGugi';
+import {
+  DefaultText,
+  DefaultTextLink,
+} from '@atoms/TextDefault/TextDefault.style';
+import { FontSpoca } from '@fonts/index';
 
 const TextDefault = ({
   textDefaultData,
-  addTextDefaultData,
 }: {
-  textDefaultData: TypeText;
-  addTextDefaultData?: Omit<TypeText, 'text'>;
+  textDefaultData: TypeTextData;
 }) => {
-  const finalTextData = Object.assign({}, textDefaultData, addTextDefaultData);
-  const { url, text, target, family } = finalTextData;
+  const { url, text, color, family } = textDefaultData || {};
 
-  return url ? (
-    <DefaultTextLink
-      href={url}
-      target={target || '_self'}
-      $textDefaultData={finalTextData}
-      className={family && FontGugi.className}
-    >
-      {text}
-    </DefaultTextLink>
-  ) : (
-    <DefaultText
-      $textDefaultData={finalTextData}
-      className={family && FontGugi.className}
-    >
-      {text}
-    </DefaultText>
+  return (
+    <>
+      {url ? (
+        <DefaultTextLink
+          href={url}
+          className={family?.className ?? FontSpoca.className}
+          $color={color}
+        >
+          {text}
+        </DefaultTextLink>
+      ) : (
+        <DefaultText
+          className={family?.className ?? FontSpoca.className}
+          $color={color}
+        >
+          {text}
+        </DefaultText>
+      )}
+    </>
   );
 };
 export default TextDefault;

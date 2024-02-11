@@ -7,11 +7,11 @@ import {
   WaveBlock,
   SlashTop,
   SlashBottom,
-} from '@/components/organisms/Background/Background.style';
+} from './Background.style';
 
 //이미지
-import WaveSvg from '@/assets/img/Background/back-top-wave.svg';
-import SlashSvg from '@/assets/img/Background/back-slash.svg';
+import WaveSvg from '@images/background/back-top-wave.svg';
+import SlashSvg from '@images/background/back-slash.svg';
 
 const Background = ({ useBackground }) => {
   return (

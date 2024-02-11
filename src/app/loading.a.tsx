@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
 
-import Toe1 from '@/assets/img/Icons/ico-toe1.svg';
-import Toe2 from '@/assets/img/Icons/ico-toe2.svg';
-import Toe3 from '@/assets/img/Icons/ico-toe3.svg';
-import Toe4 from '@/assets/img/Icons/ico-toe4.svg';
-import ToeBody from '@/assets/img/Icons/ico-footbody.svg';
+import Toe1 from '@icons/ico-toe1.svg';
+import Toe2 from '@icons/ico-toe2.svg';
+import Toe3 from '@icons/ico-toe3.svg';
+import Toe4 from '@icons/ico-toe4.svg';
+import ToeBody from '@icons/ico-footbody.svg';
 import { TitleBox } from '@molecules/index';
-import { LightPurple, SizeMediumLargeRem } from '@styles/Common.style';
+import { LightPurple } from '@styles/Common.style';
 import {
   LoadingWrap,
   ToeComponent1,
@@ -17,14 +17,13 @@ import {
   ToeComponentBody,
   ToesWrap,
 } from '@styles/loading.style';
-import { TypeTitleBoxData } from '../../interface';
+import { TypeCustomTextData } from '../../interface';
 
-const loadingTextData: TypeTitleBoxData = {
+const loadingTextData: TypeCustomTextData = {
   accent: {
     text: 'LOADING',
-    family: 'gugi',
-    size: SizeMediumLargeRem,
     color: LightPurple,
+    font: true,
   },
 };
 const LoadingA = () => {

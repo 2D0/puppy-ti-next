@@ -12,7 +12,7 @@ import {
   ContentsInner,
   CommonShadow,
 } from '@styles/Common.style';
-import Device from '@styles/Device.style';
+import device from '@styles/Device.style';
 
 // ******************** 질문 박스 ********************
 export const QuestionBox = styled.li`
@@ -58,7 +58,7 @@ export const CheckButtons = styled.div`
   grid-template-columns: repeat(7, 1fr);
   gap: 0 1rem;
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     gap: 0 0.5rem;
   }
 `;

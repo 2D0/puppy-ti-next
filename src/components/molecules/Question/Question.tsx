@@ -12,7 +12,7 @@ import {
 } from '@molecules/Question/Question.style';
 
 //이미지
-import FootButton from '@/assets/img/Icons/ico-foot.svg';
+import FootButton from '@icons/ico-foot.svg';
 
 //컴포넌트
 import { TextDefault } from '@atoms/index';

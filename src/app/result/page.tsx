@@ -1,10 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import { percentBarData, TypeCustomTextData } from '@/interface';
 
 //상태관리
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { nameAtom } from '@app/state';
+import { nameAtom } from '@state/index';
 
 //스타일
 import {
@@ -25,15 +25,13 @@ import {
   LightGray,
   LightPurple,
   Purple,
-  SizeExtraRem,
-  SizeMediumLargeRem,
 } from '@styles/Common.style';
 
 //컴포넌트
-import { TextDefault } from '@atoms/index';
+import Image from 'next/image';
+import { TextSub } from '@atoms/index';
 import { TitleBox } from '@molecules/index';
 import PercentBar from '@molecules/PercentBar/PercentBar';
-import { percentBarData, TypeTitleBoxData } from 'interface';
 
 const ResultPage = () => {
   const [resultData, setResultData] = useState([]);
@@ -42,23 +40,17 @@ const ResultPage = () => {
   useEffect(() => {
     // setNameData(sessionStorage.getItem('dog-name'));
   }, []);
-  const commonTitle = {
-    size: SizeMediumLargeRem,
-  };
-  const titleData = {
+  const titleData: TypeCustomTextData = {
     first: {
-      ...commonTitle,
       text: '"',
       color: DarkPurple,
     },
     accent: {
-      ...commonTitle,
       text: `${nameData}`,
       color: Purple,
-      font: 'gugi',
+      font: true,
     },
     last: {
-      ...commonTitle,
       text: '"',
       color: DarkPurple,
     },
@@ -98,12 +90,11 @@ const ResultPage = () => {
       },
     },
   ];
-  const mbtiNameData = {
+  const mbtiNameData: TypeCustomTextData = {
     bigSize: true,
     accent: {
       text: `INTJ`,
-      font: 'gugi',
-      size: SizeExtraRem,
+      font: true,
     },
   };
 
@@ -111,9 +102,7 @@ const ResultPage = () => {
     <>
       <ResultPuppyName>
         <TitleBox titleBoxData={titleData} />
-        <TextDefault
-          textDefaultData={{ text: '는(은)', size: '2.25rem', family: 'gugi' }}
-        />
+        <TextSub textSubData={{ text: '는(은)' }} />
       </ResultPuppyName>
       <ResultCharBox>
         <TitleBox titleBoxData={mbtiNameData} />
@@ -123,14 +112,14 @@ const ResultPage = () => {
       </ResultCharBox>
       <PercentBarList>
         {percentBarData.map(item => (
-          <PercentBar key={item.top.first.text} percentBarData={item} />
+          <PercentBar key={item?.top?.first.text} percentBarData={item} />
         ))}
       </PercentBarList>
       <ResultTxtBox>
-        <TextDefault textDefaultData={{ text: '결과', size: '1rem' }} />
+        <ResultTxt>결과</ResultTxt>
       </ResultTxtBox>
       <ResultTxtBox>
-        <TextDefault textDefaultData={{ text: '결과', size: '1rem' }} />
+        <ResultTxt>결과</ResultTxt>
       </ResultTxtBox>
     </>
   );

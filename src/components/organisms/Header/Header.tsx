@@ -1,23 +1,17 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { TypeHeaderData } from 'interface';
 import { usePathname } from 'next/navigation';
 
 //상태관리
 import { useRecoilValue } from 'recoil';
-import { colorChangeState, percentState } from '@/app/state';
+import { colorChangeState, percentState } from '@state/index';
 
 //스타일
-import {
-  HeaderCont,
-  HeaderInner,
-  HeaderLogo,
-} from '@/components/organisms/Header/Header.style';
+import { HeaderCont, HeaderInner, HeaderLogo } from './Header.style';
 
 //컴포넌트
-import CheckHead from '@/components/molecules/CheckHead/CheckHead';
 import { SvgComponent } from '@atoms/index';
-import Logo from '@images/Logo/logo.svg';
+import { CheckHead } from '@molecules/index';
 
 export function Header() {
   const pathName = usePathname(); //현재 주소
@@ -38,10 +32,10 @@ export function Header() {
   }, []);
 
   return (
-    <HeaderCont $headerData={{ colorChange: colorChange, scroll: scroll }}>
+    <HeaderCont $headerData={{ color: colorChange, scroll: scroll }}>
       <HeaderInner>
         <HeaderLogo href={'/'}>
-          <Logo />
+          <SvgComponent imageData={{ name: 'LOGO' }} />
         </HeaderLogo>
       </HeaderInner>
 

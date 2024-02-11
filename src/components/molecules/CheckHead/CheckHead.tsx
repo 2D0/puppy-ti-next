@@ -3,7 +3,7 @@ import React from 'react';
 
 //상태관리
 import { useRecoilValue } from 'recoil';
-import { percentState } from '@/app/state';
+import { percentState } from '@state/index';
 
 //스타일
 import * as A from './CheckHead.style';
@@ -21,11 +21,7 @@ import {
 
 //이미지
 import { SvgComponent } from '@atoms/index';
-import PercentBar from '@/components/molecules/PercentBar/PercentBar';
-import Back from '@/assets/img/Icons/ico-back.svg';
-import Share from '@/assets/img/Icons/ico-share.svg';
-import FireworkSvg from '@/assets/img/Icons/check-firework.svg';
-import WalkingSvg from '@/assets/img/Icons/check-walking.svg';
+import { PercentBar } from '@molecules/index';
 
 const CheckHead = () => {
   const percent = useRecoilValue(percentState);
@@ -37,21 +33,21 @@ const CheckHead = () => {
     <CheckTop $percent={percent}>
       <CheckTopInner>
         <CheckTopChar>
-          <WalkingSvg />
+          <SvgComponent imageData={{ name: 'WALKING' }} />
         </CheckTopChar>
       </CheckTopInner>
       <Fireworks $percent={percent}>
         <FireworksTopRight>
-          <FireworkSvg />
+          <SvgComponent imageData={{ name: 'FIREWORK' }} />
         </FireworksTopRight>
         <FireworkLeft1>
-          <FireworkSvg />
+          <SvgComponent imageData={{ name: 'FIREWORK' }} />
         </FireworkLeft1>
         <FireworkLeft2>
-          <FireworkSvg />
+          <SvgComponent imageData={{ name: 'FIREWORK' }} />
         </FireworkLeft2>
         <FireworkLeft3>
-          <FireworkSvg />
+          <SvgComponent imageData={{ name: 'FIREWORK' }} />
         </FireworkLeft3>
       </Fireworks>
       <CheckTopBar>

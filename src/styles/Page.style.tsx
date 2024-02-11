@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Device from '@styles/Device.style';
+import device from '@styles/Device.style';
 import { ColumnComponentStyle } from '@styles/Common.style';
 
 export const MainChar = styled.div`
@@ -11,7 +11,7 @@ export const MainChar = styled.div`
     height: 100%;
   }
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 85%;
   }
 `;

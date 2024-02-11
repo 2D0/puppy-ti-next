@@ -1,5 +1,19 @@
+import React from 'react';
+import {
+  White,
+  Black,
+  LightGray,
+  Gray,
+  Purple,
+  WhitePurple,
+  LightPurple,
+  DarkPurple,
+  Pink,
+} from '@styles/Common.style';
+import { NextFont } from 'next/dist/compiled/@next/font';
+
 type textContent = string | number;
-type TypeUrl = string | `${'/'}${string}`;
+type url = `${'/'}${string}`;
 type input = 'text' | 'button' | 'submit';
 type color =
   | White
@@ -15,7 +29,7 @@ type color =
 
 export interface TypeDefault {
   textData: string | number;
-  url: TypeUrl;
+  url: string;
   color:
     | White
     | Black
@@ -37,9 +51,9 @@ export interface TypeDefault {
 export interface TypeHeaderData {
   pathName: textContent;
   percent: number;
-  colorChange: color;
-  logo: string;
+  color: color;
   scroll: boolean;
+  logo: string;
 }
 
 export interface TypeInputData {
@@ -56,42 +70,41 @@ export interface TypeButtonData {
   event: () => void;
   axios?: boolean;
   method?: 'GET' | 'POST';
-  url?: TypeUrl;
+  url?: url;
   content: {
     text: string;
     font?: boolean;
   };
 }
-export interface TypeLink {
-  url?: TypeDefault.url | TypeUrl;
-  target?: TypeDefault.target;
-}
-export interface TypeText extends TypeLink {
-  text?: TypeDefault.textData;
-  color?: TypeDefault.color;
-  size?:
-    | SizeDefaultSmallRem
-    | SizeDefaultRem
-    | SizeRegularRem
-    | SizeMiddleRem
-    | TypeUnit;
-  weight?: TypeDefault.weight;
-  family?: string;
-  background?: TypeDefault.color;
-}
 
 export interface TypeTextData {
   text: textContent;
   color?: color;
-  url?: TypeUrl;
+  url?: url;
   font?: boolean;
+  family?: NextFont;
   bigSize?: boolean;
 }
 
-export interface TypeTitleBoxData {
-  first?: TypeText;
-  accent?: TypeText;
-  last?: TypeText;
+export interface TypeCustomTextData {
+  color?: color;
+  bigSize?: boolean;
+  url?: url;
+  first?: {
+    text: textContent;
+    color?: color;
+    font?: boolean;
+  };
+  accent?: {
+    text: textContent;
+    color?: color;
+    font?: boolean;
+  };
+  last?: {
+    text: textContent;
+    color?: color;
+    font?: boolean;
+  };
 }
 
 export interface TypeImageData {
@@ -109,19 +122,19 @@ export interface TypeImageData {
 
 export interface percentBarData {
   percent: number;
-  height?: boolean;
+  height: boolean;
   top?: {
     first: {
       text: textContent;
       color?: color;
-      url?: TypeUrl;
+      url?: url;
       font?: boolean;
       bigSize?: boolean;
     };
     last: {
       text: textContent;
       color?: color;
-      url?: TypeUrl;
+      url?: url;
       font?: boolean;
       bigSize?: boolean;
     };

@@ -1,4 +1,4 @@
-9; //반응형 전용 Device size 데이터
+9; //반응형 전용 device size 데이터
 const size = {
   MaxWidthS: '375px',
   MaxWidthM: '425px',
@@ -7,7 +7,7 @@ const size = {
   MaxHeightS: '1000px',
   MaxHeightFull: '1624px',
 };
-const Device = {
+const device = {
   MaxWidthS: `(max-width: ${size.MaxWidthS})`,
   MaxWidthM: `(max-width: ${size.MaxWidthM})`,
   MaxWidthL: `(max-width: ${size.MaxWidthL})`,
@@ -15,4 +15,4 @@ const Device = {
   MaxHeightS: `(max-height: ${size.MaxHeightS})`,
   MaxHeightFull: `(max-height: ${size.MaxHeightFull})`,
 };
-export default Device;
+export default device;

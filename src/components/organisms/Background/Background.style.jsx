@@ -1,13 +1,6 @@
 import styled, { css } from 'styled-components';
-import {
-  PositionFit,
-  BackGroundShadow,
-  SizeLargeRem,
-  SizeMiddleRem,
-  PositionAbsolute,
-  SizeMediumLargeRem,
-} from '@styles/Common.style';
-import Device from '@styles/Device.style';
+import { PositionFit, BackGroundShadow, SizeLargeRem, SizeMiddleRem, PositionAbsolute, SizeMediumLargeRem } from '@styles/Common.style';
+import device from '@styles/Device.style';
 
 // ********************** 배경 **********************
 export const BackgroundWrap = styled.div`
@@ -27,7 +20,7 @@ export const WaveBlock = styled.div`
     ${BackGroundShadow};
   }
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     padding-top: ${SizeMiddleRem};
   }
 `;
@@ -42,7 +35,7 @@ export const SlashTop = styled.div`
   top: ${SlashPositionColumn};
   right: ${SlashPositionRow};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     top: calc(-20% - -${SizeMiddleRem});
   }
 `;
@@ -51,7 +44,7 @@ export const SlashBottom = styled.div`
   bottom: ${SlashPositionColumn};
   left: ${SlashPositionRow};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     bottom: calc(-20% - -${SizeMediumLargeRem});
   }
 `;

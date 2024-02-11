@@ -6,7 +6,7 @@ import {
   SmallIconShadow,
   SizeMaxWidth,
 } from '@styles/Common.style';
-import Device from '@styles/Device.style';
+import device from '@styles/Device.style';
 
 const keyframeOption = (first, second, tired) => keyframes`
 0%{${first}}
@@ -45,7 +45,7 @@ export const ToesWrap = styled.div`
   height: 214px;
   position: relative;
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 179.63px;
     height: 151.93px;
   }
@@ -65,7 +65,7 @@ export const ToeComponent1 = styled(ToeComponent)`
     0,
   )};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 42.1px;
     height: 47.93px;
     top: 43px;
@@ -84,7 +84,7 @@ export const ToeComponent2 = styled(ToeComponent)`
   left: 61px;
   ${upAndDownOption(keyframeOption('top:0px', 'top:-25px', 'top:0'), 1.4, 0.3)};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 39.94px;
     height: 53.68px;
     left: 44px;
@@ -102,7 +102,7 @@ export const ToeComponent3 = styled(ToeComponent)`
   right: 59px;
   ${upAndDownOption(keyframeOption('top:0', 'top:-25px', 'top:0'), 1.4, 0.6)};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 39.94px;
     height: 55.67px;
     right: 42px;
@@ -120,7 +120,7 @@ export const ToeComponent4 = styled(ToeComponent)`
     0.9,
   )};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 39.94px;
     height: 51.69px;
     top: 39px;
@@ -138,7 +138,7 @@ export const ToeComponentBody = styled(ToeComponent)`
   left: 52%;
   transform: translateX(-50%);
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 113.82px;
     height: 79.53px;
   }

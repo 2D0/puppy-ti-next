@@ -1,17 +1,16 @@
 import styled, { css } from 'styled-components';
-import Device from '@styles/Device.style';
+import device from '@styles/Device.style';
 
 // ********************** 색상 **********************
 export const White = `#fff`;
-export const Black = '#333';
-export const LightGray = '#ccc';
-export const Gray = '#888';
-export const Purple = '#7846D0';
-export const WhitePurple = '#F4EEFF';
-export const LightPurple = '#C4A5FA';
-export const DarkPurple = '#1C0E35';
-export const Pink = '#9E446F';
-export const Transparent = 'transparent';
+export const Black = `#333`;
+export const LightGray = `#ccc`;
+export const Gray = `#888`;
+export const Purple = `#7846D0`;
+export const WhitePurple = `#F4EEFF`;
+export const LightPurple = `#C4A5FA`;
+export const DarkPurple = `#1C0E35`;
+export const Pink = `#9E446F`;
 
 // ********************* 사이즈 ********************
 //100% 사이즈
@@ -105,7 +104,7 @@ export const ContentsInner = css`
   width: calc(100% - ${SizeMiddleRem});
   margin: 0 auto;
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: calc(100% - ${SizeRegularRem});
   }
 `;
@@ -117,7 +116,7 @@ export const CommonShape = css`
   text-align: center;
   font-size: ${SizeDefaultRem};
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     font-size: ${SizeDefaultSmallRem};
   }
 `;

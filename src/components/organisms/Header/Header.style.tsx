@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Device from '@styles/Device.style';
-import { TypeHeaderData } from 'interface';
+import device from '@styles/Device.style';
+import { TypeHeaderData } from '@/interface';
 import {
   CenterAlign,
   PositionCenter,
@@ -23,12 +23,12 @@ export const HeaderLogo = styled.a`
   ${PositionCenter};
   width: 95.5px;
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     width: 60.61px;
   }
 `;
 export const HeaderCont = styled.header<{
-  $headerData: Pick<TypeHeaderData, 'scroll' | 'colorChange'>;
+  $headerData: Partial<TypeHeaderData>;
 }>`
   width: 100%;
   max-width: ${SizeMaxWidth};
@@ -37,18 +37,15 @@ export const HeaderCont = styled.header<{
   position: fixed;
   top: 0;
   z-index: 998;
-  background-color: ${({ $headerData }) => $headerData.colorChange};
-  ${({ $headerData }) => {
-    const { colorChange, scroll } = $headerData;
-
-    return colorChange !== Black && scroll && IconShadow;
-  }}
+  background-color: ${({ $headerData }) => $headerData?.color};
+  ${({ $headerData }) =>
+    $headerData?.color !== Black && $headerData?.scroll && IconShadow}
 
   ${HeaderLogo} {
     > svg {
       > path {
         fill: ${({ $headerData }) => {
-          switch ($headerData.colorChange) {
+          switch ($headerData?.color) {
             case LightPurple:
             case Black:
               return White;
@@ -75,7 +72,7 @@ export const HeaderInner = styled.div`
   margin: 0 auto;
   position: relative;
 
-  @media ${Device.MaxWidthL} {
+  @media ${device.MaxWidthL} {
     height: ${SizeMiddleRem};
   }
 `;

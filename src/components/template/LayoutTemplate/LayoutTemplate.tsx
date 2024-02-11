@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import StyledComponentsRegistry from '@/../lib/registry';
+import { StyledComponentsProvider } from '@lib/providers';
 
 //상태관리
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import { colorChangeState, percentState, testCountState } from '@/app/state';
+import { colorChangeState, percentState, testCountState } from '@state/index';
 
 //스타일
 import GlobalStyle from '@styles/Global.style';
@@ -16,7 +16,7 @@ import { Main, Body } from './LayoutTemplate.style';
 import { Header, Footer, Background } from '@organisms/index';
 import { Share, RowTextList } from '@molecules/index';
 
-const LayoutTemplate = ({ children }): any => {
+const LayoutTemplate = ({ children }) => {
   //ContextData
   const pathName = usePathname(); //현재 주소
   const [useBackground, setUseBackground] = useState<boolean>(true);
@@ -25,7 +25,7 @@ const LayoutTemplate = ({ children }): any => {
   const setColorChange = useSetRecoilState(colorChangeState);
   const percent = useRecoilValue(percentState);
 
-  //페이지 경로에 따라 Background color change 및 Component on off
+  //페이지 경로에 따라 background color change 및 Component on off
   useEffect(() => {
     switch (pathName) {
       case '/':
@@ -70,20 +70,19 @@ const LayoutTemplate = ({ children }): any => {
   ];
 
   return (
-    <StyledComponentsRegistry>
+    <StyledComponentsProvider>
       <GlobalStyle />
       <Body $pathName={pathName} $percent={percent}>
         <Header />
         <Main $pathName={pathName}>
           {children}
-
           <RowTextList textListData={textListData} />
           {useShare && <Share />}
         </Main>
         <Background useBackground={useBackground} />
         <Footer />
       </Body>
-    </StyledComponentsRegistry>
+    </StyledComponentsProvider>
   );
 };
 export default LayoutTemplate;
