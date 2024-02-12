@@ -5,12 +5,13 @@ import { RecoilRoot } from 'recoil';
 
 //컴포넌트
 import LayoutTemplate from '@template/LayoutTemplate/LayoutTemplate';
+import ClientLayout from '@/clientLayout';
 
 export const RecoilProvider = ({ children }) => {
   return (
-    <RecoilRoot>
-      <LayoutTemplate children={children} />
-    </RecoilRoot>
+    <>
+      <ClientLayout children={children} />
+    </>
   );
 };
 

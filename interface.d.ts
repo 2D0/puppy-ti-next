@@ -76,7 +76,24 @@ export interface TypeButtonData {
     font?: boolean;
   };
 }
-
+interface TypeFetchData {
+  tableName: string;
+  selectValue?: string;
+  params?:
+    | {
+        name: string;
+        value: string;
+      }
+    | undefined;
+  successHandler?: (resData: any) => void;
+  errorHandler?: (error: any) => void;
+  valueName?: string;
+}
+interface TypeUpdateData extends Omit<TypeFetchData, 'params'> {
+  methodName: string;
+  updateValue: string | { [key: string]: any };
+  primaryKey: string;
+}
 export interface TypeTextData {
   text: textContent;
   color?: color;

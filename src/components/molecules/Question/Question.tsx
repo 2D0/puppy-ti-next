@@ -29,7 +29,7 @@ const CheckQuestion = ({ questionData }) => {
         </li>
       </QuestionSelect>
       <QuestionBoxContent>
-        <QuestionBoxText>{questionData.text}</QuestionBoxText>
+        <QuestionBoxText>{questionData.question}</QuestionBoxText>
         <CheckButtons>
           <CheckButton>
             <FootButton stroke={Pink} fill={Pink} />

@@ -4,9 +4,17 @@ import axios from 'axios';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
+//커스텀 훅
+import {
+  useDate,
+  useGetData,
+  useRandomString,
+  useUpdateData,
+} from '@hooks/index';
+
 //상태관리
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { nameAtom, testCountState } from '@state/index';
+import { nameAtom, testCountState, userIdState } from '@state/index';
 
 //스타일
 import { MainChar, MainForm } from '@styles/Page.style';
@@ -23,14 +31,22 @@ import { TitleBox } from '@molecules/index';
 
 //이미지
 import { MainImg } from '@images/character/index';
-import { createClient } from '@lib/utils/supabase/middleware';
 
 const Home = () => {
   const [nameData, setNameData] = useState<string>();
   const router = useRouter(); //react router 페이지 핸들링하는 함수
   const [buttonAble, setButtonAble] = useState<boolean>(false);
   const nameState = useSetRecoilState(nameAtom); //반려견 이름
+  const setUserId = useSetRecoilState(userIdState); //반려견 이름
   const [testCount, setTestCount] = useRecoilState<number>(testCountState);
+
+  const { fullDateValue } = useDate();
+  const { primaryString } = useRandomString({ length: 18 });
+  const [userId] = useState<string>(`${primaryString}-${fullDateValue}`); //유저 아이디
+  const { mutate: dataHandler, isLoading } = useUpdateData();
+
+  if (isLoading) return <div>Loading...</div>;
+  // console.log('데이터', dataHandler);
 
   //input에 value있을 경우 버튼 활성화
   const inputEvent = (event: React.SyntheticEvent<HTMLInputElement>) => {
@@ -44,23 +60,22 @@ const Home = () => {
   //submit 이벤트
   const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const postData = async (): Promise<void> => {
-      await axios({
-        url: '/main-data',
-        method: 'POST',
-        data: { count: testCount },
-      })
-        .then(response => {
-          //axios 통신 error가 났을 때 페이지 이동을 막기 위해 then에 router 기능 추가
-          router.push(buttonData.url);
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    };
-    postData();
+    dataHandler({
+      methodName: 'POST',
+      tableName: 'result_user_list',
+      updateValue: {
+        id: userId,
+        name: nameData,
+        time: fullDateValue,
+        mbti: '',
+      },
+      successHandler: data => {
+        console.log(data);
+        router.push(buttonData.url);
+        setUserId(userId);
+      },
+      primaryKey: '',
+    });
   };
 
   const countUp = () => {

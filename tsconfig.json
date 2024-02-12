@@ -11,6 +11,8 @@
       "@lib/*": ["./lib/*"],
       "@app/*": ["./src/app/*"],
       "@state/*": ["./src/state/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@atoms/*": ["src/components/atoms/*"],
       "@molecules/*": ["src/components/molecules/*"],
       "@organisms/*": ["src/components/organisms/*"],

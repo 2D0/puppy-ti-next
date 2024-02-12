@@ -1,34 +1,22 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { nameAtom, testCountState, userIdState } from '@state/index';
 
 //컴포넌트
 import { ButtonNext } from '@atoms/index';
 import { QuestionList } from '@organisms/index';
+import { useRecoilValue } from 'recoil';
+import { useGetData } from '@/src/hooks';
 
 const CheckPage = () => {
   const [checkPercent, setCheckPercent] = useState<number>(10);
   const [buttonAble, setButtonAble] = useState<boolean>(false);
-  const [questions, setQuestions] = useState<object>([]);
 
+  const userId = useRecoilValue(userIdState);
+  const { data: questions } = useGetData({ tableName: 'question_list' });
 
-  const getQuestionData = async () => {
-    await axios({
-      url: '/questions',
-      method: 'GET',
-    })
-      .then(response => {
-        setQuestions(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  };
-
-  useEffect(() => {
-    getQuestionData();
-    console.log(sessionStorage.getItem('dog-name'), '0');
-  }, []);
+  useEffect(() => {}, []);
 
   const clickEvent = () => {
     console.log('click');
@@ -47,7 +35,7 @@ const CheckPage = () => {
   };
   return (
     <>
-      <QuestionList questionData={questions} />
+      <QuestionList questionData={questions || []} />
       <ButtonNext buttonData={buttonData} />
     </>
   );

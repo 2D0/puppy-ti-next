@@ -1,5 +1,9 @@
 import { atom, RecoilState } from 'recoil';
 
+export const userIdState: RecoilState<string | undefined> = atom({
+  key: 'userId',
+  default: '',
+});
 export const nameAtom: RecoilState<string | undefined> = atom({
   key: 'nameAtom',
   default: '',

@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { StyledComponentsProvider } from '@lib/providers';
+import { StyledComponentsProvider, ReactQueryProvider } from '@lib/providers';
 
 //상태관리
 import { useRecoilValue, useSetRecoilState } from 'recoil';
@@ -15,15 +15,20 @@ import { Main, Body } from './LayoutTemplate.style';
 //컴포넌트
 import { Header, Footer, Background } from '@organisms/index';
 import { Share, RowTextList } from '@molecules/index';
+import { useGetData } from '@/src/hooks';
 
 const LayoutTemplate = ({ children }) => {
   //ContextData
   const pathName = usePathname(); //현재 주소
   const [useBackground, setUseBackground] = useState<boolean>(true);
   const [useShare, setUseShare] = useState<boolean>(true); //공유하기
-  const testCount = useRecoilValue(testCountState);
+  // const testCount = useRecoilValue(testCountState);
   const setColorChange = useSetRecoilState(colorChangeState);
   const percent = useRecoilValue(percentState);
+
+  const { data: testCount } = useGetData({
+    tableName: 'result_user_list',
+  });
 
   //페이지 경로에 따라 background color change 및 Component on off
   useEffect(() => {
@@ -64,25 +69,22 @@ const LayoutTemplate = ({ children }) => {
       color: Black,
     },
     {
-      text: testCount,
+      text: testCount?.length ?? '',
       color: Black,
     },
   ];
 
   return (
-    <StyledComponentsProvider>
-      <GlobalStyle />
-      <Body $pathName={pathName} $percent={percent}>
-        <Header />
-        <Main $pathName={pathName}>
-          {children}
-          <RowTextList textListData={textListData} />
-          {useShare && <Share />}
-        </Main>
-        <Background useBackground={useBackground} />
-        <Footer />
-      </Body>
-    </StyledComponentsProvider>
+    <Body $pathName={pathName} $percent={percent}>
+      <Header />
+      <Main $pathName={pathName}>
+        {children}
+        <RowTextList textListData={textListData} />
+        {useShare && <Share />}
+      </Main>
+      <Background useBackground={useBackground} />
+      <Footer />
+    </Body>
   );
 };
 export default LayoutTemplate;
